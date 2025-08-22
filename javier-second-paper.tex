@@ -1,0 +1,151 @@
+\documentclass[fleqn,usenatbib, useAMS, a4paper]{mnras}
+
+
+\usepackage{savesym}
+\savesymbol{tablenum}
+\usepackage{siunitx}
+\restoresymbol{SIX}{tablenum}
+
+
+% MNRAS is set in Times font. If you don't have this installed (most LaTeX
+% installations will e fine) or prefer the old Computer Modern fonts, comment
+% out the following line
+\usepackage{newtxtext}
+\usepackage[varg,varvw,smallerops]{newtxmath}
+% Depending on your LaTeX fonts installation, you might get better results with one of these:
+%\usepackage{mathptmx}
+%\usepackage{txfonts}
+
+% Use vector fonts, so it zooms properly in on-screen viewing software
+% Don't change these lines unless you know what you are doing
+\usepackage[T1]{fontenc}
+\usepackage{ae,aecompl}
+
+
+%%%%% AUTHORS - PLACE YOUR OWN PACKAGES HERE %%%%%
+
+% Only include extra packages if you really need them. Common packages are:
+\usepackage{graphicx}	% Including figure files
+\let\Bbbk\relax
+\usepackage{amsmath}	% Advanced maths commands
+\usepackage{amssymb}	% Extra maths symbols
+\usepackage{multicol}
+\usepackage{enumerate}          % Better lists
+\usepackage{xcolor}
+
+\usepackage[spanish,es-minimal,english]{babel}
+
+%% Package set-up
+\usepackage{booktabs}
+\usepackage{array}   % for \newcolumntype macro
+\newcolumntype{L}{>{$}l<{$}} % math-mode version of lrc column types
+\newcolumntype{R}{>{$}r<{$}} 
+\newcolumntype{C}{>{$}c<{$}}
+
+% Use more muted colors for links
+% \hypersetup{colorlinks=True, linkcolor=blue!50!black, citecolor=black,
+%   urlcolor=blue!50!black}
+\hypersetup{hidelinks=True}
+
+% Tweaks to siunitx configuration
+\sisetup{
+  % explicit""+" is useful for velocities
+  retain-explicit-plus = true,
+  % prefer 10^6 over 1 x 10^6
+  retain-unity-mantissa = false,
+  % Use x +/- e instead of x(e)  
+  separate-uncertainty = true,
+  % Make sure to pick up bold font when used in section heading for instance
+  detect-weight = true,
+}
+
+\usepackage{upgreek}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{placeins}
+%%%%% AUTHORS - PLACE YOUR OWN COMMANDS HERE %%%%%
+
+% Title of the paper, and the short title which is used in the headers.
+% Keep the title short and informative.
+\title[Turbulence in H II regions]{Turbulence in compact to giant H~II regions}
+
+% The list of authors, and the short list which is used in the headers.
+% If you need two or more lines of authors, add an extra line using \newauthor
+\author[J. García-Vázquez et al.]{
+  J. García-Vázquez$^{1}$\thanks{
+    E-mail: \href{mailto:jgarciav1600@alumno.ipn.mx}{jgarciav1600@alumno.ipn.mx}
+  },
+  William J. Henney$^{2}$
+  and H. O. Castañeda$^{1}$\thanks{Deceased.}
+\\
+% List of institutions
+$^{1}$Escuela Superior de Física y Matemáticas, Instituto Politécnico Nacional, U.P. Adolfo López Mateos, Zacatenco, Ciudad de México, México C.P. 07738\\
+$^{2}$Instituto de Radioastronomía y Astrofísica,
+Universidad Nacional Autónoma de México,
+Antigua Carretera a Pátzcuaro \#8701,\\
+Ex-Hda. San José de la Huerta, 
+Morelia, Michoacán, México C.P. 58089\\
+}
+
+% These dates will be filled out by the publisher
+\date{Accepted XXX. Received YYY; in original form ZZZ}
+
+% Enter the current year, for the copyright statements etc.
+\pubyear{2023}
+
+% Don't change these lines
+\begin{document}
+\label{firstpage}
+\pagerange{\pageref{firstpage}--\pageref{lastpage}}
+\maketitle
+
+% Abstract of the paper
+\begin{abstract}
+  % Context
+  CONTEXT. 
+  % What we did
+  WHAT WE DID.
+  % How we did it
+  HOW WE DID IT.
+  % What we found
+  WHAT WE FOUND.
+\end{abstract}
+
+% Select between one and six entries from the list of approved keywords.
+% Don't make up new ones.
+\begin{keywords}
+HII regions -- ISM: kinematics and dynamics -- turbulence 
+\end{keywords}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%% BODY OF PAPER %%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+
+\section*{Acknowledgements}
+
+\section*{Data availability statement}
+\label{sec:data-avail-stat}
+All data and accompanying analysis programs used in this paper are available
+from the github repository \url{https://github.com/JavGVastro/PhD.Paper}.
+
+\bibliographystyle{mnras}
+\bibliography{turb-refs}
+
+%\clearpage
+
+
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%% END %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Don't change these lines
+\bsp	% typesetting comment
+\label{lastpage}
+\end{document}
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: t
+%%% End:
