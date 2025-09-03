@@ -98,13 +98,13 @@
 % Abstract of the paper
 \begin{abstract}
   % Context
-  CONTEXT. 
+  Turbulence plays a critical role in the evolution of H~II regions, yet recovering its statistical properties from observations remains challenging, especially under low signal-to-noise conditions.
   % What we did
-  WHAT WE DID.
+  We use high-resolution integral field spectroscopic observations from MUSE/VLT of the Orion Nebula (M~42) to recover the turbulent velocity field across multiple emission lines.
   % How we did it
-  HOW WE DID IT.
+  We analyze the centroid velocity maps by computing the second-order structure function of the velocity fluctuations in the plane-of-sky. We apply a masking procedure based on surface brightness and systematically test binning to optimize the trade-off between instrumental noise and spatial resolution. A model is then fitted to the observed structure functions to extract the key turbulent parameters, including the correlation length $r_0$, slope $m$, and noise level.
   % What we found
-  WHAT WE FOUND.
+  Masking and downsampling significantly improve the reliability and efficiency of structure function analysis. The fitted model successfully recovers the turbulent parameters for all binning levels, with higher bin sizes yielding better agreement with the "true" (noise-free, seeing-free) structure function. Differences in large-scale behavior among emission lines are observed, revealing line-specific turbulence signatures. Our method allows consistent recovery of turbulent parameters even under varying observational conditions. Comparison with KPNO echelle yields...
 \end{abstract}
 
 % Select between one and six entries from the list of approved keywords.
@@ -119,6 +119,36 @@ HII regions -- ISM: kinematics and dynamics -- turbulence
 %%%%%%%%%%%%%%%%% BODY OF PAPER %%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
+
+%Intro first para (what we are studying)
+The process of star formation begins with the gravitational collapse of molecular clouds, followed by fragmentation into dense cores where stars form in clusters. 
+Massive O- and B-type stars emerge within these stellar groups, and their intense ionizing radiation and stellar winds inject substantial energy and momentum into the surrounding gas, profoundly shaping the interstellar medium (ISM).
+
+Observations of both molecular and ionized gas reveal complex velocity structures that deviate from simple motions. 
+Instead, these motions exhibit characteristics consistent with turbulence. 
+In this context, H~II regions—especially nearby ones—offer ideal laboratories for studying turbulent dynamics in the ionized ISM.
+
+Turbulence in H~II regions is typically first characterized through the amplitude of velocity fluctuations. This can be studied using velocity dispersion along the line-of-sight (LOS) or through the variance of centroid velocities projected onto the plane-of-sky (POS). 
+Statistical tools, such as the second-order structure function, enable the recovery of turbulence signatures in the POS and allow comparisons with theoretical models like Kolmogorov’s theory of incompressible turbulence.
+
+A major challenge in analyzing turbulence from observational data lies in recovering the intrinsic turbulent behavior while minimizing the effects of instrumental noise, seeing, and resolution limits.
+This becomes especially important in regions of low surface brightness or when high-resolution data are undersampled.
+
+The Orion Nebula (M~42), located at a distance of 440 pc \citetext{\SI{1}{\arcsecond} = \SI{0.002}{pc}; \citealp{2008AJ....136.1566O}}, is the nearest massive star-forming region and one of the most studied H~II regions. 
+Ionized by the O7~V star $\theta^1$~Ori~C, the nebula features complex physical and kinematic structures, with a rich population of young stars, stellar outflows, and Herbig-Haro objects. Its proximity and brightness make it a prime target for turbulence studies using spectroscopic observations.
+
+Several works have analyzed turbulence in the Orion Nebula using various statistical methods \citep{von1951methode, munch1958internal, castaneda1988, 1992ApJ...387..229O, 2016MNRAS.455.4057M, arthur2016turbulence, garciav23}. 
+However...
+
+%Intro second para (how we are studying it)
+In this study, we use integral field spectroscopic data from MUSE/VLT to analyze the turbulent velocity field of the Orion Nebula across multiple emission lines. 
+
+% Intro para Description of our methodology
+By combining a systematic masking approach and downsampling strategy, we aim to recover the true second-order spatial structure function of the velocity fluctuations and reliably extract the underlying turbulent parameters. 
+This method enables inter-line and inter-dataset comparisons, providing insight into the structure and nature of turbulence in ionized gas.
+
+\section{Methods}
+
 
 \section*{Acknowledgements}
 
