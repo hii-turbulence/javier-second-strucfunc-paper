@@ -63,6 +63,102 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{placeins}
 %%%%% AUTHORS - PLACE YOUR OWN COMMANDS HERE %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\hii{\ion{H}{2}}
+\newcommand\pos{\ensuremath{_{\mathrm{pos}}}}
+\newcommand\los{\ensuremath{_{\mathrm{los}}}}
+\newcommand\noise{\ensuremath{_{\text{noise}}}}
+\newcommand\obs{\ensuremath{_{\mathrm{obs}}}}
+\newcommand\model{\ensuremath{_{\mathrm{mod}}}}
+\newcommand\halpha{H${\alpha}$}
+\newcommand\n{[\ion{N}{II}]$\lambda$6584}
+\newcommand\oi{[\ion{O}{III}]$\lambda$5007}
+\newcommand\s{[\ion{S}{II}]$\lambda$6737}
+\newcommand\kms{$^{-1}$}
+\newcommand\LL{\ensuremath{\mathcal{L}}}
+
+\newcommand\ha{\ensuremath{\text{H}\upalpha}}
+\newcommand\hb{\ensuremath{\text{H}\upbeta}}
+\newcommand\Wav[1]{\ensuremath{\lambda #1}}
+% Chemical formulae
+\newcommand*\chem[1]{\ensuremath{\mathrm{#1}}}
+\newcommand\csound{\ensuremath{c_{\text{s}}}}
+\newcommand\FNa{\textsuperscript{a}}
+\newcommand\Mach{\ensuremath{\mathcal{M}}}
+\newcommand\longsig[1]{\ensuremath{\langle \delta #1^2 \rangle^{1/2} / #1_0}}
+\newcommand\shortsig[1]{\ensuremath{\sigma_{#1/#1_0}}}
+\newcommand\xx{\ensuremath{\boldsymbol{x}}}
+\newcommand\PM[2]{\ensuremath{\substack{+#1\\-#2}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%------------Figures Format------------------------------------%  
+\newlength\SFwidth
+\setlength\SFwidth{0.45\textwidth}
+
+\newcommand\SFtwograph[2]{%
+  \includegraphics[width=\SFwidth]{figures/sf-emcee-#1}
+  &  \includegraphics[width=\SFwidth]{figures/corner-emcee-#1}
+}
+
+\newcommand\histtwograph[2]{%
+  \includegraphics[width=\SFwidth]{figures/hist_#1}
+  &  \includegraphics[width=\SFwidth]{figures/hist_#2}
+}
+
+\newcommand\pstwograph[2]{%
+  \includegraphics[width=0.45\textwidth]{figures/ps_#1}
+  &  \includegraphics[width=0.45\textwidth]{figures/ps_#2}
+}
+
+\newcommand\sftwograph[2]{%
+  \includegraphics[width=0.45\textwidth]{figures/sf_#1}
+  &  \includegraphics[width=0.45\textwidth]{figures/sf_#2}
+}
+
+\newcommand\bftwograph[2]{%
+  \includegraphics[width=0.45\textwidth]{figures/bf_#1}
+  &  \includegraphics[width=0.45\textwidth]{figures/bf_#2}
+}
+
+
+\newcommand\sffigg[2]{%
+  \begin{tabular}{@{}ll@{}}
+    (a)& (b)\\
+    \SFtwograph{#1}{#2}
+  \end{tabular}%
+}
+
+\newcommand\sffigggg[4]{%
+  \begin{tabular}{@{}ll@{}}
+    (a)& (b)\\
+    \SFtwograph{#1}{#2}\\
+    (c)& (d)\\
+    \SFtwograph{#3}{#4}\\
+  \end{tabular}%
+}
+
+\newcommand\histfigg[2]{%
+  \begin{tabular}{@{}ll@{}}
+    (a)& (b)\\
+    \histtwograph{#1}{#2}
+  \end{tabular}%
+}
+\newcommand\turbufiggg[6]{%
+  \begin{tabular}{@{}ll@{}}
+    %(a)& (b)
+    \\
+    \pstwograph{#1}{#2}
+    %(c)& (d)
+    \\
+    \sftwograph{#1}{#2}
+    %(e)& (f)
+    \\
+    \bftwograph{#1}{#2}
+  \end{tabular}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Title of the paper, and the short title which is used in the headers.
 % Keep the title short and informative.
@@ -105,7 +201,7 @@
   % How we did it
   We analyze the centroid velocity maps by computing the second-order structure function of the velocity fluctuations in the plane-of-sky. We apply a masking procedure based on surface brightness and systematically test binning to optimize the trade-off between instrumental noise and spatial resolution. A model is then fitted to the observed structure functions to extract the key turbulent parameters, including the correlation length $r_0$, slope $m$, and noise level.
   % What we found
-  Masking and downsampling significantly improve the reliability and efficiency of structure function analysis. The fitted model successfully recovers the turbulent parameters for all binning levels, with higher bin sizes yielding better agreement with the "true" (noise-free, seeing-free) structure function. Differences in large-scale behavior among emission lines are observed, revealing line-specific turbulence signatures. Our method allows consistent recovery of turbulent parameters even under varying observational conditions. Comparison with KPNO echelle yields...
+  Masking and downsampling significantly improve the reliability and efficiency of structure function analysis. The fitted model successfully recovers the turbulent parameters for all binning levels, with higher bin sizes yielding better agreement with the "true" (noise-free, seeing-free) structure function. Differences in large-scale behavior among emission lines are observed, revealing line-specific turbulence signatures. Our method allows consistent recovery of turbulent parameters even under varying observational conditions. %Comparison with KPNO echelle yields...
 \end{abstract}
 
 % Select between one and six entries from the list of approved keywords.
@@ -132,23 +228,302 @@ In this context, H~II regions—especially nearby ones—offer ideal laboratorie
 Turbulence in H~II regions is typically first characterized through the amplitude of velocity fluctuations. This can be studied using velocity dispersion along the line-of-sight (LOS) or through the variance of centroid velocities projected onto the plane-of-sky (POS). 
 Statistical tools, such as the second-order structure function, enable the recovery of turbulence signatures in the POS and allow comparisons with theoretical models like Kolmogorov’s theory of incompressible turbulence.
 
+
+
+The Orion Nebula (M~42), located at a distance of 440 pc \citetext{\SI{1}{\arcsecond} = \SI{0.002}{pc}; \citealp{2008AJ....136.1566O}}, is the nearest massive star-forming region and one of the most studied H~II regions. 
+Ionized by the O7~V star $\theta^1$~Ori~C, the nebula features complex physical and kinematic structures, with a rich population of young stars, stellar outflows, and Herbig-Haro objects. 
+Its proximity and brightness make it a prime target for turbulence studies using spectroscopic observations.
+
+Several works have analyzed the turbulence in the Orion Nebula using various statistical methods \citep{von1951methode, munch1958internal, castaneda1988, 1992ApJ...387..229O, 2016MNRAS.455.4057M, arthur2016turbulence, 2016MNRAS.455.4057M}. 
+Some results are...
+
+
+However, the lack of agreement between methods in the literature, combined with the absence of a standardized model for extracting turbulent parameters, makes each individual study difficult to compare with others. 
+This fragmentation poses a major problem for turbulence research, especially since the absence of a complete and predictive theory of astrophysical turbulence makes observational constraints crucial for understanding the dynamics of star-forming environments such as H~II regions.
+
+Recovering turbulent parameters from the velocity field of an H~II region is not a trivial task. 
+Several observational and methodological challenges must be addressed. Since the goal is to recover the turbulent cascade, which is scale-dependent, it is essential to ensure that the measured spatial scales reflect genuine turbulent velocity fluctuations—free from contamination by instrumental or environmental effects.
+
+In practice, this is rarely guaranteed. 
+Ground-based observations are affected by atmospheric seeing, and the smallest velocity fluctuations that can be detected are limited by the instrument’s spectral resolution and sensitivity. 
+Noise levels and other systematic effects further complicate the analysis. Additionally, H~II regions are dynamic environments subject to large-scale motions that are not necessarily part of the turbulent cascade and must be accounted for when interpreting the data.
+
 A major challenge in analyzing turbulence from observational data lies in recovering the intrinsic turbulent behavior while minimizing the effects of instrumental noise, seeing, and resolution limits.
 This becomes especially important in regions of low surface brightness or when high-resolution data are undersampled.
 
-The Orion Nebula (M~42), located at a distance of 440 pc \citetext{\SI{1}{\arcsecond} = \SI{0.002}{pc}; \citealp{2008AJ....136.1566O}}, is the nearest massive star-forming region and one of the most studied H~II regions. 
-Ionized by the O7~V star $\theta^1$~Ori~C, the nebula features complex physical and kinematic structures, with a rich population of young stars, stellar outflows, and Herbig-Haro objects. Its proximity and brightness make it a prime target for turbulence studies using spectroscopic observations.
-
-Several works have analyzed turbulence in the Orion Nebula using various statistical methods \citep{von1951methode, munch1958internal, castaneda1988, 1992ApJ...387..229O, 2016MNRAS.455.4057M, arthur2016turbulence, garciav23}. 
-However...
-
 %Intro second para (how we are studying it)
-In this study, we use integral field spectroscopic data from MUSE/VLT to analyze the turbulent velocity field of the Orion Nebula across multiple emission lines. 
+In \citet{garciav23}, we introduced a heuristic model for the second-order structure function and applied it to H\,\textsc{ii} regions of varying sizes. 
+This approach provided a coherent methodology that not only enabled the recovery of turbulent parameters, but also allowed for meaningful comparisons between different regions. 
+In the present work, we continue to apply this model, extending its use to new observational data and addressing how to mitigate nuisance parameters that commonly affect the measurement of turbulence in ionized gas.
 
-% Intro para Description of our methodology
-By combining a systematic masking approach and downsampling strategy, we aim to recover the true second-order spatial structure function of the velocity fluctuations and reliably extract the underlying turbulent parameters. 
-This method enables inter-line and inter-dataset comparisons, providing insight into the structure and nature of turbulence in ionized gas.
+We use integral field spectroscopic observations from MUSE/VLT to analyze the turbulent velocity field of the Orion Nebula across multiple emission lines (Section~\ref{sec:observations}). 
+By combining a systematic masking procedure with a downsampling strategy (Section~\ref{sec:met}), we aim to recover the true second-order spatial structure function of the velocity fluctuations and reliably extract the underlying turbulent parameters (Section~\ref{sec:results}). 
+This methodology enables inter-line and inter-dataset comparisons, providing insight into the structure and nature of turbulence in ionized regions (Section~\ref{sec:discussion}).
 
-\section{Methods}
+
+\section{Observations}\label{sec:observations}
+
+The Orion Nebula was observed with MUSE during its commissioning phase on 2014 February 16 \citep{2014Msngr.157...13B}.
+A total of \(  60 \times 5 \ \text{s}\) exposures were used to build a \(\SI{6}{arcmin} \times \SI{5}{arcmin}\) mosaic, in which each of the 30 distinct pointings was observed twice, employing a 90\textdegree{} dither rotation.
+Details for the data reduction see \citep{2015A&A...582A.114W}.
+The observations were carried out in the wide field mode with a field-of-view (FOV) of \(\SI{1}{arcmin} \times \SI{1}{arcmin}\), with a the wavelength range of \(4595-  \SI{9366}{\angstrom} \) and a sampling of \(\SI{0.2}{arcsec} \times \SI{0.2}{arcsec} \times \SI{0.85}{\angstrom}  \). 
+The data was previously used in \citet{2016MNRAS.455.4057M}.
+
+Figure~\ref{fig:H_I-6563_maps} shows the two-dimensional maps of integrated intensity and centroid velocity for the Orion Nebula, reconstructed using the MUSE data.
+
+
+
+\begin{figure*}
+ \centering
+ \includegraphics[width=6.5in]{figures/H_I-6563_maps}\par
+ \caption{
+ Two-dimensional map of the integrated intensity (surface brightness) and the  velocity of the \halpha\ line for the Orion Nebula. 
+ North is up and East is to the left.
+ }
+\label{fig:H_I-6563_maps}
+\end{figure*}
+
+\section{Plane-of-sky velocity fluctuations}\label{sec:met}
+
+The overall amplitude of the plane-of-sky velocity fluctuations can be characterized by a dispersion, \(\sigma\pos\), defined as:
+
+\begin{equation}
+  \label{eq:sig-pos}
+  \sigma^2\pos =
+  \left\langle 
+  \bigl[ V_c (\xx_i) -\langle V_ c\rangle  \bigr]^2
+  \right \rangle ,
+\end{equation}
+where the average is performed over all observed points \(i\)
+in a given map.
+Note that \(\sigma\pos\) is also the RMS width of
+the probability density function (PDF) of \(V_c\).
+
+\begin{figure*}
+ \centering
+ \includegraphics[width=5in]{figures/pdfs}\par
+ \caption{
+   Histograms of the plane-of-sky centroid velocities for different emission lines.
+   Each panel shows the fraction of the observed spatial points
+   with a given velocity offset from the mean systemic velocity of each region.
+   The RMS width \(\sigma\pos\) of each distribution is marked,
+   as is the number of spatial points.
+   The bin width is \SI{1}{km.s^{-1}}.
+ }
+\label{fig:pdfs}
+\end{figure*}
+
+\begin{figure*}
+ \centering
+ \includegraphics[width=6in]{figures/velocity_maps_shared_cbar_fixed}\par
+ \caption{
+ Two-dimensional velocity maps for different emission lines for the Orion nebula using MUSE/VLT observations. Each map has been masked by normalizing the surface brigthness and selecting all pixles below $0.001$ and by excluding values above $2 \sigma_{Vc}$ for each sample. 
+ }
+\label{fig:figures/velocity_maps_shared_cbar_fixed}
+\end{figure*}
+
+\subsection{The binning proccedure}
+
+To improve the signal-to-noise ratio (S/N) in regions of low surface brightness and to reduce the impact of small-scale noise fluctuations, we applied a spatial binning procedure to the original maps using the \texttt{tetrablock} Python package\footnote{\url{https://github.com/will-henney/tetrabloks}}.
+This binning was performed by re-sampling the original data onto coarser grids, using binning factors of $2^1 = 2$, $2^2 = 4$, $2^3 = 8$, and $2^4 = 16$. 
+Each binning level corresponds to averaging the velocity values within non-overlapping square regions of increasing size. 
+The binning process not only enhances computational efficiency, but also allows us to test the robustness of the recovered turbulent parameters across different spatial resolutions. For consistency, all binned maps were later processed using the same masking criteria and structure function fitting method as applied to the original unbinned data.
+
+Figure~\ref{fig:figures/Ha_maps_comparison} shows as an example of the binned velocity maps for the \halpha\ emission line.
+The original map has a size of \(1 475 \times1765 \ \text{pixels}\) (see Fig.~\ref{fig:H_I-6563_maps}) which is reduced to a size of \(91 \times 109 \ \text{pixels}\) through a series of four iterations.
+After applying the binning to each map, a mask was applied to exclude pixels with centroid velocity above \(2\sigma_\text{pos}\) and regions with normalized integrated intensity below \(0.001\).
+Each iteration and the resulting velocity map is shown in the different panels of Fig.~\ref{fig:figures/Ha_maps_comparison}.
+
+\begin{figure*}
+ \centering
+ \includegraphics[width=6.5in]{figures/Ha_maps_comparison.pdf}\par
+ \caption{
+ Two-dimensional binned maps of the centroid velocity of the Orion nebula for the \halpha\ emission line. The size of each map are \(737 \times 882\), \(368\times 440\), \(183 \times 219\)  and \(91 \times 109 \ \text{pixels}\) which correspond to the bin sizes of $2$, $4$, $8$ and $16$ respectively. The same procedure of binning is applied to all emission lines mentioned in X.  
+ }
+\label{fig:figures/Ha_maps_comparison}
+\end{figure*}
+
+\subsection{The second-order structure function}
+\label{sec:second-order-struct}
+
+After the binning and masking of the maps we employ the second-order structure function, $B(r)$, which is a function of the scalar separation or lag, \(r\),
+between two points on the plane of the sky:
+%
+\newcommand\Abs[1]{\vert #1\vert}
+\begin{equation}\label{eq:Br}
+  B(r) = \left\langle 
+  \bigl[
+  V_{c}(\xx_j) - V_{c}(\xx_i)
+  \bigr]^{2} \right \rangle_{\Abs{\xx_j - \xx_i\!} \ \approx \ r} \ .
+\end{equation}
+
+The averaging is performed over all pairs of points
+\((i, j)\)
+whose scalar separation \(\Abs{\xx_j - \xx_i}\) is close to \(r\),
+irrespective of the orientation of the separation vector.
+In practice, we achieve this by binning the separations with a constant
+logarithmic width of \SI{0.05}{dex}.
+
+We will also employ the related quantity of the
+normalized spatial autocovariance or autocorrelation function:
+\begin{equation}
+  \label{eq:autocovar}
+  C(r) = \frac{1}{\sigma^2\pos}\left\langle 
+  \bigl[
+  V_{c}(\xx_j) \  V_{c}(\xx_i)
+  \bigr] \right \rangle_{\Abs{\xx_j - \xx_i\!} \ \approx \ r} \ .
+\end{equation}
+If the fluctuations are perfectly spatially homogeneous, then the
+two quantities are related \citep{1984ApJ...277..556S} as:
+\begin{equation}\label{eq:functional}
+  B(r) = 2\sigma^2\pos \bigl[   1 - C(r)\bigr] .
+\end{equation}
+
+%A common property of homogeneous fluctuating velocity fields is that neighboring points tend to have similar velocities (\(C(r) \approx 1\) for small \(r\)), whereas points that are far apart may have very different velocities (\(C(r) \ll 1\) for large \(r\)).
+%The value of the separation that corresponds to the transition between these two regimes is called the correlation length, \(r_0\).
+%In the simplest case, two points separated by \(r \gg r_0\) have totally uncorrelated velocities in the sense that knowledge of the velocity at the first point is of no help in predicting the velocity at the second point.
+%At scales smaller than \(r_0\), the fluctuations often show a power-law behavior as a function of \(r\).
+
+%In order to capture these two behaviors,
+
+We  propose the following idealized 2-parameter model
+for the autocorrelation function:
+%
+\begin{equation}\label{eq:new-correlation-form}
+  C\model(r;\ r_0, m) = 2^{- \left( r/r_0 \right)^m} 
+\end{equation}
+%
+in which \(r_{0}\)\ is the correlation length (see above)
+and \(m\) is the power-law slope at small scales.
+This is constructed so that \(C\model(r) = 1/2\) at \(r = r_0\),
+while the exponential form ensures that \(C(r)\) rapidly approaches zero
+for larger separations.
+We assume the validity of equation~\eqref{eq:functional} to determine the structure function
+from this model autocorrelation function:
+\begin{equation}
+  \label{eq:model-strucfunc-ideal}
+  B\model(r) = 2\sigma^2\pos \left[
+    1 - 2^{- \left( r/r_0 \right)^m} 
+  \right]
+\end{equation}
+This has the following properties:
+\begin{enumerate}[1.]
+ \item Small scales: \(B\model(r) \propto r^m\) for \(r \ll r_0\);
+ \item Correlation scale: \(B\model(r_0) = \sigma\pos^2\);
+ \item Large scales: \(B\model(r) \to 2 \sigma\pos^2\) for \(r \gg r_0\).
+ \end{enumerate}
+
+Then, by combining both the effects of seeing $S(r)$ and noise $B\noise$ yields the corrected model structure function:
+\begin{equation}
+  \tilde{B}\model(r) = B\model(r) \,  S(r) + B\noise
+  \label{eq:sf-functional}
+\end{equation}
+
+
+\section{Results}\label{sec:results}
+
+In this section we present the turbulent paramaters and confidence intervals obtained through the fitting of the equation~\eqref{eq:sf-functional} to the observed structure function computed for each of the original masked maps and binned maps.
+The posterior distributions of model parameters that are consistent with the observations for each emission line are estimated using Markov Chain Monte Carlo (MCMC) ensemble sampling \citep{2010CAMCS...5...65G} as implemented in the \texttt{emcee} Python library \citep{2013PASP..125..306F}.
+The Table~\ref{tab:parameter-ranges} shows the uniform prior distribution that is assumed between upper and lower bounds for each parameter.
+
+
+\input{tables/prior}
+
+
+\subsection{Representative Case Study: \halpha\ and [ArIII] emission lines}\label{sec:discussion}
+
+First, we present the results for the \halpha\ and [ArIII] emissiones lines.
+Since they correspond to the brightest and faintest line, respectively, they are used to shows the effects of masking and binning in the structure function.
+Then we apply the same analysis to the remaining lines in the following section.
+
+Table~\ref{tab:results_MUSE_Ha} shows the best-fit values for the model parameters with  with 95\% credibility range for the \halpha\ line. 
+The first column has the value for the binning size used in each map before computing the structure function.
+The nuiscance values like the noise and seeing (in RMS and FWHM) are shown in columns three, four and ten.
+The turbulent parameter are shown in columns two, six and seven.
+Finally, columns eight and nine show the quotients $L/r_0$ and $s_0/r_0$, where $L$ is the observational box lenght, which are used for a sanity check of the results.
+
+The solid markers (and different colors) in Figure~\ref{fig:figures/bin comparison} show the results of applying Equation~\eqref{eq:Br} to the masked \halpha\ and [ArIII] velocity maps (left and right panels, respectively), as shown in Figure~\ref{fig:figures/velocity_maps_shared_cbar_fixed} and the corresponding binned maps in Figure~\ref{fig:figures/Ha_maps_comparison}.
+
+In Figure~\ref{fig:figures/bin comparison}, the strucutre function of each map is represented using different marker symbols.  
+For the non-binned \halpha\ observed structure function (circles), the absence of a clear power-law behavior is evident, as much of the structure in the velocity fluctuations at small scales is buried beneath the instrumental noise.  
+This result is consistent with the findings previously reported by \citet{2016MNRAS.455.4057M}, see their Figure~12.
+The structure functions for the binned maps are also shown in Figure~\ref{fig:figures/bin comparison}, as indicated in the legend.  
+It is evident that small-scale structure in the velocity field is progressively recovered as the bin size increases, as reflected in the emergence of a clear power-law behavior in each function.  
+While smoothing helps reduce the impact of instrumental noise, high binning factors appear to be the most effective, at least in this case, at preserving the turbulent cascade while suppressing noise sufficiently to allow the smallest spatial scales to be sampled.
+
+While for the largest scales, since the \halpha\ mask presents the better concordance between the non-binned map and binned map, the behavior at large scales is mantained for all the samples.
+In this case the downward hook is a representaion of tapered fluctuaciones where the intensity of the fluctuacions is reduced at the border of the observational box.
+
+The dotted line corresponds to the heuristic model described in equation~\eqref{eq:model-strucfunc-ideal} and fitted using..., while the dashed lines represent the ideal model given in equation~\eqref{eq:sf-functional}.  
+For the \halpha\ emission, we were able to fit the model to all structure functions. While the ideal second-order structure function agrees well with all binned maps, a noticeable discrepancy remains with the non-binned results.  
+This discrepancy is attributed to the lack of small-scale structure in the non-binned velocity map, as previously discussed.
+This is better seen in Table~\ref{tab:results_MUSE_Ha} where the value obtained for the instrumental noise, \( B_{\text{noise}} \), decrease from a value of \SI{40}{km.s^{-1}} to \SI{0.5}{km.s^{-1}}.
+
+Though, each binning iteration reduces the instrumental noise, this smoothing is at the expense of increasing the observational seeing in each sample. 
+This is seen in the change of the $s_0$ value changing from \SI{\sim 1}{\text{arsec}} for the non-binned map to a value \SI{\sim 6}{\text{arsec}}.
+Therefore there is a limit to the binning procedure in which we can reproduce the small scale fluctuactions and confidently recover the turbulent parameters.
+
+The Table~\ref{tab:results_MUSE_Ar} shows the best-fit model parameters and their confidence intervals for the [Ar III] emission line and their structure functions are shown in the right panel of Figure~\ref{fig:figures/bin comparison}.
+
+In this case, we observe that the non-binned structure function is not as strongly affected by noise as in the case of the \halpha\ emission line. 
+However, it still lacks a coherent shape that resembles a typical structure function.  
+The reduced impact of noise compared to \halpha\ is due to the more aggressive masking applied to the non-binned [ArIII] map.  
+Since the normalization criterion is based on the surface brightness of the \halpha\ emission, any fainter emission line undergoes more intense masking. 
+This effect is evident in Figure~\ref{fig:figures/velocity_maps_shared_cbar_fixed}.
+In this case the reduction in noise for the non-binned case to the binning of \num{16} is from \SI{10}{km.s^{-1}} to \SI{0.5}{km.s^{-1}}, while the seeing...
+
+For the [ArIII] emission line, we observe a good overall agreement with the model described by equation~\eqref{eq:model-strucfunc-ideal}.  
+This indicates that the turbulent parameters as the slope \(m\), \(\sigma\)\pos, and the correlation length \(r_0\), are consistently recovered across all maps, both binned and non-binned.
+
+We also find that Equation~\eqref{eq:sf-functional} can be successfully fitted to all observed structure functions.  
+This demonstrates not only the applicability of the binning procedure in recovering the turbulent cascade in a computationally efficient manner, but also the effectiveness of the model in equation~\eqref{eq:sf-functional} for extracting the relevant turbulent parameters under certain S/N conditions.
+%, if the noise is less than...see appendix...
+
+Regarding the large scales in the structure function of the [ArIII] emission line, we observe a transition in behavior, which goes from a periodic, oscillatory pattern in the non-binned map (albeit masked, as previously discussed) to a radial-gradient pattern in the binned maps, similar to what is observed in the \halpha\ case.  
+This change is primarily driven by the masking applied to the binned maps, which consistently excludes pixels with values above \(2\sigma_{Vc}\) for each iteration, thereby altering the large-scale structure.  
+
+This observation is significant, as it suggests that large-scale fluctuations may be line-dependent, which is consistent with the expected spatial distribution of different ions within the nebula.
+
+
+
+
+\input{tables/results_MUSE_Ha}
+
+\input{tables/results_MUSE_Ar}
+
+
+\begin{figure*}
+ \centering
+ \includegraphics[width=6.5in]{figures/bin comparison.png}\par
+ \caption{
+ }
+\label{fig:figures/bin comparison}
+\end{figure*}
+
+\begin{figure*}
+  \centering
+  \sffigggg{H_I-6563_mask_bin_4}{H_I-6563_mask_bin_4}{Ar_III-7136_mask_bin_4}{Ar_III-7136_mask_bin_4}
+  \caption{ Results for binning 4
+  }
+  \label{fig:Orion_sf_1}
+\end{figure*}
+
+\subsection{Application to Additional Emission Lines}
+
+\input{tables/results_MUSE_O}
+
+\input{tables/results_MUSE_O_4959}
+
+\input{tables/results_MUSE_N}
+
+\input{tables/results_MUSE_N_6548}
+
+\input{tables/results_MUSE_S}
+
+
+\section{Discussion}\label{sec:discussion}
+
+\section{Summary}\label{sec:summary}
 
 
 \section*{Acknowledgements}
@@ -156,7 +531,7 @@ This method enables inter-line and inter-dataset comparisons, providing insight 
 \section*{Data availability statement}
 \label{sec:data-avail-stat}
 All data and accompanying analysis programs used in this paper are available
-from the github repository \url{https://github.com/JavGVastro/PhD.Paper}.
+from the github repository \url{https://github.com/JavGVastro/orion_muse}.
 
 \bibliographystyle{mnras}
 \bibliography{turb-refs}

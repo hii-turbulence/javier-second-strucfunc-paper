@@ -1,0 +1,31 @@
+\begingroup
+\setlength{\tabcolsep}{6pt} % Default value: 6pt
+\renewcommand{\arraystretch}{1.5} % Default value: 1
+%% In Emacs we can use M-x align-current to align the table on the & symbols after editing
+\begin{table*}
+\begin{center}
+  \caption{
+    Best-fit model parameters and 95\% credibility intervals for fits to observed structure functions in the Orion core for the VLT MUSE (bin=0) observations.
+  }
+
+%\begin{adjustbox}{width=1\textwidth}
+  
+  \begin{tabular}{l RRRRRR  @{\hspace{6\tabcolsep}} RRR}
+    \toprule
+Line   & \sigma^2\pos            & B_{\text{noise}}       & s_0 (\text{RMS})       & r_0             & L        & m                   & L/r_0    & s_0 / r_0 & s_0 (\text{FWHM}) \\
+         & [\si{km^2.s^{-2}}] & [\si{km^2.s^{-2}}]     & [\si{pc}]                 & [\si{pc}]              & [\si{pc}] & [-]                 & [-]   & [-]       & [\text{arcsec}]   \\
+\midrule
+H I 6563    & 95.46\PM{49.22}{58.05} & 42.410\PM{2.197}{0.895} & 0.0002\PM{0.0044}{-0.0000}& 0.881\PM{0.383}{0.670}   & 0.64    & 0.78\PM{0.20}{0.10} & 0.72  & 0.0002   &  0.27\PM{5.21}{-0.02} \\
+O III 5007  & 9.33\PM{1.90}{0.79} & 6.322\PM{0.232}{0.117} & 0.0002\PM{0.0015}{0.0000}     & 0.081\PM{0.028}{0.010}   & 0.64    & 1.01\PM{0.07}{0.10} & 8   & 0.0026   & 0.26\PM{1.73}{0.00}  \\
+O III 4959  & 10.17\PM{21.51}{1.09}  & 13.392\PM{0.412}{0.282} & 0.0003\PM{0.0040}{0.0000} & 0.084\PM{0.567}{0.013}   & 0.64    &   0.98\PM{0.10}{0.29}  & 8   & 0.0031   & 0.31\PM{4.76}{0.04}  \\
+N II 6583   & 8.42\PM{1.44}{0.68}  & 4.861\PM{0.317}{0.106} & 0.0002\PM{0.0014}{-0.0000}   & 0.066\PM{0.023}{0.008}   & 0.64    &  0.89\PM{0.07}{0.08} & 10  & 0.0030   & 0.24\PM{1.63}{-0.01} \\
+N II 6548   & 14.53\PM{28.55}{1.77} & 6.159\PM{0.825}{0.155} & 0.0002\PM{0.0025}{-0.0000}  & 0.104\PM{1.036}{0.021}   & 0.64    & 0.72\PM{0.06}{0.15}  & 6   & 0.0019   & 0.24\PM{2.96}{-0.03} \\
+S III 9069  & 11.29\PM{0.82}{0.55}  & 2.928\PM{0.214}{0.057}  & 0.0002\PM{0.0008}{-0.0000} & 0.060\PM{0.007}{0.005}   & 0.64    & 1.00\PM{0.04}{0.04} & 10   & 0.0033   & 0.24\PM{0.90}{-0.01} \\
+Ar III 7136 & 8.62\PM{3.08}{0.54}  & 9.717\PM{0.339}{0.091}  & 0.0002\PM{0.0045}{-0.0001}  & 0.071\PM{0.039}{0.007}   & 0.64    & 1.10\PM{0.08}{0.24} & 9   & 0.0028   & 0.24\PM{5.36}{-0.08} \\
+  \bottomrule
+
+\end{tabular}\label{tab:results_MUSE_0}
+%\end{adjustbox}
+\end{center}
+\end{table*}
+\endgroup

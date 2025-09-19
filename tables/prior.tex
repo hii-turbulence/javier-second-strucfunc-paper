@@ -1,0 +1,25 @@
+\begin{table}
+  \centering
+  \caption{Bounds of allowed values for parameters in model fits}
+  \label{tab:parameter-ranges}
+  \newlength\partabwidth
+  \setlength\partabwidth{0.8\linewidth}
+  \begin{tabular*}{\partabwidth}{
+    l @{\extracolsep{\fill}}
+    r 
+    r
+    }
+    \toprule
+    Parameter & Lower & Upper\\
+    \midrule
+    \(\sigma^2\) & \(0.25\, \max [B\obs]\)& \(2\, \max [B\obs]\)\\
+    \(r_0\) & \(0.01\, L\) & \(2\, L\)\\
+    \(m\) & \(0.5\) & \(2.0\) \\
+    \(s_0\) & \SI{0.1}{arcsec}& \SI{1.5}{arcsec}\\
+    \(B\noise\) & \(0\) & \(3\, \min [B\obs]\) \\
+    \bottomrule
+    \multicolumn{3}{@{}p{\partabwidth}@{}}{
+    Note: \(\max[B\obs]\) and \(\min[B\obs]\) are over all bins in the observed structure function with \(r < L/2\).
+    }
+  \end{tabular*}
+\end{table}
