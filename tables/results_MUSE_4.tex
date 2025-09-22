@@ -1,0 +1,31 @@
+\begingroup
+\setlength{\tabcolsep}{6pt} % Default value: 6pt
+\renewcommand{\arraystretch}{1.5} % Default value: 1
+%% In Emacs we can use M-x align-current to align the table on the & symbols after editing
+\begin{table*}
+\begin{center}
+  \caption{
+    Best-fit model parameters and 95\% credibility intervals for fits to observed structure functions in the Orion core for the VLT MUSE (bin=4) observations.
+  }
+
+%\begin{adjustbox}{width=1\textwidth}
+  
+  \begin{tabular}{l RRRRRR  @{\hspace{6\tabcolsep}} RRR}
+    \toprule
+Line   & \sigma^2\pos            & B_{\text{noise}}       & s_0 (\text{RMS})       & r_0             & L        & m                   & L/r_0    & s_0 / r_0 & s_0 (\text{FWHM}) \\
+         & [\si{km^2.s^{-2}}] & [\si{km^2.s^{-2}}]     & [\si{pc}]                 & [\si{pc}]              & [\si{pc}] & [-]                 & [-]   & [-]       & [\text{arcsec}]   \\
+\midrule
+H I 6563    & 7.09\PM{0.13}{0.10}  & 1.049\PM{0.125}{0.076}  & 0.0004\PM{0.0007}{0.0002} & 0.050\PM{0.001}{0.001} & 0.64    & 1.19\PM{0.04}{0.04} & 13  & 0.007   & 0.43\PM{0.78}{0.18} \\
+O III 5007  &  8.77\PM{1.10}{0.61} & 1.113\PM{0.199}{0.122}  & 0.0005\PM{0.0012}{0.0002} & 0.083\PM{0.016}{0.008} & 0.64    & 1.03\PM{0.05}{0.06} & 8   & 0.005   & 0.54\PM{1.37}{0.28}  \\
+O III 4959  & 8.79\PM{1.53}{0.67}  & 2.552\PM{0.339}{0.168} & 0.0005\PM{0.0025}{0.0002} & 0.082\PM{0.022}{0.009} & 0.64    & 1.03\PM{0.07}{0.10}  & 8   & 0.005   & 0.57\PM{2.94}{0.29}  \\
+N II 6583   & 8.44\PM{0.87}{0.50}  & 0.727\PM{0.319}{0.163}  & 0.0005\PM{0.0013}{0.0002} & 0.064\PM{0.012}{0.006} & 0.64    & 0.93\PM{0.05}{0.06} & 10  & 0.007   & 0.55\PM{1.52}{0.28} \\
+N II 6548   & 9.23\PM{1.89}{0.76} & 1.546\PM{0.458}{0.220}  & 0.0005\PM{0.0020}{0.0002} & 0.078\PM{0.031}{0.009} & 0.64    & 0.89\PM{0.06}{0.09}  & 8   & 0.005   & 0.55\PM{2.40}{0.27} \\
+S III 9069  & 8.94\PM{0.70}{0.42}  & 0.601\PM{0.181}{0.076}  & 0.0004\PM{0.0013}{0.0002} & 0.072\PM{0.008}{0.005} & 0.64    & 1.11\PM{0.04}{0.05} & 9   & 0.006   & 0.52\PM{1.54}{0.25}  \\
+Ar III 7136 & 8.11\PM{1.26}{0.42}  & 2.101\PM{0.291}{0.201}  & 0.0011\PM{0.0033}{0.0008} & 0.068\PM{0.014}{0.005} & 0.64    & 1.09\PM{0.05}{0.14} & 9   & 0.016   & 1.32\PM{3.91}{1.00} \\
+  \bottomrule
+
+\end{tabular}\label{tab:results_KPNO}
+%\end{adjustbox}
+\end{center}
+\end{table*}
+\endgroup

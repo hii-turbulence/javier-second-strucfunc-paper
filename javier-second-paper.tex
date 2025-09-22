@@ -226,7 +226,7 @@ Instead, these motions exhibit characteristics consistent with turbulence.
 In this context, H~II regions—especially nearby ones—offer ideal laboratories for studying turbulent dynamics in the ionized ISM.
 
 Turbulence in H~II regions is typically first characterized through the amplitude of velocity fluctuations. This can be studied using velocity dispersion along the line-of-sight (LOS) or through the variance of centroid velocities projected onto the plane-of-sky (POS). 
-Statistical tools, such as the second-order structure function, enable the recovery of turbulence signatures in the POS and allow comparisons with theoretical models like Kolmogorov’s theory of incompressible turbulence.
+Statistical tools, such as the second-order structure function, enable the recovery of turbulence signatures in the POS like the power-law $m$ and correlation length \(r_0\), and allow comparisons with theoretical models like Kolmogorov’s theory of incompressible turbulence.
 
 
 
@@ -235,8 +235,11 @@ Ionized by the O7~V star $\theta^1$~Ori~C, the nebula features complex physical 
 Its proximity and brightness make it a prime target for turbulence studies using spectroscopic observations.
 
 Several works have analyzed the turbulence in the Orion Nebula using various statistical methods \citep{von1951methode, munch1958internal, castaneda1988, 1992ApJ...387..229O, 2016MNRAS.455.4057M, arthur2016turbulence, 2016MNRAS.455.4057M}. 
-Some results are...
-
+Using KPNOP observations and by fitting a power-law index for separation of \num{\sim 7} - \SI{\sim 25}{arcsec}, \citet{arthur2016turbulence} found a value of \(m_\text{2D} \sim 1.2\) for the \halpha\ and [OIII] lines, and  \(m_\text{2D} < 1\) for [SII] and [NII] emission lines. 
+The range in which to fit the power-law was determined in conjunction with Velocity Channel analysis which the data cube is....
+This results is in contrast to what \citet{2016MNRAS.455.4057M} obtained by analizing MUSE observations, where the a lack of velocity fluctuactions strucuture was reported.
+As noted by \citet{arthur2016turbulence}, the abscence of turublent cascade in \citet{2016MNRAS.455.4057M} is probaly because of the heavy noise-to-signal ratio which comes from observations.
+Here, we address this problem and found and agreement between results.
 
 However, the lack of agreement between methods in the literature, combined with the absence of a standardized model for extracting turbulent parameters, makes each individual study difficult to compare with others. 
 This fragmentation poses a major problem for turbulence research, especially since the absence of a complete and predictive theory of astrophysical turbulence makes observational constraints crucial for understanding the dynamics of star-forming environments such as H~II regions.
@@ -275,13 +278,14 @@ Figure~\ref{fig:H_I-6563_maps} shows the two-dimensional maps of integrated inte
 
 \begin{figure*}
  \centering
- \includegraphics[width=6.5in]{figures/H_I-6563_maps}\par
+ \includegraphics[width=6.5in]{figures/H_I-6563.png}\par
  \caption{
  Two-dimensional map of the integrated intensity (surface brightness) and the  velocity of the \halpha\ line for the Orion Nebula. 
  North is up and East is to the left.
  }
 \label{fig:H_I-6563_maps}
 \end{figure*}
+
 
 \section{Plane-of-sky velocity fluctuations}\label{sec:met}
 
@@ -317,9 +321,9 @@ the probability density function (PDF) of \(V_c\).
  \centering
  \includegraphics[width=6in]{figures/velocity_maps_shared_cbar_fixed}\par
  \caption{
- Two-dimensional velocity maps for different emission lines for the Orion nebula using MUSE/VLT observations. Each map has been masked by normalizing the surface brigthness and selecting all pixles below $0.001$ and by excluding values above $2 \sigma_{Vc}$ for each sample. 
+ Two-dimensional velocity maps for different emission lines for the Orion nebula using MUSE/VLT observations. Each map has been masked to exclude all pixels with surface brightness below \(0.001\) times the peak or radial velocities greater than \(2\sigma_\text{pos}\). 
  }
-\label{fig:figures/velocity_maps_shared_cbar_fixed}
+\label{fig:figures/velocity_maps_shared_cbar_fixed.png}
 \end{figure*}
 
 \subsection{The binning proccedure}
@@ -336,7 +340,7 @@ Each iteration and the resulting velocity map is shown in the different panels o
 
 \begin{figure*}
  \centering
- \includegraphics[width=6.5in]{figures/Ha_maps_comparison.pdf}\par
+ \includegraphics[width=6.5in]{figures/Ha_maps_comparison.png}\par
  \caption{
  Two-dimensional binned maps of the centroid velocity of the Orion nebula for the \halpha\ emission line. The size of each map are \(737 \times 882\), \(368\times 440\), \(183 \times 219\)  and \(91 \times 109 \ \text{pixels}\) which correspond to the bin sizes of $2$, $4$, $8$ and $16$ respectively. The same procedure of binning is applied to all emission lines mentioned in X.  
  }
@@ -484,9 +488,6 @@ This change is primarily driven by the masking applied to the binned maps, which
 
 This observation is significant, as it suggests that large-scale fluctuations may be line-dependent, which is consistent with the expected spatial distribution of different ions within the nebula.
 
-
-
-
 \input{tables/results_MUSE_Ha}
 
 \input{tables/results_MUSE_Ar}
@@ -510,18 +511,43 @@ This observation is significant, as it suggests that large-scale fluctuations ma
 
 \subsection{Application to Additional Emission Lines}
 
-\input{tables/results_MUSE_O}
+Continue here...
 
-\input{tables/results_MUSE_O_4959}
 
-\input{tables/results_MUSE_N}
 
-\input{tables/results_MUSE_N_6548}
 
-\input{tables/results_MUSE_S}
+\begin{figure*}
+  \centering
+  \sffigggg{O_III-5007_mask_bin_4}{O_III-5007_mask_bin_4}{O_III-4959_mask_bin_4}{O_III-4959_mask_bin_4}
+  \caption{ Results for binning 4
+  }
+  \label{fig:Orion_sf_O}
+\end{figure*}
 
+
+\begin{figure*}
+  \centering
+  \sffigggg{N_II-6583_mask_bin_4}{N_II-6583_mask_bin_4}{N_II-6548_mask_bin_4}{N_II-6548_mask_bin_4}
+  \caption{ Results for binning 4
+  }
+  \label{fig:Orion_sf_N}
+\end{figure*}
+
+
+\begin{figure*}
+  \centering
+  \sffigg{S_III-9069_mask_bin_4}{S_III-9069_mask_bin_4}
+  \caption{ Results for binning 4
+  }
+  \label{fig:Orion_sf_S}
+\end{figure*}
 
 \section{Discussion}\label{sec:discussion}
+
+\input{tables/results_MUSE_4}
+
+\input{tables/results_KPNO}
+
 
 \section{Summary}\label{sec:summary}
 
@@ -537,6 +563,46 @@ from the github repository \url{https://github.com/JavGVastro/orion_muse}.
 \bibliography{turb-refs}
 
 %\clearpage
+
+%\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% APPENDICES %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\appendix
+
+\section{Multiple emission line maps} \label{apex:multiple_lines_maps}
+
+\begin{figure*}
+ \centering
+ \includegraphics[width=6.5in]{figures/Ar_III-7136.png}\par
+ \caption{
+ Two-dimensional map of the integrated intensity (surface brightness) and the  velocity of the [ArIII] line for the Orion Nebula. 
+ North is up and East is to the left.
+ }
+\label{fig:Ar_maps}
+\end{figure*}
+
+
+\section{Results for different binning iterations} \label{apex:multiple_lines_results}
+
+Here we show tables \ref{tab:results_MUSE_O} - \ref{tab:results_MUSE_S}
+
+\input{tables/results_MUSE_O}
+
+\input{tables/results_MUSE_O_4959}
+
+\input{tables/results_MUSE_N}
+
+\input{tables/results_MUSE_N_6548}
+
+\input{tables/results_MUSE_S}
+
+\section{Structure functions for KPNO observations} \label{apex:kpno_structure_function}
+
+\section{Using synthethic observatios for finding a minimum noise value for recovering turbulence parameters} \label{apex:simulation_noise}
+
 
 
 %

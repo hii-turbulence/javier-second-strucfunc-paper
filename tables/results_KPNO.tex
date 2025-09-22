@@ -1,0 +1,28 @@
+\begingroup
+\setlength{\tabcolsep}{6pt} % Default value: 6pt
+\renewcommand{\arraystretch}{1.5} % Default value: 1
+%% In Emacs we can use M-x align-current to align the table on the & symbols after editing
+\begin{table*}
+\begin{center}
+  \caption{
+    Best-fit model parameters and 95\% credibility intervals for fits to observed structure functions in the Orion core for the KPNO echelle observations.
+  }
+
+%\begin{adjustbox}{width=1\textwidth}
+  
+  \begin{tabular}{l RRRRRR  @{\hspace{6\tabcolsep}} RRR}
+    \toprule
+Element   & \sigma^2\pos            & B_{\text{noise}}       & s_0 (\text{RMS})          & r_0                    & L         & m                   & L/r_0 & s_0 / r_0 & s_0 (\text{FWHM}) \\
+         & [\si{km^2.s^{-2}}] & [\si{km^2.s^{-2}}]     & [\si{pc}]                 & [\si{pc}]              & [\si{pc}] & [-]                 & [-]   & [-]       & [\text{arcsec}]   \\
+\midrule
+H   & 12.0\PM{0.5}{0.5}        & 0.025\PM{0.003}{0.002} & 0.0016\PM{0.0001}{0.0001} & 0.068\PM{0.003}{0.002} & 0.5       & 1.07\PM{0.02}{0.02} & 7     & 0.03      & 2.4\PM{0.4}{0.3}  \\
+O   & 11.0\PM{0.5}{0.4}        & 0.025\PM{0.004}{0.004} & 0.0018\PM{0.0002}{0.0002} & 0.061\PM{0.004}{0.003} & 0.45       & 1.18\PM{0.03}{0.04} & 7.4     & 0.03      & 2.13\PM{0.3}{0.2}  \\
+N    & 12\PM{2}{1}        & 0.028\PM{0.011}{0.014} & 0.0036\PM{0.0009}{0.0004} & 0.050\PM{0.030}{0.006} & 0.45       & 0.66\PM{0.06}{0.11} & 9     & 0.07      & 2.13\PM{0.3}{0.2}  \\
+S   & 6.35\PM{0.23}{0.84}        & 0.031\PM{0.02}{0.01} & 0.0030\PM{0.0001}{0.000} & 0.045\PM{0.05}{0.01} & 0.35       & 0.62\PM{0.06}{0.11} &  7.5    & 0.03      & 3.2 \PM{1.0}{0.5}  \\
+  \bottomrule
+
+\end{tabular}\label{tab:results_KPNO}
+%\end{adjustbox}
+\end{center}
+\end{table*}
+\endgroup
