@@ -76,12 +76,12 @@
 \newcommand\MAYBE[1]{\startMAYBE #1\stopMAYBE\relax}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand\ariii{[\ion{A}{III}]$\lambda$7136}
-\newcommand\hii{\ion{H}{2}}
+\newcommand\ariii{[\ion{Ar}{III}]$\lambda$7136}
+\newcommand\hii{\ion{H}{II}}
 \newcommand\halpha{H${\alpha}$}
 \newcommand\n{[\ion{N}{II}]$\lambda$6584}
 \newcommand\oi{[\ion{O}{III}]$\lambda$5007}
-\newcommand\sii{[\ion{S}{II}]$\lambda$6737}
+\newcommand\sii{[\ion{S}{II}]$\lambda$6731}
 \newcommand\siii{[\ion{S}{III}]$\lambda$9069}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand\pos{\ensuremath{_{\mathrm{pos}}}}
@@ -199,13 +199,17 @@
 % Abstract of the paper
 \begin{abstract}
   % Context
-  Turbulence plays a critical role in the evolution of H~II regions, yet recovering its statistical properties from observations remains challenging, especially under low signal-to-noise conditions.
+  Turbulence plays a critical role in the evolution of \hii\ regions, yet recovering its statistical properties from observations remains challenging, especially under low signal-to-noise conditions.
   % What we did
   We use high-resolution integral field spectroscopic observations from VLT MUSE of the Orion Nebula (M~42) to recover the turbulent velocity field across multiple emission lines.
   % How we did it
   We analyze the centroid velocity maps by computing the second-order structure function of the velocity fluctuations in the plane-of-sky. We apply a masking procedure based on surface brightness and systematically test binning to optimize the trade-off between instrumental noise and spatial resolution. A model is then fitted to the observed structure functions to extract the key turbulent parameters, including the correlation length $r_0$, slope $m$, and noise level.
   % What we found
-  Thought downsampling significantly improve the reliability and efficiency on the computation of the structure function until a ratio of bin size and correlation ratio of 1, the fitted model alone successfully recovers the turbulent parameters for all binning levels. Differences in large-scale behavior among emission lines are observed, revealing line-specific turbulence signatures. Our method allows consistent recovery of turbulent parameters even under varying observational conditions. Comparison with KPNO echelle yields...
+ Downsampling significantly improves both the reliability and computational efficiency of the structure function up to a limit set by the ratio between the bin size and the correlation length (\(\text{Bin size} / r_0 \sim 0.1\)). 
+At the same time, the fitted model alone is able to recover the turbulent parameters across all binning levels, including low signal-to-noise conditions. 
+Differences in the large-scale behavior among emission lines are observed, revealing line-dependent turbulence signatures associated with the spatial structure of the nebula. 
+Our methodology enables a consistent recovery of turbulent parameters under varying observational conditions. 
+Comparison with KPNO echelle observations yields overall agreement in the turbulent parameters, with systematic differences attributable to variations in spatial coverage and resolution.
   % Take-away statement
   We show that, despite its relatively poor velocity resolution, 
   our methodology can turn MUSE observations into a tool for studying turbulent velocity.
@@ -230,44 +234,60 @@ Massive O- and B-type stars emerge within these stellar groups, and their intens
 
 Observations of both molecular and ionized gas reveal complex velocity and density structures that deviate from simple motions \citep{2025ApJ...986..159R,Jaupart:2022i}. 
 Instead, these motions exhibit characteristics consistent with turbulence. 
-In this context, H~II regions—especially nearby ones—offer ideal laboratories for studying turbulent dynamics in the ionized ISM.
+In this context, \hii\ regions—especially nearby ones—offer ideal laboratories for studying turbulent dynamics in the ionized ISM.
 
-Turbulence in H~II regions is typically first characterized through the amplitude of velocity fluctuations. This can be studied using velocity dispersion along the line-of-sight (LOS) or through the variance of centroid velocities projected onto the plane-of-sky (POS). 
-Statistical tools, such as the second-order structure function, enable the recovery of turbulence signatures in the POS like the power-law $m$ and correlation length \(r_0\), and allow comparisons with theoretical models like Kolmogorov’s theory of incompressible turbulence.
+Turbulence in \hii\ regions is typically first characterized through the amplitude of velocity fluctuations. This can be studied using velocity dispersion along the line-of-sight (LOS) or through the variance of centroid velocities projected onto the plane-of-sky (POS). 
+Statistical tools, such as the second-order structure function, enable the recovery of turbulence signatures in the POS like the power-law $m$ and correlation length \(r_0\), and allow comparisons with theoretical models like Kolmogorov theory of incompressible turbulence.
 
-The Orion Nebula (M~42), located at a distance of 440 pc \citetext{\SI{1}{\arcsecond} = \SI{0.002}{pc}; \citealp{2008AJ....136.1566O}}, is the nearest massive star-forming region and one of the most studied H~II regions. 
-Ionized by the O7~V star $\theta^1$~Ori~C, the nebula features complex physical and kinematic structures, with a rich population of young stars, stellar outflows, and Herbig-Haro objects \citep{2021MNRAS.502.1703M,2019MNRAS.486.3423H, Garcia-Diaz:2007a}. 
+However, recovering these turbulent parameters from observational data is not straightforward. 
+Since the turbulent cascade is inherently scale-dependent, it is essential that the measured spatial scales accurately reflect genuine turbulent velocity fluctuations, free from contamination by instrumental or environmental effects.
+
+In practice, this condition is difficult to satisfy. 
+Ground-based observations are affected by atmospheric seeing, while the smallest measurable velocity fluctuations are limited by the instrument’s spectral resolution and sensitivity. 
+In addition, noise and other systematic effects can distort the observed velocity field. 
+Furthermore, \hii\ regions are dynamic environments that exhibit large-scale motions not directly related to turbulence, which must be carefully disentangled when interpreting the data.
+
+The Orion Nebula (M~42), located at a distance of 440 pc \citetext{\SI{1}{\arcsecond} = \SI{0.002}{pc}; \citealp{2008AJ....136.1566O}}, is the nearest massive star-forming region and one of the most studied \hii\ regions. 
+Ionized by the O7~V star $\theta^1$~Ori~C, the nebula exhibits complex physical and kinematic structures, including a rich population of young stars, stellar outflows, and Herbig–Haro objects \citep{2021MNRAS.502.1703M,2019MNRAS.486.3423H, Garcia-Diaz:2007a}. 
 Its proximity and brightness make it a prime target for studies using spectroscopic observations \citep{2024A&A...689A.352K}.
 
-Several works have analyzed the turbulence in the Orion Nebula using various statistical methods \citep{2016MNRAS.455.4057M, arthur2016turbulence, 1992ApJ...387..229O,castaneda1988,munch1958internal,von1951methode}. 
-Using KPNO observations and by fitting a power-law index for separation of \num{\sim 7} - \SI{\sim 25}{arcsec}, \citet{arthur2016turbulence} found a value of \(m_\text{2D} \sim 1.2\) for the \halpha\ and [OIII] lines, and  \(m_\text{2D} < 1\) for [SII] and [NII] emission lines. 
-The range in which to fit the power-law was determined in conjunction with Velocity Channel Analysis in which the spatial power spectrum of the emission intensity is obtained using velocity channels of spectroscopic position-velocity data.
-This results is in contrast to what \citet{2016MNRAS.455.4057M} obtained by analizing MUSE observations, where the a lack of velocity fluctuactions strucuture was reported.
-As noted by \citet{arthur2016turbulence}, the abscence of turublent cascade in \citet{2016MNRAS.455.4057M} is probaly because of the heavy noise-to-signal ratio which comes from observations. 
-Here, we address this problem and found and agreement between results.
+Several studies have investigated turbulence in the Orion Nebula using statistical tools such as the second-order structure function \citep{2019MNRAS.483..704A,2016MNRAS.455.4057M,arthur2016turbulence,1992ApJ...387..229O,castaneda1988,munch1958internal,von1951methode}. 
+However, these analyses have led to significantly different conclusions regarding the nature of the turbulent cascade. 
+For example, \citet{arthur2016turbulence}, using Kitt Peak National Observatory (KPNO) echelle observations, reported clear power-law behavior consistent with a turbulent cascade, while \citet{2016MNRAS.455.4057M}, analyzing Very Large Telescope (VLT) MUSE data, found little evidence of such structure. 
+More recent studies using the same VLT MUSE observations \citep{2019MNRAS.483..704A} have obtained intermediate results.
 
-Also, the lack of agreement between methods in the literature, combined with the absence of a standardized model for extracting turbulent parameters, makes each individual study difficult to compare with others. 
-This fragmentation poses a major problem for turbulence research, especially since the absence of a complete and predictive theory of astrophysical turbulence makes observational constraints crucial for understanding the dynamics of star-forming environments such as H~II regions.
+%Focusing on the central part of M 42, The Huygens regions, and using KPNO observations and by fitting a power-law index for separation of \num{\sim 7} - \SI{\sim 25}{arcsec}, \citet{arthur2016turbulence} found a value of \(m_\text{2D} \sim 1.2\) for the \halpha\ and [OIII] lines, and  \(m_\text{2D} < 1\) for [SII] and [NII] emission lines. 
+%The range in which to fit the power-law was determined in conjunction with Velocity Channel Analysis in which the spatial power spectrum of the emission intensity is obtained using velocity channels of spectroscopic position-velocity data.
 
-Recovering turbulent parameters from the velocity field of an H~II region is not a trivial task. 
-Several observational and methodological challenges must be addressed. Since the goal is to recover the turbulent cascade, which is scale-dependent, it is essential to ensure that the measured spatial scales reflect genuine turbulent velocity fluctuations—free from contamination by instrumental or environmental effects.
+%This results is in contrast to what \citet{2016MNRAS.455.4057M} obtained by analyzing MUSE observations, where the a lack of velocity fluctuations structure was reported.
+%As noted by \citet{arthur2016turbulence}, the absence of turbulent cascade in \citet{2016MNRAS.455.4057M} is probably because of the heavy noise-to-signal ratio which comes from observations. 
+%Here, we address this problem and found and agreement between results.
 
-In practice, this is rarely guaranteed. 
-Ground-based observations are affected by atmospheric seeing, and the smallest velocity fluctuations that can be detected are limited by the instrument’s spectral resolution and sensitivity. 
-Noise levels and other systematic effects further complicate the analysis. Additionally, H~II regions are dynamic environments subject to large-scale motions that are not necessarily part of the turbulent cascade and must be accounted for when interpreting the data.
+%Another work using VLT MUSE observations to compute the structure function is \citet{2019MNRAS.483..704A} which determines the \halpha\ power-law index of \num{\sim 0.7} for a range of \(0.129 < r < 0.645 \ \text{pc}\).
 
-%Intro second para (how we are studying it)
-A major challenge in analyzing turbulence from observational data lies in recovering the intrinsic turbulent behavior while minimizing the effects of instrumental noise, seeing, and resolution limits.
-This becomes especially important in regions of low surface brightness or when high-resolution data are undersampled.
+%Also, the lack of agreement between methods in the literature, combined with the absence of a standardized model for extracting turbulent parameters, makes each individual study difficult to compare with others. 
+%This fragmentation poses a major problem for turbulence research, especially since the absence of a complete and predictive theory of astrophysical turbulence makes observational constraints crucial for understanding the dynamics of star-forming environments such as \hii\ regions.
 
-In \citet{garciav23}, we introduced a heuristic model for the second-order structure function and applied it to H\,\textsc{ii} regions of varying sizes. 
+These discrepancies are likely driven by differences in methodology, data quality, and the treatment of observational effects such as noise and spatial resolution. 
+In particular, instrumental noise can obscure small-scale velocity fluctuations, making the recovery of the turbulent cascade highly sensitive to the analysis technique. This raises a fundamental question: how can the turbulent structure function be reliably recovered from noisy integral field spectroscopic observations? 
+
+More generally, the lack of a standardized methodology for extracting turbulent parameters from observational data makes direct comparisons between studies difficult. 
+This fragmentation poses a major challenge for turbulence research, especially in the absence of a complete theoretical framework, where observational constraints play a central role.
+
+In this work, we address these issues by implementing a consistent methodology to recover the turbulent structure function from noisy observations. 
+By combining masking, controlled binning, and model fitting, we aim to reliably extract the turbulent parameters and provide a framework for meaningful comparison between different datasets.
+
+%(how we are studying it)
+%A major challenge in analyzing turbulence from observational data lies in recovering the intrinsic turbulent behavior while minimizing the effects of instrumental noise, seeing, and resolution limits.
+%This becomes especially important in regions of low surface brightness or when high-resolution data are undersampled.
+
+In \citet{garciav23}, we introduced a heuristic model for the second-order structure function and applied it to \hii\ regions of varying sizes. 
 This approach provided a coherent methodology that not only enabled the recovery of turbulent parameters, but also allowed for meaningful comparisons between different regions. 
 In the present work, we continue to apply this model, extending its use to new observational data and addressing how to mitigate nuisance parameters that commonly affect the measurement of turbulence in ionized gas.
 
-We use integral field spectroscopic observations from MUSE/VLT to analyze the turbulent velocity field of the Orion Nebula across multiple emission linesa: \halpha, \oi, \n, \siii\ and \ariii\ (Section~\ref{sec:observations}). 
+We use integral field spectroscopic observations from VLT MUSE to analyze the turbulent velocity field of the Huygens region in the Orion Nebula across multiple emission lines: \halpha, \oi, \n, \siii\ and \ariii\ (Section~\ref{sec:observations}). 
 By combining a systematic masking procedure with a downsampling strategy (Section~\ref{sec:met}), we aim to recover the true second-order spatial structure function of the velocity fluctuations and reliably extract the underlying turbulent parameters (Section~\ref{sec:results}). 
-This methodology enables inter-line and inter-dataset comparisons, providing insight into the structure and nature of turbulence in ionized regions (Section~\ref{sec:discussion}).
-
+This methodology enables consistent inter-line and inter-dataset comparisons, providing insight into the structure and nature of turbulence in ionized regions (Section~\ref{sec:discussion}), and allowing the turbulent cascade to be recovered even in the presence of significant observational noise.
 
 \section{Observations}\label{sec:observations}
 
@@ -275,11 +295,9 @@ The Orion Nebula was observed with MUSE during its commissioning phase on 2014 F
 A total of \(  60 \times 5 \ \text{s}\) exposures were used to build a \(\SI{6}{arcmin} \times \SI{5}{arcmin}\) mosaic, in which each of the 30 distinct pointings was observed twice, employing a 90\textdegree{} dither rotation.
 Details for the data reduction see \citep{2015A&A...582A.114W}.
 The observations were carried out in the wide field mode with a field-of-view (FOV) of \(\SI{1}{arcmin} \times \SI{1}{arcmin}\), with a the wavelength range of \(4595-  \SI{9366}{\angstrom} \) and a sampling of \(\SI{0.2}{arcsec} \times \SI{0.2}{arcsec} \times \SI{0.85}{\angstrom}  \). 
-The data was previously used in \citet{2016MNRAS.455.4057M}.
+The data was previously used in \citet{2019MNRAS.483..704A} and \citet{2016MNRAS.455.4057M}.
 
 Figure~\ref{fig:H_I-6563_maps} shows the two-dimensional maps of integrated intensity and centroid velocity for the Orion Nebula, reconstructed using the MUSE data.
-
-
 
 \begin{figure*}
  \centering
@@ -291,23 +309,16 @@ Figure~\ref{fig:H_I-6563_maps} shows the two-dimensional maps of integrated inte
 \label{fig:H_I-6563_maps}
 \end{figure*}
 
+\section{Methodology}\label{sec:met}
 
-\section{Plane-of-sky velocity fluctuations}\label{sec:met}
+\subsection{Plane-of-sky velocity fluctuations}\label{sec:pos fluctuations}
 
-Figure~\ref{fig:velocity_maps_shared_cbar_fixed} shows maps of the \ha{} centroid velocity
-\(V_c\) for each emission line in our sample.
-
-\begin{figure*}
- \centering
- \includegraphics[width=6in]{figures/velocity_maps_shared_cbar_fixed}\par
- \caption{
-Two-dimensional velocity maps for different emission lines of the Orion Nebula obtained from MUSE/VLT observations. Each map has been masked to exclude pixels with normalized surface brightness below \(0.001\). 
- }
-\label{fig:velocity_maps_shared_cbar_fixed}
-\end{figure*}
+Figure~\ref{fig:velocity_maps_shared_cbar_fixed} shows the centroid velocity maps, \(V_c\), for each emission line in our sample. 
+These maps provide the basis for analyzing the velocity fluctuations projected onto the plane of the sky.
+These velocity maps highlight the presence of noise and large-scale motions that must be accounted for in the subsequent analysis.
 
 The overall amplitude of the plane-of-sky velocity fluctuations can be characterized by a dispersion, \(\sigma\pos\), defined as:
-
+%
 \begin{equation}
   \label{eq:sig-pos}
   \sigma^2\pos =
@@ -320,6 +331,16 @@ in a given map.
 Note that \(\sigma\pos\) is also the RMS width of
 the probability density function (PDF) of \(V_c\).
 The PDFs for all emission lines analyzed in this work are shown in Figure~\ref{fig:pdfs}.
+
+\begin{figure*}
+ \centering
+ \includegraphics[width=6in]{figures/velocity_maps_shared_cbar_fixed}\par
+ \caption{
+Two-dimensional velocity maps for different emission lines of the Orion Nebula obtained from VLT MUSE observations. 
+Each map has been masked to exclude pixels with normalized surface brightness below \(0.001\). Masked pixels are shown in black.
+ }
+\label{fig:velocity_maps_shared_cbar_fixed}
+\end{figure*}
 
 \begin{figure*}
  \centering
@@ -337,35 +358,20 @@ The PDFs for all emission lines analyzed in this work are shown in Figure~\ref{f
 
 
 
-\subsection{Surface brigthness masking}
 
-One method commonly used to improve the signal-to-noise (S/N) ratio is to eliminate pixels with low surface brightness. 
-Although this approach can increase the S/N ratio, it has the disadvantage of removing information about the velocity fluctuations by effectively giving more weight to brighter pixels. 
-As a result, there is no guarantee that the underlying structure of the velocity fluctuations is properly recovered. 
-For this reason, we compare this approach with the binning procedure discussed in the following section.
-The Figure~\ref{fig:Ha_sb_mask_map} shows the area left when normalizing the surface brightness and eliminatig all pixels below \(0.07\).
+\subsection{The binning procedure}\label{sec:binning procedure}
 
-\begin{figure}
- \centering
- \includegraphics[width=3.25in]{figures/MUSE-M42-H-sbmask_vel.jpg}\par
- \caption{ The figure shows the velocity field of the \halpha\ emission line with a mask applied to low surface brightness pixels.
- }
-\label{fig:Ha_sb_mask_map}
-\end{figure}
+To mitigate the impact of instrumental noise while preserving the underlying turbulent signal, we apply a spatial binning procedure to the velocity maps using the \texttt{tetrablok} Python package\footnote{\url{https://github.com/will-henney/tetrabloks}}. 
+This approach explicitly addresses the trade-off between noise reduction and spatial resolution in the recovery of the turbulent structure function.
 
-
-\subsection{The binning proccedure}
-
-To improve the signal-to-noise ratio in regions of low surface brightness and to reduce the impact of small-scale noise fluctuations, we applied a spatial binning procedure to the original maps using the \texttt{tetrablock} Python package\footnote{\url{https://github.com/will-henney/tetrabloks}}.
-This binning was performed by re-sampling the original data onto coarser grids, using binning factors of $2^1 = 2$, $2^2 = 4$, $2^3 = 8$, and $2^4 = 16$. 
-Each binning level corresponds to averaging the velocity values within non-overlapping square regions of increasing size. 
-The binning process not only enhances computational efficiency, but also allows us to test the robustness of the recovered turbulent parameters across different spatial resolutions. For consistency, all binned maps were \MAYBE{later processed using the same masking criteria} and structure function fitting method as applied to the original unbinned data.
+The binning is performed by re-sampling the original data onto progressively coarser grids using binning factors of \(2^1 = 2\), \(2^2 = 4\), \(2^3 = 8\), and \(2^4 = 16\) applied simultaneously along both spatial directions of the map. 
+At each binning level, the velocity field is averaged over non-overlapping square blocks of size \(N \times N\) pixels (e.g., \(2 \times 2\), \(4 \times 4\), \(8 \times 8\), and \(16 \times 16\)), producing a lower-resolution map.
+velocity values within non-overlapping square regions of increasing size. 
+While this process reduces small-scale noise fluctuations and improves computational efficiency, it also smooths the velocity field, potentially limiting the recovery of the smallest spatial scales.
 
 Figure~\ref{fig:Ha_bins_comparison} shows as an example of the binned velocity maps for the \halpha\ emission line.
 The original map has a size of \(1 475 \times1765 \ \text{pixels}\) (see Fig.~\ref{fig:H_I-6563_maps}) which is reduced to a size of \(91 \times 109 \ \text{pixels}\) through a series of four iterations.
-After applying the binning to each map, a mask was applied to exclude pixels with centroid velocity above \(2\sigma_\text{pos}\) and regions with normalized integrated intensity below \(0.001\).
-Each iteration and the resulting velocity map is shown in the different panels of Fig.~\ref{fig:Ha_bins_comparison}.
-
+Each iteration and the resulting velocity map is shown in the different panels of Fig.~\ref{fig:Ha_bins_comparison} for the \halpha\ emission line.
 
 
 \begin{figure*}
@@ -377,10 +383,32 @@ Each iteration and the resulting velocity map is shown in the different panels o
 \label{fig:Ha_bins_comparison}
 \end{figure*}
 
+\subsection{Surface brightness masking and weighted analysis}\label{sec:sb masking}
+
+
+A common approach to improve the signal-to-noise ratio (S/N) in observational data is to exclude pixels with low surface brightness. 
+While this procedure increases the S/N, it introduces a bias by preferentially selecting brighter regions and discarding information from fainter parts of the map. 
+As a result, there is no guarantee that the underlying structure of the velocity fluctuations is faithfully recovered.
+
+Figure~\ref{fig:Ha_sb_mask_map} illustrates the effect of this procedure, showing the spatial coverage obtained after normalizing the surface brightness and removing all pixels below a threshold of \(0.07\).
+
+To reduce the arbitrariness associated with a strict surface-brightness threshold, we also consider a weighted structure function. 
+This approach enhances the contribution of brighter pixels while preserving information from low surface-brightness regions, providing a more continuous treatment of the data.
+
+Both methods are evaluated in comparison with the binning procedure described in the following section, which directly addresses the trade-off between noise reduction and spatial resolution.
+
+\begin{figure}
+ \centering
+ \includegraphics[width=3.25in]{figures/MUSE-M42-H-sbmask_vel.jpg}\par
+ \caption{ The figure shows the velocity field of the \halpha\ emission line with a mask applied to low surface brightness pixels.
+ }
+\label{fig:Ha_sb_mask_map}
+\end{figure}
+
 \subsection{The second-order structure function}
 \label{sec:second-order-struct}
 
-After the binning and masking of the maps we employ the second-order structure function, $B(r)$, which is a function of the scalar separation or lag, \(r\),
+After the binning and masking of the maps we employ the second-order structure function, \(B(r)\), which is a function of the scalar separation or lag, \(r\),
 between two points on the plane of the sky:
 %
 \newcommand\Abs[1]{\vert #1\vert}
@@ -398,56 +426,26 @@ irrespective of the orientation of the separation vector.
 In practice, we achieve this by binning the separations with a constant
 logarithmic width of \SI{0.05}{dex}.
 
-We will also employ the related quantity of the
-normalized spatial autocovariance or autocorrelation function:
+\MAYBE{Add Weighted equation for Br}
+
+To interpret the observed structure function and extract the underlying turbulent parameters, we adopt a parametric model that accounts for both intrinsic turbulence and observational effects. 
+In this framework, the observed structure function is modeled by combining the intrinsic structure function with the effects of atmospheric seeing, \(S(r)\), and a constant noise contribution, \(B\noise\), yielding the corrected model:
+%
 \begin{equation}
-  \label{eq:autocovar}
-  C(r) = \frac{1}{\sigma^2\pos}\left\langle 
-  \bigl[
-  V_{c}(\xx_j) \  V_{c}(\xx_i)
-  \bigr] \right \rangle_{\Abs{\xx_j - \xx_i\!} \ \approx \ r} \ .
+  \tilde{B}\model(r) = B\model(r) \,  S(r) + B\noise
+  \label{eq:sf-functional}
 \end{equation}
-If the fluctuations are perfectly spatially homogeneous, then the
-two quantities are related \citep{1984ApJ...277..556S} as:
-\begin{equation}\label{eq:functional}
-  B(r) = 2\sigma^2\pos \bigl[   1 - C(r)\bigr] .
-\end{equation}
-
-%A common property of homogeneous fluctuating velocity fields is that neighboring points tend to have similar velocities (\(C(r) \approx 1\) for small \(r\)), whereas points that are far apart may have very different velocities (\(C(r) \ll 1\) for large \(r\)).
-%The value of the separation that corresponds to the transition between these two regimes is called the correlation length, \(r_0\).
-%In the simplest case, two points separated by \(r \gg r_0\) have totally uncorrelated velocities in the sense that knowledge of the velocity at the first point is of no help in predicting the velocity at the second point.
-%At scales smaller than \(r_0\), the fluctuations often show a power-law behavior as a function of \(r\).
-
-%In order to capture these two behaviors,
-
-We  propose the following idealized 2-parameter model
-for the autocorrelation function:
+where \(B\model(r)\) represents intrinsic (noise- and seeing-free) structure function is given by:
 %
-\begin{equation}\label{eq:new-correlation-form}
-  C\model(r;\ r_0, m) = 2^{- \left( r/r_0 \right)^m} 
-\end{equation}
-%
-in which \(r_{0}\)\ is the correlation length (see above)
-and \(m\) is the power-law slope at small scales.
-This is constructed so that \(C\model(r) = 1/2\) at \(r = r_0\),
-while the exponential form ensures that \(C(r)\) rapidly approaches zero
-for larger separations.
-We assume the validity of equation~\eqref{eq:functional} to determine the structure function
-from this model autocorrelation function:
 \begin{equation}
   \label{eq:model-strucfunc-ideal}
   B\model(r) = 2\sigma^2\pos \left[
     1 - 2^{- \left( r/r_0 \right)^m} 
   \right]
 \end{equation}
-This has the following properties:
-\begin{enumerate}[1.]
- \item Small scales: \(B\model(r) \propto r^m\) for \(r \ll r_0\);
- \item Correlation scale: \(B\model(r_0) = \sigma\pos^2\);
- \item Large scales: \(B\model(r) \to 2 \sigma\pos^2\) for \(r \gg r_0\).
- \end{enumerate}
 
-The seeing \(S(r)\) is given by:
+In the equation~\ref{eq:model-strucfunc-ideal} the seeing \(S(r)\) is given by:
+%
 \begin{equation}\label{eq:ffs}
   S(r) =
   \left[ \frac{1}{1 + 1.25 s_0 / r_0} \right]
@@ -460,16 +458,12 @@ where \(s_0\) is the RMS width of the seeing profile\footnote{%
 },
 and \(r_0\) is the correlation length.
 
-Then, by combining both the effects of seeing $S(r)$ and noise $B\noise$ yields the corrected model structure function:
-\begin{equation}
-  \tilde{B}\model(r) = B\model(r) \,  S(r) + B\noise
-  \label{eq:sf-functional}
-\end{equation}
-
+A detailed description of our structure function methodology can be found in \citet{garciav23}. 
+In this work, the focus is on its application to observational data processed through masking and binning, with the aim of recovering the underlying turbulent cascade.
 
 \section{Results}\label{sec:results}
 
-In this section, we present the turbulent parameters and their confidence intervals obtained by fitting Equation~\eqref{eq:sf-functional} to the observed structure functions.  
+In this section, we present the turbulent parameters and their confidence intervals obtained by fitting Equation~\eqref{eq:sf-functional} to the observed structure function computed using Equation~\eqref{eq:Br}.  
 The posterior distributions of the model parameters consistent with the observations for each emission line are estimated using Markov Chain Monte Carlo (MCMC) ensemble sampling \citep{2010CAMCS...5...65G}, as implemented in the \texttt{emcee} Python library \citep{2013PASP..125..306F}.  
 Table~\ref{tab:parameter-ranges} lists the uniform prior distributions assumed for each parameter, defined by their corresponding lower and upper bounds.
 
@@ -479,57 +473,89 @@ Table~\ref{tab:parameter-ranges} lists the uniform prior distributions assumed f
 
 \subsubsection{Representative Case Study for the \halpha\ and \ariii\ emission lines}\label{sec:Representative case study}
 
-First, we present the results for the \halpha\ and \ariii\  emissiones lines.
-Since they correspond to the brightest and faintest line respectively, they are used to shows the effects of masking and binning in the structure function.
-The same analysis is apllied to the remaining lines showing the results in the following section.
+We first present the results for the \halpha\ and \ariii\ emission lines, which correspond to the brightest and faintest lines in our sample, respectively. 
+These two cases illustrate the effects of masking and binning on the structure function under different signal-to-noise conditions. 
+The same analysis is applied to the remaining emission lines, with results presented in the Appendix~\ref{apex:multiple_lines_results}. 
+The results shown here are used to evaluate the impact of noise and spatial resolution on the recovery of the turbulent structure function.
 
+% Present Brs for Halpha
+The solid markers of different colors in Figure~\ref{fig:Ha_Br_comparison} show the results of applying equation~\eqref{eq:Br} to the non-binned / non-masked \halpha\ map show in Figure~\ref{fig:velocity_maps_shared_cbar_fixed}, the masked \halpha\ velocity map show in Figure~\ref{fig:Ha_sb_mask_map} and the corresponding binned maps in Figure~\ref{fig:Ha_bins_comparison}.
+
+In Figure~\ref{fig:Ha_Br_comparison}, the \halpha\ emission line structure functions corresponding to each map are shown using different colors.  
+The dotted lines corresponds to the heuristic model described in equation~\eqref{eq:sf-functional}, while the dashed lines represent the ideal model given in equation~\eqref{eq:model-strucfunc-ideal}.  
+For the \halpha\ emission, we were able to fit the model to all the observed structure functions. 
+
+% Present trubulent parameters for Halpha
 Table~\ref{tab:results_MUSE_Ha} shows the best-fit values for the model parameters with  with 95\% credibility range for the \halpha\ line. 
 The first column has the value for the binning size used in each map before computing the structure function.
-The nuiscance values like the noise and seeing (in RMS and FWHM) are shown in columns three, four and eleven.
+The nuisance values like the noise and seeing (in RMS and FWHM) are shown in columns three, four and eleven.
 The turbulent parameter are shown in columns two, five and seven.
 Finally, columns eight, nine and ten show the quotients \(L/r_0\) ($L$ being the observational box length), \(s_0/r_0\) and \(\text{Bin size} / r_0\), which are used for a sanity check of the results.
 
-The solid markers of different colors in Figure~\ref{fig:Ha_Br_comparison} show the results of applying equation~\eqref{eq:Br} to the non-binned / non-masked \halpha\ map show in Figure~\ref{fig:velocity_maps_shared_cbar_fixed}, the masked \halpha\ velocity map show in Figure~\ref{fig:Ha_sb_mask_map} and the corresponding binned maps in Figure~\ref{fig:Ha_bins_comparison}.
+% Halpha Discussion small scales
+For the non-binned, non-masked \halpha\ map (Bin~0), a power-law trend is present, but the structure at small scales is significantly affected by instrumental noise with a value of \SI{3}{km^{2}.s^{-2}}.  
+The structure functions derived from the binned maps (Bin~1–4) are also shown in Figure~\ref{fig:Ha_Br_comparison}.  
+As the bin size increases, from \num{2} to \num{16}, the small-scale structure of the velocity field becomes progressively clearer, as evidenced by the emergence of a well-defined power-law behavior and a reduction of the instrumental noise to a value of \SI{0.41}{km^{2}.s^{-2}}.  
 
-In Figure~\ref{fig:Ha_Br_comparison}, the strucutre function of each map is represented using different colors.  
-For the non-binned / no-mask \halpha\ observed structure function (Bin~0), the existence of a power-law behavior can be seen but much of the structure in the velocity fluctuations at small scales is buried beneath the instrumental noise.  
-This result is consistent with the findings previously reported by \citet{2016MNRAS.455.4057M}, see their Figure~12.
-The structure functions for the mask map (Bin~0 sbm) and the binned maps are also shown in Figure~\ref{fig:Ha_Br_comparison}, as indicated in the legend (Bin~0-4).  
-It is evident that small-scale structure in the velocity field is progressively recovered as the bin size increases, as reflected in the emergence of a clear power-law behavior in each function.  
-While smoothing helps reduce the impact of instrumental noise, increaing the binning factors appear to be the most effective until a limit where there is no reduction in the noise.
+% Noise reduction
+Although binning smooths the velocity field, it effectively suppresses small-scale noise, allowing the underlying turbulent structure to be recovered. 
+However, this improvement reaches a limit, beyond which increasing the bin size does not lead to further noise reduction and begins to remove physically relevant small-scale information.
+This behavior is reflected in the derived noise values for the largest binning factors (\num{8} and \num{16}), which converge to similar levels of \SI{0.42}{km^{2}.s^{-2}} and \SI{0.41}{km^{2}.s^{-2}}, respectively, indicating that further binning does not lead to a significant reduction in instrumental noise.
 
-While for the largest scales, the \halpha\ mask presents worst concordance between the non-binned map and binned map and non-stationary effects are show thorugh a decay and rise in the points for large separations. The behavior at large scales is mantained for all the the binned samples.
-In this case the downward hook is a representaion of tapered fluctuaciones where the intensity of the fluctuacions is reduced at the border of the observational box.
+% Increse in seeing
+As for the seeing (FWHM), we observe a systematic increase in the derived values with increasing bin size. 
+For the binned samples, the inferred seeing grows from \SI{2.02}{arcsec}, which is relatively low, to \SI{3.47}{arcsec}, a value that would be considered high under typical observing conditions. 
 
-In the Figure~\ref{fig:Ha_Br_comparison} the dotted lines corresponds to the heuristic model described in equation~\eqref{eq:sf-functional}, while the dashed lines represent the ideal model given in equation~\eqref{eq:model-strucfunc-ideal}.  
-For the \halpha\ emission, we were able to fit the model to all structure functions. While the ideal second-order structure function agrees well with all binned maps.  
+%Seeing-noise trade off
+This trend reflects the intrinsic trade-off of the binning procedure: while the reduction of noise enables the recovery of the structure function from noisy observations, it simultaneously smooths the velocity field, increasing the apparent blurring and suppressing small-scale fluctuations. 
+This effect is analogous to the blurring introduced by atmospheric seeing in ground-based observations.
 
-Although each binning iteration reduces the instrumental noise, this reduction comes at the cost of smoothing the velocity map, which results in the loss of small-scale information.  
-This effect is analogous to the blurring caused by atmospheric seeing in ground-based observations.  
-As a consequence, each binning level leads to a decrease in the structure function values due to the reduced ability to sample velocity fluctuations at smaller spatial scales.  
+Therefore, there exists a practical limit to the binning procedure, beyond which small-scale fluctuations can no longer be reliably recovered and the derived turbulent parameters may become biased due to the loss of physical information. 
+To quantify this limit, we consider the ratio between the bin size and the correlation length, \(\text{Bin size} / r_0\). 
+We find that when these quantity is of the order of \num{0.1}, further binning does not lead to a significant reduction in noise and the seeing increase abruptly.
 
-Therefore, there exists a practical limit to the binning procedure, beyond which small-scale fluctuations can no longer be reliably recovered and turbulent parameters may be biased due to the loss of physical information.
-What criteria can be used to determined a bin size which allow to recover the turbuent cascade? 
-We use the \(\text{Bin size} / r_0\) ratio, and when this to values are of the same magnitude there is no further improvement in decreasing the noise.
+% Halpha Large scales
+At large spatial scales, the \halpha\ structure function exhibits a downward hook, which reflects tapered fluctuations where the amplitude of the velocity variations decreases toward the edges of the observational field. This behavior is consistently observed across all binning levels.
 
-Table~\ref{tab:results_MUSE_Ar} presents the best-fit model parameters and their confidence intervals for the \ariii\ emission line. The corresponding structure functions are shown in the right panel of Figure~\ref{fig:Ha_Br_comparison}.
 
-The \ariii\ emission line exhibits a similar trend to that observed for \halpha, where the structure of the velocity fluctuations can be recovered either by fitting the model to the masked, non-binned map or by applying spatial binning. Since this line is intrinsically fainter, the binning procedure is more effective at recovering the velocity structure by reducing the noise at small scales compared to maps with lower binning levels.
-We observe a good overall agreement with the model described by equation~\eqref{eq:model-strucfunc-ideal} for all the binned smaples.  
+An important result shown in Figure~\ref{fig:Ha_Br_comparison} is that the fitting procedure is able to recover the turbulent parameters even at low signal-to-noise ratios. 
+This is illustrated by the dashed lines, which represent the ideal model given by equation~\eqref{eq:model-strucfunc-ideal} and closely match the observed structure functions across different binning levels. 
 
-We also find that heuristic model in equation~\eqref{eq:sf-functional} can be successfully fitted to all observed structure functions.  
-This demonstrates not only the applicability of the binning procedure in recovering the turbulent cascade in a computationally efficient manner, but also the effectiveness of the heuristic model for extracting the relevant turbulent parameters even under low S/N conditions.
+This demonstrates that our methodology, based on fitting a heuristic model to the observational data, is sufficient to recover the turbulent parameters of the velocity field. 
+In practice, this implies that either the non-binned maps can be used, at the expense of increased computational cost, or binned maps can be employed within the constraint imposed by the ratio \(\text{Bin size} / r_0\), without compromising the recovery of the turbulent cascade. 
+This result extends the applicability of the method to datasets with low signal-to-noise ratios or limited spatial resolution.
 
-Regarding the large scales in the structure function of the \ariii\ emission line, we observe a transition in behavior, which goes from a periodic, oscillatory pattern in the non-binned map to a radial-gradient pattern in the binned maps, similar to what is observed in the \halpha\ case.  
-This suggests that large-scale fluctuations may be line-dependent, which is consistent with the expected spatial distribution of different ions within the nebula.
+% [Ar III] Discussion
+Table~\ref{tab:results_MUSE_Ar} presents the best-fit model parameters and their corresponding confidence intervals for the \ariii\ emission line, while the associated structure functions are shown in the right panel of Figure~\ref{fig:Ha_Br_comparison}.
+
+As discussed for the \halpha\ emission, the heuristic model given by Equation~\eqref{eq:sf-functional} provides a good fit to all observed structure functions. 
+This result demonstrates that the combined use of binning and model fitting allows the turbulent cascade to be reliably recovered even in low signal-to-noise conditions. 
+In particular, it highlights the robustness of the methodology when applied to fainter emission lines, where noise effects are more significant.
+
+The \ariii\ emission exhibits a similar trend to that observed for \halpha, in which the structure of the velocity fluctuations can be recovered either by fitting the model to the non-binned map or by applying spatial binning. 
+Since this line is intrinsically fainter, the binning procedure is particularly effective at recovering the velocity structure, reducing the instrumental noise from \SI{13.5}{km^{2}.s^{-2}} to \SI{0.62}{km^{2}.s^{-2}}.
+
+One key difference for the \ariii\ emission, compared to \halpha\ in our analysis, is that its lower intrinsic brightness leads the model fitting to constrain only an upper limit for the seeing, with a value of \SI{3.45}{arcsec} for all binned samples. 
+Although this value is high for typical astronomical observations, it reflects the limited constraints imposed by the data and indicates that smaller seeing values are consistent with the recovery of the velocity structure.
+In this context, the ratio \(\text{Bin size} / r_0\) provides a useful criterion to assess whether the recovered parameters reliably describe the underlying velocity field.
+
+Regarding the large-scale behavior of the \ariii\ structure functions, we observe a transition from a periodic, oscillatory pattern in the non-binned map to a radial-gradient behavior in the binned maps, similar to that found for \halpha.  
+This suggests that the oscillatory pattern is likely driven by the low signal-to-noise ratio in the non-binned data, while the smoothing introduced by binning recovers the intrinsic large-scale velocity structure of the emission line.
+
+As in the case of \halpha, the observed structure functions show good overall agreement with the model described by equation~\eqref{eq:model-strucfunc-ideal} across all binned samples.
+This behavior further supports the robustness of the methodology in recovering the turbulent structure across different emission lines, even under varying signal-to-noise conditions.
+
+The left panel of Figure~\ref{fig:fit_results_01} shows the observed structure functions for the \halpha\ and \ariii\ emission lines, together with the best-fit model and the corresponding 95\% credibility intervals for the parameters. 
+The right panel of Figure~\ref{fig:fit_results_01} presents the pairwise correlations of the posterior distributions of the model parameters, obtained using the \texttt{corner} Python library \citep{2017ascl.soft02002F}. 
+
+Figure~\ref{fig:Orion_sf_1} extends this analysis to all binned samples of \halpha, illustrating the progressive recovery of small-scale fluctuations with increasing bin size, as well as the consistency of the best-fit model and parameter constraints across different resolutions.
 
 \input{tables/results_MUSE_Ha}
-
 \input{tables/results_MUSE_Ar}
 
 \begin{figure*}
  %\centering
- \includegraphics[width=0.48\textwidth]{figures/Brs_H.pdf}
+ \includegraphics[width=0.48\textwidth]{figures/Brs_H_no_sbm.pdf}
  \hfill
  \includegraphics[width=0.48\textwidth]{figures/Brs_Ar.pdf}
  \caption{
@@ -586,33 +612,163 @@ The solid markers shows the observational structure function computed using equa
   \label{fig:Orion_sf_1}
 \end{figure*}
 
+\subsubsection{Extension to Additional Emission Lines}\label{sec:other emission lines}
+
+The analysis presented for the \halpha\ and \ariii\ emission lines is extended to the remaining lines in the sample, following the same methodology.
+
+In Appendix~\ref{apex:multiple_lines_results}, we present the turbulent parameters and their corresponding confidence intervals for the \oi, \n, and \siii\ emission lines derived from the VLT MUSE observations (Tables~\ref{tab:results_MUSE_O}--\ref{tab:results_MUSE_S}). 
+The associated structure functions and corner plots are shown in Figures~\ref{fig:fit_results_02}--\ref{fig:fit_results_03}.
+
+% Noise analysis
+All these emission lines exhibit behavior consistent with the previous cases. 
+The small-scale structure is progressively recovered as the binning level increases, accompanied by a systematic reduction in the instrumental noise and a corresponding increase in the effective seeing. 
+From Tables~\ref{tab:results_MUSE_O}--\ref{tab:results_MUSE_S}, the noise decreases from typical values of \SI{\sim 6}{km^{2}.s^{-2}} to \SI{\sim 0.5}{km^{2}.s^{-2}} with increasing bin size. 
+
+%Seeing analysis
+At the same time, the inferred seeing increases from values below \SI{2}{arcsec} for binning factors of \num{2} and \num{4}, to values above \SI{3}{arcsec} for bins \num{8} and \num{16}. 
+In these cases, the transition occurs at a characteristic value of \(\text{Bin size} / r_0 \sim 0.1\), consistent with the limit identified in the previous section.
+This confirms that the balance between noise reduction and spatial resolution is a general feature across all emission lines analyzed.
+
+\subsection{Comparison between binning, masking and the weighted structure functions}
+
+In this section, we present the results of the weighted structure function and compare them with those obtained from surface-brightness masking. 
+To address the limitations of masking, which removes low-intensity regions and may bias the velocity field, we explore a weighted formulation of the structure function. 
+This approach retains contributions from low surface-brightness regions while reducing the dependence on an arbitrary threshold.
+
+Figure~\ref{fig:Ha_Br_w_comparison} shows the weighted structure function and the structure function derived from the masked velocity map. 
+For comparison, the structure function of the non-binned map (\(2^0 = 1\)) is also included. 
+The best-fit parameters and their corresponding confidence intervals are presented in Table~\ref{tab:results_MUSEw}.
+
+From Table~\ref{tab:results_MUSEw}, we recover the same general behavior observed previously: the fitting procedure is able to extract the turbulent parameters from the data. 
+However, in the absence of binning, there is no significant reduction in the instrumental noise, which remains at an average value of \SI{\sim 2.5}{km^{2}.s^{-2}} for these samples. 
+
+Regarding the seeing, both the weighted analysis and the masking approach lead to lower inferred values. 
+For the non-binned, non-masked structure function, the seeing is \SI{\sim 2}{arcsec}, while for the weighted and masked cases it decreases to \SI{\sim 1}{arcsec}.
+
+An interesting result of this analysis is that, as noted earlier, fitting the heuristic model to noisy maps alone is sufficient to recover the turbulent parameters. 
+Here we confirm this behavior, with differences arising primarily in the plane-of-sky velocity dispersion, \(\sigma\pos\), and the correlation length, \(r_0\), depending on the method applied.
+
+In particular, we find a significant difference in \(\sigma\pos\) between the masked map, with a value of \SI{13}{km^{2}.s^{-2}}, and the weighted and non-masked samples, which yield values of \SI{\sim 9}{km^{2}.s^{-2}}. 
+This difference arises because the masking procedure emphasizes the inner regions of the nebula while discarding the outer parts. 
+Given the presence of a radial gradient in the nebula—where velocity fluctuations decrease toward the outer regions—this selection leads to an increase in the measured \(\sigma\pos\).
+
+For the correlation length, \(r_0\), the main difference is observed in the weighted structure function, which yields values in the range \SI{0.050}{pc} to \SI{0.075}{pc}, compared to the other samples. 
+This reduction in \(r_0\) may be attributed to the smaller spatial scales probed when the analysis emphasizes brighter pixels, which are concentrated in a more confined region (see Figure~\ref{fig:H_I-6563_maps}). 
+In contrast, the other samples include velocity fluctuations over a more extended area, leading to larger inferred correlation lengths.
+
+We also find that, for the ideal model, Equation~\eqref{eq:model-strucfunc-ideal}, the weighted and masked cases show better agreement with each other compared to the non-masked map. 
+This highlights the dependence of the recovered turbulent parameters on the adopted methodology, emphasizing the need for a consistent and physically motivated approach when interpreting structure function results.
+
+Appendix~\ref{apex:weigthed_br_results} shows the structure functions and corner plots (Figure~\ref{fig:fit_results_w}) for the \halpha\  emission line for the weighted and masked analysis.
+
+The results presented above demonstrate that the recovery of the turbulent structure function, and consequently the inferred turbulent parameters, is strongly dependent on the treatment of observational effects such as noise, spatial resolution, and surface-brightness selection. 
+While binning, masking, and weighted approaches all allow for the extraction of turbulent parameters, they lead to systematic differences in the recovered values, particularly in \(\sigma\pos\) and \(r_0\). 
+These differences reflect not only the impact of instrumental limitations, but also the sensitivity of the structure function to the spatial regions sampled and the methodology employed.
+
+Given these considerations, a direct comparison with previous studies requires careful evaluation of both the data quality and the analysis techniques used. 
+In the following section, we compare our results with those reported in the literature, focusing on how methodological differences influence the interpretation of turbulence in the Orion Nebula.
+
+\input{tables/results_MUSEw}
+
+\begin{figure}
+ %\centering
+ \includegraphics[width=0.48\textwidth]{figures/Brs_Hw.pdf}
+ \caption{
+ The solid markers shows the observational structure function computed using equation~\eqref{eq:Br}.
+ }
+\label{fig:Ha_Br_w_comparison}
+\end{figure}
 
 \section{Discussion}\label{sec:discussion}
 
-For our discussion of the turbulent parameters and for comparison with other results, we present the detailed analysis corresponding to a binning factor of \(2^1 = 2\), as this sample yields the smallest value of the seeing parameter \(s_0\). 
-The turbulent parameters and their confidence intervals are listed in Table~\ref{tab:results_MUSE}. 
-In Appendix~\ref{apex:multiple_lines_results}, we present the second-order structure functions and their corresponding corner plots for all emission lines analyzed in this work.
+For the discussion of the turbulent parameters and their comparison with previous results, we adopt the analysis corresponding to a binning factor of \(2^1 = 2\), as this configuration provides the best compromise between noise reduction and spatial resolution, yielding the smallest inferred value of the seeing parameter \(s_0\).
+The resulting turbulent parameters and their confidence intervals are listed in Table~\ref{tab:results_MUSE}. 
+For completeness, Appendix~\ref{apex:multiple_lines_results} presents the second-order structure functions and their corresponding corner plots for all emission lines analyzed in this work.
 
-Our results are compared with other works that have computed the structure function for the Orion nebula.
-Using the same VLT MUSE observations are the work of
-\citet{2019MNRAS.483..704A} and \cite{2016MNRAS.455.4057M}.
+%Other recent turbulent works on Orion
+Our results are compared with previous studies that have computed the structure function for the Orion Nebula. 
+Among works based on VLT MUSE observations are \citet{2019MNRAS.483..704A}, and \citet{2016MNRAS.455.4057M}. 
+In contrast, \citet{arthur2016turbulence} derived the structure function using echelle observations from the Kitt Peak National Observatory (KPNO) for \halpha, \oi, and \n, complemented by data from the Observatorio Astronómico Nacional at San Pedro Mártir (OAN-SPM) for the \sii\ line.
 
-The work of \cite{arthur2016turbulence} used echelle obsevervation from the Kitt Peak National Observatory (KPNO).
+Table~\ref{tab:results_KPNO} lists the turbulent parameters obtained by applying our methodology to the KPNO data and in Appendix~\ref{apex:kpno_structure_function} we present the structure functions and their corresponding corner plots. 
+For details about the observations, we refer the reader to Section~2 of \citet{arthur2016turbulence}. 
+
+%Sigma2 discussion
+Since the KPNO observations cover an area of \(3' \times 5'\), while the VLT/MUSE observations cover \(6' \times 5'\) (both centered on Orionis), one key difference between Table~\ref{tab:results_MUSE} and Table~\ref{tab:results_KPNO} is the larger value of \(\sigma\pos\) measured for the \halpha\ and \oi\ emission lines in the MUSE data. 
+Because the \halpha\ emission traces a large volume of the nebula, whereas the \oi\ emission originates from the inner regions, this difference likely reflects the variation in the sampled area. 
+In particular, the larger MUSE field of view captures a broader radial velocity gradient, with velocity fluctuations decreasing toward the outer regions of the nebula. 
+
+This interpretation is supported by the value of \(\sigma\pos\) for the \n\ emission line, which is approximately \SI{\sim 8}{km\,s^{-1}}. 
+Since \n\ traces the outer layers of the nebula, this value agrees—within the confidence intervals—between the KPNO and VLT-MUSE results.
+
+%Power-law discussion
+For the power-law index \(m\), the values derived from the VLT MUSE and KPNO datasets are broadly consistent. 
+As reported in \citet{arthur2016turbulence}, the more pronounced steepening below \SI{2}{arcsec} (\SI{\sim0.002}{pc}) in the KPNO observations arises from the spatial resolution of the data, corresponding to the regime where seeing effects and the inter-slit separation become significant (See section~3.2.1 on their work). 
+This behavior is reflected in the fitting of our model, which yields slightly higher values of \(m\) for the KPNO data. 
+This can be seen in the observed structure functions (compare solid blue markers in Figure~\ref{fig:fit_results_01} and Figure~\ref{fig:fit_results_04}), which lie below the ideal model (green curves in the figures), in contrast to the VLT MUSE observations.
+
+Values reported by \citet{arthur2016turbulence} are \(m>1\) for \halpha\ and \oi\ emission lines and \(m\sim1\) for \n\ and \sii\ emission lines which matches our results Table~\ref{tab:results_KPNO}.
+This indices were determined through fitting a line between scales of \(8 < r < 22 \ \text{arcsec}\) (\(0.016 < r < 0.044 \ \text{pc}\)) for all emission lines except \sii\ which was obtained for scales  \(7 < r < 32 \ \text{arcsec}\) (\(0.014 < r < 0.064 \ \text{pc}\)).
+
+A further comparison can be made with the results of \citet{2016MNRAS.455.4057M}. 
+%Random sampling for the structure function...
+In their analysis, the power-law index was estimated by fitting a straight line to the observed structure function over specific ranges of spatial separations. 
+For the \halpha\ emission line, they obtained a slope of \num{0.41} for separations in the range \(0.039 < r < 0.19\ \text{pc}\), while for the \oi\ emission line they reported a value of \num{0.22} over separations of \(0.025 < r < 0.14\ \text{pc}\).
+They argue that the structure function cannot be reliably recovered due to the low signal-to-noise ratio. 
+However, as demonstrated in Section~\ref{sec:met}, the recovery of the structure function is strongly dependent on the analysis methodology, and appropriate treatment of noise and spatial resolution allows the turbulent signal to be recovered even in low S/N conditions.
+
+Another study that uses the same VLT MUSE observations to compute the second-order structure function is \citet{2019MNRAS.483..704A}, which provides an additional point of comparison for our methodology and results.
+
+\citet{2019MNRAS.483..704A} present the second-order structure function for the \halpha\ emission line using several masking strategies based on asymmetric cutoffs defined from the standard deviation of the radial velocity map. 
+The most direct comparison with our results corresponds to what they call "filter~4", where the original velocity map is masked by retaining values within the range \(-\sigma\pos, +\sigma\pos\).
+As opposed to \citet{2016MNRAS.455.4057M}, the structure function is computed for the entire map instead of using random samples as in \citet{2016MNRAS.455.4057M}.
+
+One concern regarding their results is the apparent lack of structure at both small and large spatial scales. 
+At the largest separations, the structure function should reflect not only large-scale motions—comparable to the size of the region, such as global rotation—but also non-stationary effects, including radial velocity gradients and periodic motions \citep{garciav23}. 
+At the smallest separations, the measurements are typically affected by observational seeing and instrumental noise, as discussed in this work. 
+The plateau observed in the structure function shown in their Figure~5a is therefore difficult to interpret in terms of a physically meaningful observations.
+As we show in the model used in this work, this plateau is merely theoretical.
+
+%In the paper, it is stated that each filtered structure function is normalized such that the plateau tends toward a value of \num{1}, although little explanation is provided for the choice of this value, since theory shows that for a normalized value of \num{2} for the structure function is were colleration are lost. 
+
+The main difference between our results and those of \citet{2019MNRAS.483..704A} lies in the value of the turbulent parameter \(m\). 
+In their analysis, they report a \halpha\ power-law index of \num{\sim 0.7} for a range of \(0.129 < r < 0.645 \ \text{pc}\) for three different masked samples.
+For the sample that better match the map used here the value of the power-law index is \num{0.55}.
+%As in previous cases, there is no correlation length \(r_0\) which aid in the comparison of our results, which again is one of the characteristic length in the turbulent cascade.
+
+%Correlation length discussion
+As mentioned earlier, the absence of a standardized methodology for determining the power-law index complicates direct comparisons between different studies. 
+In this context, the model adopted in this work provides a consistent framework for fitting observed structure functions and extracting the parameters that describe the turbulent velocity fluctuations, offering a robust basis for future inter-dataset comparisons.
+
+An additional advantage of our methodology is that the model fitting also allows us to recover the correlation length \(r_0\), which represents a characteristic scale of the turbulent structure. 
+In this case, neither \citet{2019MNRAS.483..704A}, \citet{arthur2016turbulence} nor \citet{2016MNRAS.455.4057M} report values for this parameter, preventing a direct comparison with their results. 
+
+However, comparing the datasets analyzed in this work yields a correlation length of \(r_0 \sim \SI{0.080}{pc}\) for the VLT MUSE observations and \(r_0 \sim \SI{0.065}{pc}\) for the KPNO data in the case of the \halpha\ and \oi\ emission lines.
+
+Although the correlation length decreases for other emission lines, the VLT MUSE data yield a value of \(r_0 \sim \SI{0.07}{pc}\), compared to \(r_0 \sim \SI{0.04}{pc}\) derived from the KPNO data. 
+This difference may reflect distinct physical turbulent conditions traced by each set of emission lines, since they originate from different spatial regions within the nebula.
+\MAYBE{If this interpretation holds, the turbulent parameters provide a physically meaningful way to probe the ionization structure of the nebula.}
+
+Overall, our analysis shows that the recovery of the turbulent structure function in H~II regions depends primarily on the treatment of observational effects rather than on the intrinsic signal-to-noise ratio of the data. 
+By adopting a consistent modeling framework and carefully accounting for noise and spatial resolution, we are able to recover the turbulent parameters across multiple emission lines and datasets in a coherent manner. 
+This enables meaningful comparisons between observations and suggests that discrepancies reported in previous studies are largely driven by methodological differences. 
+The approach presented here therefore provides a robust framework for studying turbulence in ionized regions and for linking turbulent properties to the physical structure of the interstellar medium.
 
 \input{tables/results_MUSE}
 \input{tables/results_KPNO}
-
+\input{tables/results_MUSE_trim}
 
 \section{Summary}\label{sec:summary}
 
-Our findings can be sumarize as:
+Our findings can be summarize as:
 \begin{enumerate}
-    \item The fitting of our propsed model is enough to recover the turbulent parameters and their confidence intervals for the Orion MUSE velocity maps.
-    \item Weigthing the structure function by the intensity or masking low emission pixels is not enough to recover the turbulent parameters.
-    \item By binning the maps we show that turbulent parameters can be recover with the advanatge of reducing computational time.
-    \item The trade-off between noise and seeing...
-    \item Comparsion with KPNO yields....
+    \item The fitting of our proposed model is enough to recover the turbulent parameters and their confidence intervals for the Orion MUSE velocity maps despite the low S/N ratio.
+    \item The trade-off between noise and seeing is addressed through controlled binning, allowing the recovery of the turbulent cascade while reducing instrumental noise without significantly degrading the spatial information and reducing computational time.
+    \item Weighting the structure function by the intensity and masking low-emission pixels allow the recovery of turbulent parameters when fitting the proposed model; however, unlike binning, these approaches do not lead to a significant reduction in instrumental noise.
+    \item Comparison with the KPNO data yields consistent turbulent parameters, with similar power-law indices and correlation lengths, while remaining differences are attributed to the larger spatial coverage and higher spatial resolution of the VLT MUSE observations.
+    \item Comparison with previous studies \citep{2019MNRAS.483..704A,2016MNRAS.455.4057M} shows that our approach provides a more consistent framework for recovering the structure of the velocity fluctuations from observational data.
 \end{enumerate}
+
 
 
 \section*{Acknowledgements}
@@ -620,7 +776,7 @@ Our findings can be sumarize as:
 \section*{Data availability statement}
 \label{sec:data-avail-stat}
 All data and accompanying analysis programs used in this paper are available
-from the github repository \url{https://github.com/JavGVastro/VIENTO/tree/main/MUSE_orion}.
+from the GitHub repository \url{https://github.com/JavGVastro/VIENTO/tree/main/structure_function_analysis/MUSE_orion}.
 
 \bibliographystyle{mnras}
 \bibliography{turb-refs}
@@ -631,6 +787,8 @@ from the github repository \url{https://github.com/JavGVastro/VIENTO/tree/main/M
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \appendix
+
+
 
 \section{Results for different emission lines} \label{apex:multiple_lines_results}
 
@@ -659,6 +817,20 @@ In this appendix, Tables~\ref{tab:results_MUSE_O}--\ref{tab:results_MUSE_S} pres
   \label{fig:fit_results_03}
 \end{figure*}
 
+\section{Results for weighted and masked analysis} \label{apex:weigthed_br_results}
+
+In this appendix, we present the structure functions and corner plots (Figure~\ref{fig:fit_results_w}) for the \halpha\  emission line for the weighted and masked analysis.
+
+
+\begin{figure*}
+  \centering
+  \fitfigggg{MUSE-M42-H-bin0w}{MUSE-M42-H-bin0w}{MUSE-M42-H-sbmask}{MUSE-M42-H-sbmask}
+  \caption{ 
+  Same information as Figure~\ref{fig:fit_results_01} for (a)~the weighted structure function and (c)~the masked map for the \halpha\ emission lines obtained through VLT MUSE.
+  }
+  \label{fig:fit_results_w}
+\end{figure*}
+
 \section{Structure functions for KPNO observations} \label{apex:kpno_structure_function}
 
 In this appendix, we present the structure functions and corner plots (Figures~\ref{fig:fit_results_04}--\ref{fig:fit_results_05}) for the \halpha, \oi, \n, and \sii\ emission lines for the KPNO echelle observations.
@@ -671,7 +843,6 @@ In this appendix, we present the structure functions and corner plots (Figures~\
   \label{fig:fit_results_04}
 \end{figure*}
 
-
 \begin{figure*}
   \centering
   \fitfigggg{KPNO-M42-N-bin0}{KPNO-M42-N-bin0}{KPNO-M42-S-bin0}{KPNO-M42-S-bin0}
@@ -680,8 +851,7 @@ In this appendix, we present the structure functions and corner plots (Figures~\
   \label{fig:fit_results_05}
 \end{figure*}
 
-
-\MAYBE{\section{Using synthethic observatios for finding a minimum noise value for recovering turbulence parameters}} \label{apex:simulation_noise}
+\MAYBE{\section{Using synthetic observations for finding a minimum noise value for recovering turbulence parameters}} \label{apex:simulation_noise}
 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
