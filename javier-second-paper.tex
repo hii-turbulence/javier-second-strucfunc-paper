@@ -76,13 +76,13 @@
 \newcommand\MAYBE[1]{\startMAYBE #1\stopMAYBE\relax}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand\ariii{[\ion{Ar}{III}]$\lambda$7136}
+\newcommand\ariii{[\ion{Ar}{III}]$\, \lambda$7136}
 \newcommand\hii{\ion{H}{II}}
 \newcommand\halpha{H${\alpha}$}
-\newcommand\n{[\ion{N}{II}]$\lambda$6584}
-\newcommand\oi{[\ion{O}{III}]$\lambda$5007}
-\newcommand\sii{[\ion{S}{II}]$\lambda$6731}
-\newcommand\siii{[\ion{S}{III}]$\lambda$9069}
+\newcommand\n{[\ion{N}{II}]$\, \lambda$6584}
+\newcommand\oi{[\ion{O}{III}]$\, \lambda$5007}
+\newcommand\sii{[\ion{S}{II}]$\, \lambda$6731}
+\newcommand\siii{[\ion{S}{III}]$\, \lambda$9069}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand\pos{\ensuremath{_{\mathrm{pos}}}}
 \newcommand\los{\ensuremath{_{\mathrm{los}}}}
@@ -232,7 +232,7 @@ HII regions -- ISM: kinematics and dynamics -- turbulence
 The process of star formation begins with the gravitational collapse of molecular clouds, followed by fragmentation into dense cores where stars form in clusters. 
 Massive O- and B-type stars emerge within these stellar groups, and their intense ionizing radiation and stellar winds inject substantial energy and momentum into the surrounding gas, profoundly shaping the interstellar medium (ISM).
 
-Observations of both molecular and ionized gas reveal complex velocity and density structures that deviate from simple motions \citep{2025ApJ...986..159R,Jaupart:2022i}. 
+Observations of both molecular and ionized gas reveal complex velocity and density structures that deviate from simple motions \citep{Jaupart:2022i,2025ApJ...986..159R}. 
 Instead, these motions exhibit characteristics consistent with turbulence. 
 In this context, \hii\ regions—especially nearby ones—offer ideal laboratories for studying turbulent dynamics in the ionized ISM.
 
@@ -248,10 +248,10 @@ In addition, noise and other systematic effects can distort the observed velocit
 Furthermore, \hii\ regions are dynamic environments that exhibit large-scale motions not directly related to turbulence, which must be carefully disentangled when interpreting the data.
 
 The Orion Nebula (M~42), located at a distance of 440 pc \citetext{\SI{1}{\arcsecond} = \SI{0.002}{pc}; \citealp{2008AJ....136.1566O}}, is the nearest massive star-forming region and one of the most studied \hii\ regions. 
-Ionized by the O7~V star $\theta^1$~Ori~C, the nebula exhibits complex physical and kinematic structures, including a rich population of young stars, stellar outflows, and Herbig–Haro objects \citep{2021MNRAS.502.1703M,2019MNRAS.486.3423H, Garcia-Diaz:2007a}. 
+Ionized by the O7~V star $\theta^1$~Ori~C, the nebula exhibits complex physical and kinematic structures, including a rich population of young stars, stellar outflows, and Herbig–Haro objects \citep{Garcia-Diaz:2007a,2019MNRAS.486.3423H,2021MNRAS.502.1703M}. 
 Its proximity and brightness make it a prime target for studies using spectroscopic observations \citep{2024A&A...689A.352K}.
 
-Several studies have investigated turbulence in the Orion Nebula using statistical tools such as the second-order structure function \citep{2019MNRAS.483..704A,2016MNRAS.455.4057M,arthur2016turbulence,1992ApJ...387..229O,castaneda1988,munch1958internal,von1951methode}. 
+Several studies have investigated turbulence in the Orion Nebula using statistical tools such as the second-order structure function \citep{von1951methode,munch1958internal,castaneda1988,1992ApJ...387..229O,arthur2016turbulence,2016MNRAS.455.4057M,2019MNRAS.483..704A}. 
 However, these analyses have led to significantly different conclusions regarding the nature of the turbulent cascade. 
 For example, \citet{arthur2016turbulence}, using Kitt Peak National Observatory (KPNO) echelle observations, reported clear power-law behavior consistent with a turbulent cascade, while \citet{2016MNRAS.455.4057M}, analyzing Very Large Telescope (VLT) MUSE data, found little evidence of such structure. 
 More recent studies using the same VLT MUSE observations \citep{2019MNRAS.483..704A} have obtained intermediate results.
@@ -337,7 +337,10 @@ The PDFs for all emission lines analyzed in this work are shown in Figure~\ref{f
  \includegraphics[width=6in]{figures/velocity_maps_shared_cbar_fixed}\par
  \caption{
 Two-dimensional velocity maps for different emission lines of the Orion Nebula obtained from VLT MUSE observations. 
-Each map has been masked to exclude pixels with normalized surface brightness below \(0.001\). Masked pixels are shown in black.
+To mask each velocity map, we construct a global mask based on the \halpha\ emission line. 
+Continuum maps are used to identify and exclude pixels associated with stars in the region. 
+We then apply a surface-brightness threshold, removing pixels with normalized values below \(0.025\). 
+Masked pixels are shown in grey.
  }
 \label{fig:velocity_maps_shared_cbar_fixed}
 \end{figure*}
@@ -346,10 +349,8 @@ Each map has been masked to exclude pixels with normalized surface brightness be
  \centering
  \includegraphics[width=6in]{figures/pdfs_all}\par
  \caption{
-   Histograms of the plane-of-sky centroid velocities for different emission lines.
-   Each panel shows the fraction of the observed spatial points
-   with a given velocity offset from the mean systemic velocity of each region.
-   The RMS width \(\sigma\pos\) of each distribution is marked,
+   Probability density functions of the plane-of-sky centroid velocities for the different emission lines presented in Fig~\ref{fig:velocity_maps_shared_cbar_fixed}.
+   The RMS width \(\sigma\pos\) of each distribution is shown,
    as is the number of spatial points.
    The bin width is \SI{1}{km.s^{-1}}.
  }
@@ -376,9 +377,9 @@ Each iteration and the resulting velocity map is shown in the different panels o
 
 \begin{figure*}
  \centering
- \includegraphics[width=6.5in]{figures/Ha_maps_comparison.png}\par
+ \includegraphics[width=6.5in]{figures/velocity_maps_shared_cbar_fixed_bin}\par
  \caption{
- Two-dimensional binned maps of the centroid velocity of the Orion nebula for the \halpha\ emission line. The size of each map are \(737 \times 882\), \(368\times 440\), \(183 \times 219\)  and \(91 \times 109 \ \text{pixels}\) which correspond to the bin sizes of $2$, $4$, $8$ and $16$ respectively. The same procedure of binning is applied to all emission lines.  
+ Two-dimensional binned maps of the centroid velocity of the Orion nebula for the \halpha\ emission line. The size of each map are \(737 \times 882\), \(368\times 440\), \(183 \times 219\)  and \(91 \times 109 \ \text{pixels}\) which correspond to the bin sizes of $2^1=2$, $2^2=4$, $2^3=8$ and $2^4=16$ respectively. The same procedure of binning is applied to all emission lines.  
  }
 \label{fig:Ha_bins_comparison}
 \end{figure*}
@@ -555,7 +556,7 @@ Figure~\ref{fig:Orion_sf_1} extends this analysis to all binned samples of \halp
 
 \begin{figure*}
  %\centering
- \includegraphics[width=0.48\textwidth]{figures/Brs_H_no_sbm.pdf}
+ \includegraphics[width=0.48\textwidth]{figures/Brs_H.pdf}
  \hfill
  \includegraphics[width=0.48\textwidth]{figures/Brs_Ar.pdf}
  \caption{
@@ -756,6 +757,30 @@ The approach presented here therefore provides a robust framework for studying t
 
 \input{tables/results_MUSE}
 \input{tables/results_KPNO}
+
+\MAYBE{\subsection{Comparison between MUSE and KPNO observations using the an equivalent field of view}}
+
+Here we briefly discuss the VLT MUSE results when restricted to a field of view equivalent to that of the KPNO observations. 
+This analysis is motivated by the discrepancy observed in the correlation length for the \n\ emission line.
+
+The results of this trimmed analysis are presented in Table~\ref{tab:results_MUSE_trim}. 
+For the \n\ emission line, the correlation length decreases from \SI{0.064}{pc} for an observational box size \(L = \SI{0.64}{pc}\) to \SI{0.042}{pc} for \(L = \SI{0.45}{pc}\), bringing it into agreement with the KPNO results within the confidence intervals. 
+In contrast, the values of \(r_0\) for the \halpha\ and \oi\ emission lines remain consistent.
+ 
+In \citet{garciav23}, we discussed the relationship between \(r_0\) and the observational box size \(L\), where the condition \(L > 10\,r_0\) was required to reliably recover \(r_0\). 
+In the present work, our heuristic approach allows the recovery of \(r_0\) for \(L > 5\,r_0\).
+
+For the \n\ emission line, we find \(L / r_0 \sim 10\), which would nominally satisfy this condition. 
+However, the results suggest a stronger dependence between \(L\) and \(r_0\) in this case, indicating that the recovered correlation length remains sensitive to the sampled spatial extent.
+This is of interest since \halpha\ and \oi\, with a lower \(L/r_0\) value seems unaffected by this difference.
+
+A similar behavior is observed for \(\sigma\pos\), which varies with the field of view due to the presence of a radial velocity gradient across the region as discussed earlier. 
+In contrast, the power-law index \(m\) appears to be largely insensitive to differences in the field of view.
+
+These results indicate that the impact of the field of view on the recovered turbulent parameters is not uniform. 
+While \(\sigma\pos\) and, in some cases, \(r_0\) remain sensitive to the spatial extent of the observations, the power-law index \(m\) appears to be more robust. 
+This suggests that \(m\) provides a more reliable characterization of the turbulent cascade when comparing datasets with different spatial coverage.
+
 \input{tables/results_MUSE_trim}
 
 \section{Summary}\label{sec:summary}
@@ -767,6 +792,8 @@ Our findings can be summarize as:
     \item Weighting the structure function by the intensity and masking low-emission pixels allow the recovery of turbulent parameters when fitting the proposed model; however, unlike binning, these approaches do not lead to a significant reduction in instrumental noise.
     \item Comparison with the KPNO data yields consistent turbulent parameters, with similar power-law indices and correlation lengths, while remaining differences are attributed to the larger spatial coverage and higher spatial resolution of the VLT MUSE observations.
     \item Comparison with previous studies \citep{2019MNRAS.483..704A,2016MNRAS.455.4057M} shows that our approach provides a more consistent framework for recovering the structure of the velocity fluctuations from observational data.
+    \item Each emission line exhibits a characteristic set of turbulent parameters, reflecting the physical conditions and spatial regions traced within the nebula.
+    \item The parameters \(\sigma\pos\) and \(r_0\) are sensitive to the spatial extent of the observations and to large-scale velocity gradients, while the power-law index \(m\) remains largely invariant, indicating that it provides a more robust tracer of the intrinsic turbulent cascade.
 \end{enumerate}
 
 
@@ -851,7 +878,7 @@ In this appendix, we present the structure functions and corner plots (Figures~\
   \label{fig:fit_results_05}
 \end{figure*}
 
-\MAYBE{\section{Using synthetic observations for finding a minimum noise value for recovering turbulence parameters}} \label{apex:simulation_noise}
+%\MAYBE{\section{Using synthetic observations for finding a minimum noise value for recovering turbulence parameters}} \label{apex:simulation_noise}
 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
