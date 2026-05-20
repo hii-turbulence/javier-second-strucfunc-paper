@@ -1,0 +1,29 @@
+\begingroup
+\setlength{\tabcolsep}{6pt} % Default value: 6pt
+\renewcommand{\arraystretch}{1.5} % Default value: 1
+%% In Emacs we can use M-x align-current to align the table on the & symbols after editing
+\begin{table*}
+\begin{center}
+  \caption{
+    Best-fit model parameters and 95\% credibility intervals for fits to observed weighted and masked structure function in the Orion core for the VLT MUSE \halpha\ line observations.
+  }
+
+%\begin{adjustbox}{width=1\textwidth}
+  
+  \begin{tabular}{l RRRRRR  @{\hspace{6\tabcolsep}} RRR}
+    \toprule
+Sample   & \sigma^2\pos            & B_{\text{noise}}       & s_0 (\text{RMS})       & r_0             & L        & m          & L/r_0    & s_0 / r_0  & s_0 (\text{FWHM}) \\
+          & [\si{km^2.s^{-2}}] & [\si{km^2.s^{-2}}]     & [\si{pc}]                 & [\si{pc}]           & [\si{pc}] & [-]     & [-]      & [-]       & [\text{arcsec}]   \\
+\midrule
+2$^0$=1  & 8.88\PM{0.40}{0.31} & 2.61\PM{0.08}{0.04} & <0.0006  & 0.072\PM{0.005}{0.004} & 0.64 & 1.13\PM{0.04}{0.04} & 8.88 & 0.0027 & <0.76 \\
+Weighted & 8.77\PM{0.38}{0.30} & 2.47\PM{0.15}{0.08} & <0.0007 & 0.044\PM{0.003}{0.003} & 0.64 & 1.08\PM{0.06}{0.06} & 14.57 & 0.0045 & <0.84 \\
+Mask & 11.00\PM{0.83}{0.56} & 2.45\PM{0.14}{0.08} & <0.0008 & 0.059\PM{0.007}{0.005} & 0.51 & 1.13\PM{0.06}{0.06} & 8.75 & 0.0034 & <0.98 \\
+
+
+  \bottomrule
+
+\end{tabular}\label{tab:results_MUSEw}
+%\end{adjustbox}
+\end{center}
+\end{table*}
+\endgroup
