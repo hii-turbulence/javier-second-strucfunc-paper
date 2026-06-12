@@ -310,7 +310,15 @@ The Orion Nebula was observed with MUSE during its commissioning phase on 2014 F
 A total of \(  60 \times 5 \ \text{s}\) exposures were used to build a \(\SI{6}{arcmin} \times \SI{5}{arcmin}\) mosaic, in which each of the 30 distinct pointings was observed twice, employing a 90\textdegree{} dither rotation.
 For details of the data reduction see \citep{2015A&A...582A.114W}.
 The observations were carried out in the wide field mode with a field-of-view (FOV) of \(\SI{1}{arcmin} \times \SI{1}{arcmin}\), with a the wavelength range of \(4595-  \SI{9366}{\angstrom} \) and a sampling of \(\SI{0.2}{arcsec} \times \SI{0.2}{arcsec} \times \SI{0.85}{\angstrom}  \). 
-The derived velocity fields were previously analyzed in \citet{2016MNRAS.455.4057M} and \citet{2019MNRAS.483..704A} .
+The derived velocity fields were previously analyzed in \citet{2016MNRAS.455.4057M} and \citet{2019MNRAS.483..704A}.
+
+For comparison with the VLT MUSE observations, we analyze the Orion Nebula echelle data obtained with the \SI{4}{m} telescope at Kitt Peak National Observatory (KPNO) and originally presented by \citet{Doi:2004a}. 
+The observations map the central Huygens region of the nebula over an area of approximately \(\SI{3}{arcmin} \times \SI{5}{arcmin}\). 
+The dataset is composed of 96 north-south oriented long-slit spectra, each spanning \SI{300}{arcsec}, separated by \SI{2}{arcsec}, and observed with a slit width of \SI{0.8}{arcsec}. 
+The resulting velocity resolution is \SI{8}{km\,s^{-1}}. 
+
+The centroid velocity maps employed in this work are based on the intensity-weighted mean velocities derived by \citet{Garcia-Diaz:2008a}. Their analysis incorporated additional east-west slit observations to improve the relative velocity calibration between adjacent slit positions.
+The derived velocity fields were previously analyzed in \citet{arthur2016turbulence}.
 
 \textcolor{red}{Figure~\ref{fig:H_I-6563_maps} shows the two-dimensional maps of integrated intensity (left panel) and centroid velocity (right panel) for the Orion Nebula reconstructed using the MUSE data, both centered at the ionizing star of the region the O7~V star $\theta^1$~Ori~C. 
 The field of view covers the brightest portion of the nebula commonly called the Huygens region.
@@ -319,6 +327,7 @@ The region of highest surface brightness lies southwest of the Trapezium stars (
 Toward the southeast, the Orion Bar is visible, tracing the main ionization front of the nebula. 
 To the northeast, the Dark Bay appears as a region of high extinction produced by neutral material in the Veil located on the observer's side of the nebula.
 Other prominent features are the Herbig-Haro objects HH~201, HH~203, and HH~204, which are readily identified in the velocity map through their strongly blue-shifted kinematic signatures.}
+
 
 
 \section{Methodology}\label{sec:met}
@@ -367,7 +376,7 @@ The PDFs for all emission lines analyzed in this work are shown in Figure~\ref{f
 They represent the amplitude distribution of the plane-of-sky velocity fluctuations and exhibit approximately Gaussian profiles for all emission lines. 
 This behavior is expected after removing high-velocity features associated with Herbig-Haro objects and proplyds, together with low signal-to-noise pixels and regions contaminated by bright stars, resulting in more symmetric velocity distributions.
 All PDFs span a similar velocity range, approximately from \SI{-10}{km\,s^{-1}} to \SI{10}{km\,s^{-1}} which display broadly similar kinematic behavior.
-The \oiii\ emission line presents a small tail toward positive values which maps a southwest region in Figure~\ref{fig:velocity_maps_shared_cbar_fixed}. 
+The \n\ emission line presents a small tail toward positive values which maps a southwest region in Figure~\ref{fig:velocity_maps_shared_cbar_fixed}. 
 The broader distribution observed in the \ariii\ emission line is likely dominated by observational noise due to the intrinsic faintness of the line, whereas the narrower distribution of \halpha\ reflects its higher signal-to-noise ratio.}
 
 \textcolor{red}{Although the PDFs characterize the overall amplitude of the velocity fluctuations through \(\sigma\pos\), they do not contain information about the spatial correlations of the velocity field. 
@@ -886,7 +895,7 @@ Our findings can be summarize as:
 
 \section*{Data availability statement}
 \label{sec:data-avail-stat}
-All data and accompanying analysis programs used in this paper are available
+Data are available in \url{https://data.aip.de/projects/musescience.html} and accompanying analysis programs used in this paper are available
 from the GitHub repository \url{https://github.com/JavGVastro/VIENTO/tree/main/structure_function_analysis/MUSE_orion}.
 
 \section*{Software availability statement}
