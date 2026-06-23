@@ -400,14 +400,12 @@ A summary of the velocity statistics is shown in Table~\ref{tab:velocity-statist
 To mitigate the impact of instrumental noise while preserving the underlying turbulent signal, we apply a spatial binning procedure to the velocity maps using the \texttt{tetrablok} Python package\footnote{\url{https://github.com/will-henney/tetrabloks}} \citep{2018MNRAS.479.3909G}. 
 This approach explicitly addresses the trade-off between noise reduction and spatial resolution in the recovery of the turbulent structure function.
 
-The binning is performed by re-sampling the original data onto progressively coarser grids using binning factors of \(2^1 = 2\), \(2^2 = 4\), \(2^3 = 8\), and \(2^4 = 16\) applied in each spatial direction. 
-At each binning level, the velocity field is averaged over non-overlapping square blocks of size \(N \times N\) pixels (e.g., \(2 \times 2\), \(4 \times 4\), \(8 \times 8\), and \(16 \times 16\)), producing a lower-resolution map.
-\textcolor{red}{The averaging is performed only over valid pixels, excluding those previously removed from the analysis. 
-For each pixel in the coarsened map (coarse pixel), we count the number of valid pixels, \(N_{\text{good}}\), and compute the average using only those values. 
-A coarse pixel is retained only if \(N_{\text{good}} \geq N_{\text{min}}\), where \(N_{\text{min}}\) is a tunable parameter controlling the minimum number of valid pixels required. 
-Throughout this work, we adopt \(N_{\text{min}}=1\), such that a coarse pixel is retained whenever at least one valid pixel is present.}
-
-While this process reduces small-scale noise fluctuations and improves computational efficiency, it also smooths the velocity field, potentially limiting the recovery of the fluctuations of the smallest spatial scales.
+The binning is performed by re-sampling the original data onto progressively coarser grids using binning factors of \(2^1 = 2\), \(2^2 = 4\), \(2^3 = 8\), and \(2^4 = 16\) applied in each spatial direction.
+When passing from a finer grid to the next coarser grid,
+the flux-weighted average velocity is calculated over all valid pixels in a \(2 \times 2\) block,
+but only if the number of valid pixels is \(\ge N_{\text{min}}\), where \(N_{\text{min}}\) is a tunable parameter.
+In this paper, we adopt \(N_{\text{min}}=1\), which means that missing data on the original grid
+tends to get filled in on the coarser grids.
 
 Figure~\ref{fig:Ha_bins_comparison} shows as an example of the binned velocity maps for the \halpha\ emission line.
 The original map has a size of \(1 475 \times1765 \ \text{pixels}\) (see Fig.~\ref{fig:H_I-6563_maps}) which is reduced to a size of \(91 \times 109 \ \text{pixels}\) through a series of four iterations.
@@ -499,9 +497,7 @@ where \(B\model(r)\) represents the intrinsic (noise- and seeing-free) structure
 \end{equation}
 %
 Here, \(r_0\) is the correlation length, the characteristic length of the velocity fluctuations, and \(m\) is the is the power-law index, which characterize the slope of the turbulent cascade.
-\textcolor{red}{Model in equation~\eqref{eq:model-strucfunc-ideal} corresponds to the stable covariance model, a standard model in geostatistics used to describe variograms (or equivalently, structure functions). 
-It characterizes spatial correlations that decrease rapidly at small separations and then gradually approach an asymptotic variance \citep{wackernagel2003multivariate}. 
-This model is particularly appropriate for empirical structure functions that rise steeply at small scales and progressively flatten at larger separations.}
+The model in equation~\eqref{eq:model-strucfunc-ideal} corresponds to the \textit{stable covariance model}, a standard model used in the field of geostatistics \citep{wackernagel2003multivariate}.
 %This behavior closely resembles the observed structure functions analyzed in this work.
 
 In equation~\eqref{eq:model-strucfunc-ideal}, the seeing \(S(r)\) is given by:
@@ -539,28 +535,44 @@ In this section we present the turbulent parameters and their confidence interva
 
 The results are analyzed to assess how observational effects, such as noise, spatial resolution, and field of view, as well as different analysis methods, impact the recovery of the structure function and the derived parameters.
 
-\textcolor{red}{\subsection{Intensity vs radial velocity diagrams}\label{sec:sb vs velocity diagrams}}
+\subsection{Intensity vs radial velocity diagrams}\label{sec:sb vs velocity diagrams}
 
-\textcolor{red}{Figure~\ref{fig:intensity_velocity} presents the intensity, or surface brightness, versus centroid velocity diagrams for the VLT MUSE and KPNO datasets. 
-These diagrams provide a direct view of the relation between line brightness and centroid velocity for each emission line, allowing us to compare the velocity distribution of bright and faint gas across datasets. 
-Vertical band patterns suggests a contribution from resolved systematic radial motions. 
-Abrupt velocity changes over a narrow intensity range may be associated with localized expansion of the gas \citep{2009ApJ...696.1668B}.}
+Figure~\ref{fig:intensity_velocity} shows the joint distribution of surface brightness and centroid velocity
+for the three emission lines \n{}, \halpha{}, \oiii{} from both the VLT MUSE and KPNO datasets. 
+The three rows in the figure correspond to the full VLT MUSE field of view,
+the VLT MUSE data restricted to the KPNO field of view, and the KPNO observations, respectively.
+These diagrams provide a direct view of the relation between line brightness and centroid velocity for each emission line, allowing us to compare the velocity distribution of bright and faint gas across datasets.
+Visual comparison of the bottom two rows shows a remarkable consistency between the MUSE and KPNO
+results for each emission line, when restricted to the same field of view.
+Fine details in the joint distributions can be matched between the two datasets, but there are two main differences,
+which indicate the limitations of the data.
+First, there is a systematic offset between the MUSE and KPNO velocities of \qtyrange{3}{6}{km.s^{-1}},
+which is not unexpected given the finding by \citet{2015A&A...582A.114W} of a similar offset between MUSE velocities
+and values from the literature \citep{Baldwin:2000a}.
+The precision of the KPNO absolute velocities is estimated to be better than this, at \(\approx \qty{2}{km.s^{-1}}\) \citep{Garcia-Diaz:2008a}.
+Second, the KPNO distributions appear to be slightly compressed along the brightness axis,
+compared with the MUSE distributions.
+This is probably due to the fact that the MUSE spectra are sky-subtracted,
+while the KPNO spectra are not,
+with the resultant difference in the brightness zero point manifesting
+as stretching/compression on a log scale.
+Since this paper concentrates on relative velocity fluctuations and employs the surface brightness
+only for masking the velocity maps,
+our results are not significantly affected by either of these issues.
 
-\textcolor{red}{For this comparison, we show the full VLT MUSE field of view, the VLT MUSE data restricted to the KPNO field of view, and the KPNO observations. 
-The VLT/MUSE maps are shown with a \(16\times16\) binning, while the KPNO data are shown with a \(4\times4\) binning. 
-No masking was applied in constructing these diagrams, so all pixels from each dataset were included.}
-
-\
 
 \begin{figure*}
  \centering
  \includegraphics[width=6.5in]{figures/SB_vs_radial_velocity_grid}\par
  \caption{
- Intensity versus radial velocity diagrams. 
- The first row shows the full VLT MUSE field of view with a \(16\times16\) binning. 
- The second row shows the VLT MUSE data restricted to the KPNO field of view, also with a \(16\times16\) binning. 
- The third row shows the KPNO data with a \(4\times4\) binning. 
- No masking was applied, so all pixels from each dataset were used to construct the diagrams.
+   Joint distribution of surface brightness and radial velocity centroid
+   for  \n{} (first column), \halpha{} (second column), and \oiii{} (third column).
+   The intensity of the negative grayscale images is proportional to the number of pixels with
+   each combination of brightness and velocity. 
+   The first row shows the full VLT MUSE field of view with a \(16\times16\) binning. 
+   The second row shows the VLT MUSE data restricted to the KPNO field of view, also with a \(16\times16\) binning. 
+   The third row shows the KPNO data with a \(4\times4\) binning. 
+   No masking was applied, so all pixels from each dataset were used to construct the diagrams.
  }
 \label{fig:intensity_velocity}
 \end{figure*}
