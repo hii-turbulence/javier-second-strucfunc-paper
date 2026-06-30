@@ -537,7 +537,7 @@ The results are analyzed to assess how observational effects, such as noise, spa
 
 \subsection{Intensity vs radial velocity diagrams}\label{sec:sb vs velocity diagrams}
 
-Figure~\ref{fig:intensity_velocity} shows the joint distribution of surface brightness and centroid velocity
+Figure~\ref{fig:intensity_velocity} shows the joint distribution histograms of surface brightness and centroid velocity
 for the three emission lines \n{}, \halpha{}, \oiii{} from both the VLT MUSE and KPNO datasets. 
 The three rows in the figure correspond to the full VLT MUSE field of view,
 the VLT MUSE data restricted to the KPNO field of view, and the KPNO observations, respectively.
@@ -560,14 +560,21 @@ Since this paper concentrates on relative velocity fluctuations and employs the 
 only for masking the velocity maps,
 our results are not significantly affected by either of these issues.
 
+A third difference is that the MUSE joint distribution histograms in Figure~\ref{fig:intensity_velocity}
+appear more blurred than the KPNO ones, especially along the velocity axis,
+which is a direct result of the larger uncertainty in the radial velocity measurements of the MUSE observations.
+It can be improved by increasing the binning level of the maps,
+but only at the cost of worsening the counting-statistics fluctuations of the histograms
+due to the reduced number of map pixels.
+
 
 \begin{figure*}
  \centering
  \includegraphics[width=6.5in]{figures/SB_vs_radial_velocity_grid}\par
  \caption{
-   Joint distribution of surface brightness and radial velocity centroid
+   Joint distribution histograms of surface brightness and radial velocity centroid
    for  \n{} (first column), \halpha{} (second column), and \oiii{} (third column).
-   The intensity of the negative grayscale images is proportional to the number of pixels with
+   The darkness of the colored images is proportional to the number of pixels with
    each combination of brightness and velocity. 
    The first row shows the full VLT MUSE field of view with a \(4\times4\) binning. 
    The second row shows the VLT MUSE data restricted to the KPNO field of view, also with a \(4\times4\) binning. 
