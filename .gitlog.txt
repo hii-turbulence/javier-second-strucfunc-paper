@@ -1,0 +1,10 @@
+35757ba (HEAD -> main, upstream/main) Refine comparison with McLeod
+eb2f3b7 Expand description of joint histograms
+ad4d785 Javier changes 2026-06-26
+46809c7 Will changes
+6b5145f Javier changes 2026-06-22
+c7547b4 Javier changes 2026-06-16
+0ba7bb4 Javier updates 2026-06-12
+03b00ac Javier changes 2026-06-11
+6b9f4cf Javier updates 2026-05-20
+6853e6d Javier changes 2026-04-19
