@@ -200,12 +200,14 @@
 % Abstract of the paper
 \begin{abstract}
   Turbulence plays a critical role in the evolution of \hii\ regions, yet recovering its statistical properties from observations remains challenging, especially under low signal-to-noise conditions.
-  We investigate whether high spatial resolution but low spectra integral field spectroscopic observations from VLT MUSE of the Orion Nebula can recover the same turbulent velocity as derived from previously analyzed observations at high spectral resolution but lower spatial resolution.
+  We investigate whether high spatial resolution but low spectral resolution integral field spectroscopic observations from VLT MUSE of the Orion Nebula can recover the same turbulent velocity as derived from previously analyzed observations at high spectral resolution but lower spatial resolution.
   We analyze the centroid velocity maps by computing the second-order structure function of the velocity fluctuations in the plane-of-sky. We systematically test binning to optimize the trade-off between instrumental noise and spatial resolution. A model is then fitted to the observed structure functions to extract the key turbulent parameters, including the correlation length $r_0$, slope $m$, and noise level.
   We find that downsampling improves the reliability of the structure function up to a limit set by the ratio between the bin size and the correlation length (\(\text{Bin size} / r_0 \sim 0.03\)) and that the fitted model alone is able to recover the turbulent parameters across all binning levels. 
   Differences in the large-scale behavior among emission lines of different ionization potential are observed, revealing line-dependent turbulence signatures associated with the geometric and ionization structure of the nebula. 
   Comparison with KPNO echelle observations yields good overall agreement in the turbulent parameters.
-  Despite their relatively poor velocity resolution, our methodology can turn MUSE observations into a useful tool for studying turbulent velocity, even at the subsonic velocity dispersion typical of compact \hii\ regions.
+  Despite their relatively poor velocity resolution, our methodology can turn observations from
+  intermediate resolution (\(R \approx 3000\)) integral-field spectrographs such as MUSE
+  into a useful tool for studying turbulent velocity, even at the subsonic velocity dispersion typical of compact \hii\ regions.
 \end{abstract}
 
 % Select between one and six entries from the list of approved keywords.
@@ -563,7 +565,7 @@ our results are not significantly affected by either of these issues.
 A third difference is that the MUSE joint distribution histograms in Figure~\ref{fig:intensity_velocity}
 appear more blurred than the KPNO ones, especially along the velocity axis,
 which is a direct result of the larger uncertainty in the radial velocity measurements of the MUSE observations.
-It can be improved by increasing the binning level of the maps,
+This can be improved by increasing the binning level of the maps,
 but only at the cost of worsening the counting-statistics fluctuations of the histograms
 due to the reduced number of map pixels.
 
@@ -878,17 +880,24 @@ In particular, \citet{2016MNRAS.455.4057M} and \citet{2019MNRAS.483..704A} analy
 
 \subsubsection{Comparison with \citet{2016MNRAS.455.4057M}}\label{sec:comp_McLeod}
 
-\citet{2016MNRAS.455.4057M} computed the second-order structure function following the method of \citet{2015MNRAS.447.1341B} function for a randomly selected sample of \(10^3\) pixels \(j\), around which we radially bin all other pixels \(i\). 
-They applied an intensity-based selection criterion for a mask, excluding pixels with \oi\ surface brightness below \SI{\sim 1e-16}{erg.s^{-1}.cm^{-2}.pixel^{-1}}. 
-Then computed the second-order structure function for both the masked and unmasked velocity maps, while also considering the influence of high-velocity objects.
+\citet{2016MNRAS.455.4057M} computed the second-order structure function following the method of \citet{2015MNRAS.447.1341B} for a randomly selected sample of \(10^3\) pixels \(j\), around which they radially bin all other pixels \(i\). 
+They applied an intensity-based selection criterion for a mask, excluding pixels with \oi\ surface brightness below \SI{\sim 1e-16}{erg.s^{-1}.cm^{-2}.pixel^{-1}},
+then computed the second-order structure function for both the masked and unmasked velocity maps, while also considering the influence of high-velocity objects.
 
-In their analysis, the power-law index was estimated by fitting a straight line to the observed structure function over specific ranges of spatial separations. 
-For the non-masked set \halpha\ emission line, they obtained a slope of \num{0.41} for separations in the range \(0.039 < r < 0.19\ \text{pc}\), while for the \oiii\ emission line they reported a value of \num{0.22} over separations of \(0.025 < r < 0.14\ \text{pc}\).
-For the masked set \halpha\ emission line, they obtained a slope of \num{0.45} ans for the \oiii\ emission line they reported a value of \num{0.29} for the same separation range.
-In comparison our results for the \halpha\ and \oiii\ emission line indexes are \num{1.1}.
+In their analysis, the power-law index was estimated by fitting a straight line to the observed structure function over a restricted range (\(\approx \qty{0.7}{dex}\))
+of spatial separations.
+For the highest S/N lines of \halpha{} and \oiii{} they determined indices in the range
+\(m = \numrange{0.22}{0.45}\),
+as compared with the value \(m = 1.1\) that we find for the same two lines (Table~\ref{tab:results_MUSE}).
 
 They argue that the structure function cannot be reliably recovered due to lower spectral resolution, short exposure times and a low S/N ratio. 
 However, as demonstrated in Section~\ref{sec:met}, the recovery of the structure function is strongly dependent on the analysis methodology, and appropriate treatment of noise and spatial resolution allows the turbulent signal to be recovered even in low signal-to-noise conditions.
+Inspection of \citeauthor{2016MNRAS.455.4057M}'s measured \halpha{} structure function (their Fig.~12a)
+reveals it to be closely similar to our own (our Fig.~\ref{fig:fit_results_01}a)
+over the same spatial range, once the difference in normalizations is accounted for.
+As recognized by \citet{2016MNRAS.455.4057M}, the shallow apparent slopes that they find are 
+entirely due to not correcting for the effects of noise.
+
 
 \subsubsection{Comparison with \citet{2019MNRAS.483..704A} }\label{sec:comp_Anorve}
 
@@ -916,7 +925,7 @@ In comparison our results for the \halpha\ emission line is \num{1.1}.
 \subsubsection{Comparison with \citet{arthur2016turbulence} }\label{sec:comp_Arthur}
 
 \citet{arthur2016turbulence} derived the structure function using echelle observations from the Kitt Peak National Observatory (KPNO) for \halpha, \oiii, and \n, complemented by data from the Observatorio Astronómico Nacional at San Pedro Mártir (OAN-SPM) for the \sii\ line.
-In their work a mas is constructed from pixels with extreme values of the centroid identified through consideration of their PDFs. 
+In their work a mask is constructed from pixels with extreme values of the centroid identified through consideration of their PDFs. 
 These pixels correspond to high-velocity features, such as HH 201, 202, 203, 204, and 529, and also to numerical artifacts introduced during the construction of the velocity maps from the individual slit observations.
 
 For direct comparison, Table~\ref{tab:results_KPNO} lists the turbulent parameters obtained by applying our methodology to the KPNO data and in Appendix~\ref{apex:kpno_structure_function} we present the structure functions and their corresponding corner plots and the fitting parameters in Table~\ref{tab:fitting-parameters-KPNO}. 
