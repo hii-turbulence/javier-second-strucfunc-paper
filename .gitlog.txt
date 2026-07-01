@@ -1,0 +1,146 @@
+commit 00d7dd7ace49454ddf5f430b83eac3d9ac037b11
+Author: William Henney <whenney@gmail.com>
+Date:   Wed Jul 1 10:34:30 2026 -0600
+
+    Untrack .gitlog.txt
+
+commit b747f28cafc7d5fc54b9bac5755b524549cb975a
+Merge: d29b21a b9eda9c
+Author: William Henney <whenney@gmail.com>
+Date:   Wed Jul 1 10:29:20 2026 -0600
+
+    Merge overleaf-2026-07-01-1629 into main
+
+commit b9eda9c464d0f5db6cadf8f75ad31da33ab4d119
+Author: William Henney <whenney@gmail.com>
+Date:   Wed Jul 1 10:29:19 2026 -0600
+
+    Updates from Overleaf
+
+commit d29b21a66834e706fb0ce2b652767fe98440a89a
+Author: William Henney <whenney@gmail.com>
+Date:   Wed Jul 1 10:27:44 2026 -0600
+
+    Add hacky mechanism for non-anonymous GitHub edits in Overleaf
+
+commit 35757baf1cba8d659477001d561c55c802056d60
+Author: William Henney <whenney@gmail.com>
+Date:   Tue Jun 30 23:02:40 2026 -0600
+
+    Refine comparison with McLeod
+
+commit eb2f3b767b66a33fada16efc1ea94efbf667e58c
+Author: William Henney <whenney@gmail.com>
+Date:   Tue Jun 30 13:33:24 2026 -0600
+
+    Expand description of joint histograms
+
+commit ad4d78520f9ede78116cc48ce2afdd4ad0d4420e
+Author: William Henney <whenney@gmail.com>
+Date:   Tue Jun 30 11:45:36 2026 -0600
+
+    Javier changes 2026-06-26
+
+commit 46809c73f306b832a556875cb2c50f823f570f35
+Author: William Henney <whenney@gmail.com>
+Date:   Tue Jun 23 13:28:37 2026 -0600
+
+    Will changes
+
+commit 6b5145fe676d376f656a122b25e29509578f2198
+Author: William Henney <whenney@gmail.com>
+Date:   Tue Jun 23 09:08:18 2026 -0600
+
+    Javier changes 2026-06-22
+
+commit c7547b484486cab0023253c03feb0b52b2c7daf9
+Author: William Henney <whenney@gmail.com>
+Date:   Tue Jun 16 10:07:05 2026 -0600
+
+    Javier changes 2026-06-16
+
+commit 0ba7bb463eca55030c6f17ccb838cf3cceebdcbf
+Author: William Henney <whenney@gmail.com>
+Date:   Fri Jun 12 12:03:34 2026 -0600
+
+    Javier updates 2026-06-12
+
+commit 03b00ac32e2b454ead6251d74034c77c3cdcf064
+Author: William Henney <whenney@gmail.com>
+Date:   Thu Jun 11 12:01:07 2026 -0600
+
+    Javier changes 2026-06-11
+
+commit 6b9f4cfd1f0bd6db39719f175499154623d224ab
+Author: William Henney <whenney@gmail.com>
+Date:   Wed May 20 11:22:05 2026 -0600
+
+    Javier updates 2026-05-20
+
+commit 6853e6ddac276a29e88b5ca8b82ce7d5c37a4a39
+Author: William Henney <whenney@gmail.com>
+Date:   Mon Apr 20 12:05:37 2026 -0600
+
+    Javier changes 2026-04-19
+
+commit 22e2731e374aa9960705ac5ed53395180b502cf5
+Author: William Henney <whenney@gmail.com>
+Date:   Tue Mar 31 18:19:20 2026 -0600
+
+    Javier updates 2026-03-31
+
+commit 72de5fdc5f6ae4d3a20508e88fe732e25a36044a
+Author: William Henney <whenney@gmail.com>
+Date:   Sun Mar 15 00:59:04 2026 -0600
+
+    Javier updates 2026-03-14
+
+commit 6b87c06c1e96717588feb55c0c3f8d86d4b9699d
+Author: William Henney <whenney@gmail.com>
+Date:   Fri Oct 10 13:44:10 2025 -0600
+
+    Javier updates 2025-10-07
+
+commit d867d5eefc9cf111500889a1e95f68589e38e2f2
+Author: William Henney <whenney@gmail.com>
+Date:   Sun Sep 21 21:49:37 2025 -0600
+
+    Javier changes 2025-09-21
+
+commit 5e3e65b6c65f124e618fa1c81cda186d5af0ca97
+Author: William Henney <whenney@gmail.com>
+Date:   Thu Sep 18 20:06:22 2025 -0600
+
+    Javier changes 2025-09-18
+
+commit 24ee23c4286d5e6442eae6dec3826273b86f7556
+Author: William Henney <whenney@gmail.com>
+Date:   Wed Sep 3 07:41:17 2025 -0600
+
+    Update irya address
+
+commit cbce45877c3494b54d5691fdf3051236cef68684
+Author: William Henney <whenney@gmail.com>
+Date:   Wed Sep 3 07:00:38 2025 -0600
+
+    Overleaf updates 2025-09-03
+
+commit 481b358bd00ee733b0f1869a7e34dc41cb0a1357
+Author: William Henney <whenney@gmail.com>
+Date:   Fri Aug 22 12:23:17 2025 -0600
+
+    Settle on a provisional title
+    
+    And add the author list and affiliations
+
+commit f97790feebc4328cc9baaf5e4f86b1d149fbad1c
+Author: William Henney <whenney@gmail.com>
+Date:   Fri Aug 22 12:01:14 2025 -0600
+
+    Create latex file
+
+commit 7531a4154742dc731e1c61a059b40bf0904988a9
+Author: William Henney <whenney@gmail.com>
+Date:   Fri Aug 22 11:59:08 2025 -0600
+
+    Initial commit
