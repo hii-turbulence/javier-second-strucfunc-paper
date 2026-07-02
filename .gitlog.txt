@@ -1,3 +1,9 @@
+commit 75984ed3e35b1ef9b84d6cf79931048efd61b88f
+Author: William Henney <whenney@gmail.com>
+Date:   Wed Jul 1 11:16:18 2026 -0600
+
+    Revise the abstract
+
 commit 00d7dd7ace49454ddf5f430b83eac3d9ac037b11
 Author: William Henney <whenney@gmail.com>
 Date:   Wed Jul 1 10:34:30 2026 -0600
