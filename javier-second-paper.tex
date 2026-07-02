@@ -707,35 +707,7 @@ The thick red line corresponds to the intrinsic \halpha\ structure function, equ
 
 
 
-\begin{figure*}
-  \centering
-  \fitfigggg{MUSE-M42-H-bin0}{MUSE-M42-H-bin0}{MUSE-M42-Ar-bin0}{MUSE-M42-Ar-bin0}
-  \caption{ 
-    (a)~Second-order structure functions
-    for velocity centroid images
-    of the \ha{} emission line ($1\times1$)
-    from M~42.
-    The observed structure function \(B\obs(r)\) is shown by 
-    blue symbols, with filled symbols indicating those points
-    that are used to constrain the model fits.
-    The full model is shown in orange,
-    while the underlying ideal model
-    (without the effects of seeing or noise)
-    is shown in green.
-    See text for details of the fitting process.
-    (b)~Corner plot of covariances between
-    model parameters of fits to the \ha{} structure function.  Plots on the diagonal show the 1-dimensional histogram
-    of the posterior distribution of each parameter
-    (labeled at bottom),
-    as calculated by the MCMC method,
-    assuming a uniform prior distribution
-    within the limits given in Table~\ref{tab:parameter-ranges}.
-    Off-diagonal plots show the 2-dimensional histogram of the
-    joint posterior distribution each pair of parameters.
-    (c)~Same as (a) for \ariii. (d)~Same as (b) for \ariii.
-  }
-  \label{fig:fit_results_01}
-\end{figure*}
+
 
 \begin{figure*}
  \centering
@@ -1007,16 +979,52 @@ from the GitHub repository \url{https://github.com/JavGVastro/VIENTO/tree/main/s
 
 
 
-\section{Results for different emission lines} \label{apex:multiple_lines_results}
+\section{Detailed results for all MUSE emission lines} \label{apex:multiple_lines_results}
 
-In this appendix, Tables~\ref{tab:results_MUSE_O}--\ref{tab:results_MUSE_S} present the turbulent parameters and their confidence intervals, together with the corresponding structure functions and corner plots (Figures~\ref{fig:fit_results_02}--\ref{fig:fit_results_03}) for the \oiii, \n, and \siii\ emission lines for the VLT MUSE observations.
+This appendix presents additional tables and figures that supplement the results
+given in the main text.
+Tables~\ref{tab:results_MUSE_O}--\ref{tab:results_MUSE_S} list the
+derived turbulent parameters and their confidence intervals for the additional emission lines
+\oiii, \n, and \siii.
+Figures~\ref{fig:fit_results_01}--\ref{fig:fit_results_03}
+present the structure function fits plus
+corner plots of the marginal posterior distributions of model parameters
+for all emission lines from the  VLT MUSE observations.
 
 \input{tables/results_MUSE_O}
 %\input{tables/results_MUSE_O_4959}
 \input{tables/results_MUSE_N}
 %\input{tables/results_MUSE_N_6548}
 \input{tables/results_MUSE_S}
-
+\begin{figure*}
+  \centering
+  \fitfigggg{MUSE-M42-H-bin0}{MUSE-M42-H-bin0}{MUSE-M42-Ar-bin0}{MUSE-M42-Ar-bin0}
+  \caption{ 
+    (a)~Second-order structure functions
+    for velocity centroid images
+    of the \ha{} emission line ($1\times1$)
+    from M~42.
+    The observed structure function \(B\obs(r)\) is shown by 
+    blue symbols, with filled symbols indicating those points
+    that are used to constrain the model fits.
+    The full model is shown in orange,
+    while the underlying ideal model
+    (without the effects of seeing or noise)
+    is shown in green.
+    See text for details of the fitting process.
+    (b)~Corner plot of covariances between
+    model parameters of fits to the \ha{} structure function.  Plots on the diagonal show the 1-dimensional histogram
+    of the posterior distribution of each parameter
+    (labeled at bottom),
+    as calculated by the MCMC method,
+    assuming a uniform prior distribution
+    within the limits given in Table~\ref{tab:parameter-ranges}.
+    Off-diagonal plots show the 2-dimensional histogram of the
+    joint posterior distribution each pair of parameters.
+    (c)~Same as (a) for \ariii. (d)~Same as (b) for \ariii.
+  }
+  \label{fig:fit_results_01}
+\end{figure*}
 \begin{figure*}
   \centering
   \fitfigggg{MUSE-M42-O-bin1}{MUSE-M42-O-bin1}{MUSE-M42-N-bin0}{MUSE-M42-N-bin0}
