@@ -1,3 +1,28 @@
+commit 4e515ab1b45e12762ef6a538545bd9147b52ddff
+Author: William Henney <whenney@gmail.com>
+Date:   Thu Jul 2 11:41:50 2026 -0600
+
+    Revise 4.1.1
+
+commit a7ce860b7224a39ee9f1e2c8124116629484fa0e
+Author: William Henney <whenney@gmail.com>
+Date:   Thu Jul 2 10:21:30 2026 -0600
+
+    Javier changes 2026-07-02
+
+commit 0b9b206cc84695c06ecde38eadd0679c63ae4816
+Merge: 75984ed 1ba66d6
+Author: William Henney <whenney@gmail.com>
+Date:   Wed Jul 1 11:17:19 2026 -0600
+
+    Merge overleaf-2026-07-01-1717 into main
+
+commit 1ba66d619e05a2f106f6df695bedf3df7bcad042
+Author: William Henney <whenney@gmail.com>
+Date:   Wed Jul 1 11:17:18 2026 -0600
+
+    Updates from Overleaf
+
 commit 75984ed3e35b1ef9b84d6cf79931048efd61b88f
 Author: William Henney <whenney@gmail.com>
 Date:   Wed Jul 1 11:16:18 2026 -0600

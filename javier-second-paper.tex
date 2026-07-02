@@ -665,15 +665,16 @@ In particular, it highlights the robustness of the methodology when applied to f
 The \ariii\ emission exhibits a similar trend to that observed for \halpha, in which the structure of the velocity fluctuations can be recovered either by fitting the model to the non-binned map or by applying spatial binning. 
 Since this line is intrinsically fainter, the binning procedure is particularly effective at recovering the velocity structure, reducing the instrumental noise from \SI{10.8}{km^{2}.s^{-2}} to \SI{1}{km^{2}.s^{-2}}.
 
-One key difference for the \ariii\ emission, compared to \halpha\ in our analysis, is the behavior of the inferred seeing parameter \(s_0\), which decreases from the non-binned map and reaches a minimum value of \SI{1.4}{arcsec} at intermediate binning levels (bin~4). 
-We attribute this behavior to the way the model responds to different noise regimes. For the non-binned (bin~0) and lightly binned (bin~1) maps, the signal-to-noise ratio is low due to the faintness of the line, and the observed structure function does not exhibit a clear power-law behavior, as it is dominated by noise. 
+One key difference for the \ariii\ emission, compared to \halpha\ in our analysis, is the behavior of the inferred seeing parameter \(s_0\), which decreases from the non-binned map and reaches a minimum value of \SI{1.4}{arcsec} at intermediate binning levels.
+
+We attribute this behavior to the way the model responds to different noise regimes. For the non-binned ($1\times1$) and lightly binned ($2\times2$) maps, the signal-to-noise ratio is low due to the faintness of the line, and the observed structure function does not exhibit a clear power-law behavior, as it is dominated by noise. 
 In this regime, the fitting procedure compensates by adopting relatively large values of \(s_0\), effectively reproducing the apparent flattening of the structure function at small separations.
 
-As the noise is reduced through binning (e.g., bin~2), the underlying power-law behavior becomes more clearly defined, allowing the model to recover smaller and more physically meaningful values of \(s_0\), consistent with the presence of resolved small-scale velocity fluctuations.
+As the noise is reduced through binning (e.g., $4\times4$), the underlying power-law behavior becomes more clearly defined, allowing the model to recover smaller and more physically meaningful values of \(s_0\), consistent with the presence of resolved small-scale velocity fluctuations.
 At larger binning factors, however, the averaging process begins to smooth out these small-scale fluctuations, leading again to an increase in the inferred \(s_0\). 
 In this regime, the rise in \(s_0\) reflects the loss of intrinsic small-scale structure due to the effective blurring introduced by the binning procedure.
 
-Regarding the large-scale behavior of the \ariii\ structure functions, we observe a transition from a periodic, oscillatory pattern in the non-binned map to a radial-gradient behavior in the binned maps, similar to that found for \halpha.  
+Regarding the large-scale behavior of the \ariii\ structure functions, we observe a transition from a periodic, oscillatory pattern in the non-binned map to a behavior where the amplitude of the fluctuations decreases at the edge in the binned maps, similar to that found for \halpha.  
 This suggests that the oscillatory pattern is likely driven by the low signal-to-noise ratio in the non-binned data, while the smoothing introduced by binning recovers the intrinsic large-scale velocity structure of the emission line.
 
 As in the case of \halpha, the observed structure functions show good overall agreement with the model described by equation~\eqref{eq:model-strucfunc-ideal} across all binned samples.
@@ -710,7 +711,7 @@ The thick red line corresponds to the intrinsic \halpha\ structure function, equ
   \caption{ 
     (a)~Second-order structure functions
     for velocity centroid images
-    of the \ha{} emission line (Bin~0)
+    of the \ha{} emission line ($1\times1$)
     from M~42.
     The observed structure function \(B\obs(r)\) is shown by 
     blue symbols, with filled symbols indicating those points
