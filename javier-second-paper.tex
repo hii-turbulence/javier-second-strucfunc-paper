@@ -642,16 +642,18 @@ Above the same binning level, the derived noise also stops decreasing, indicatin
 that \(4 \times 4\) is the optimum binning level for this dataset,
 which corresponds to \(\binsize{} < 0.05 r_0\).
 
-% Halpha Large scales
-At large spatial scales, the \halpha\ structure function shown in Figure~\ref{fig:Ha_Br_comparison} exhibits a downward hook, which reflects a reduction in the amplitude of the velocity fluctuations towards the edges of the observational field. 
 
 % Model recovering for all maps
-An important result shown in Figure~\ref{fig:Ha_Br_comparison} is that the fitting procedure of the equation~\eqref{eq:sf-functional}, is able to recover the turbulent parameters even at low signal-to-noise ratios. 
-This is illustrated by the dashed lines, which represent the ideal model given by equation~\eqref{eq:model-strucfunc-ideal} and closely match the observed structure functions across different binning levels. 
-
+Although the noise reduction induced by the binning results in a significant cosmetic improvement
+in the empirical structure function (symbols in Fig.~\ref{fig:Ha_Br_comparison}a),
+it is important to note that the model recovers very similar turbulent parameters
+at all binning levels (dashed lines in  Fig.~\ref{fig:Ha_Br_comparison}a).
 This demonstrates that our methodology, based on fitting a heuristic model to the observational data, is sufficient to recover the turbulent parameters of the velocity field. 
-In practice, this implies that either the non-binned maps can be used, at the expense of increased computational cost, or binned maps can be employed within the constraint imposed by the ratio \(\binsize{} / r_0\), without compromising the recovery of the turbulent cascade. 
+In practice, this implies that either the non-binned maps can be used, at the expense of increased computational cost, or binned maps can be employed within the constraint imposed by the ratio \(\binsize{} / r_0 < 0.05\), without compromising the recovery of the turbulent cascade. 
 This result extends the applicability of the method to datasets with low signal-to-noise ratios or limited spatial resolution.
+
+% Halpha Large scales
+At large spatial scales, the \halpha\ structure function shown in Figure~\ref{fig:Ha_Br_comparison} exhibits a downward hook, which reflects a reduction in the amplitude of the velocity fluctuations towards the edges of the observational field. 
 
 \subsubsection{Representative case study of the \ariii\ emission line}\label{sec:Representative case study Ar}
 
@@ -885,7 +887,7 @@ as compared with the value \(m = 1.1\) that we find for the same two lines (Tabl
 They argue that the structure function cannot be reliably recovered due to lower spectral resolution, short exposure times and a low S/N ratio. 
 However, as demonstrated in Section~\ref{sec:met}, the recovery of the structure function is strongly dependent on the analysis methodology, and appropriate treatment of noise and spatial resolution allows the turbulent signal to be recovered even in low signal-to-noise conditions.
 Inspection of \citeauthor{2016MNRAS.455.4057M}'s measured \halpha{} structure function (their Fig.~12a)
-reveals it to be closely similar to our own (our Fig.~\ref{fig:fit_results_01}a)
+reveals it to be similar to our own (our Fig.~\ref{fig:fit_results_01}a)
 over the same spatial range, once the difference in normalizations is accounted for.
 As recognized by \citet{2016MNRAS.455.4057M}, the shallow apparent slopes that they find are 
 entirely due to not correcting for the effects of noise.
