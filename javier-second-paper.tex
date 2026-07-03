@@ -608,21 +608,24 @@ The same analysis is applied to the remaining emission lines, with results prese
 
 
 % Present Brs for Halpha
-The solid markers of different colors in Figure~\ref{fig:Ha_Br_comparison} indicate the results of applying equation~\eqref{eq:Br} to the non-binned \halpha\ map shown in Figure~\ref{fig:velocity_maps_shared_cbar_fixed}, and the corresponding binned maps in Figure~\ref{fig:Ha_bins_comparison}.
-The dotted curves correspond to the heuristic model described in equation~\eqref{eq:sf-functional}, while the dashed curves represent the ideal model given in equation~\eqref{eq:model-strucfunc-ideal}.  
-For each binning level the size of the pixel in parsecs is \(\binsize = 0.0004\), \num{0.0008}, \num{0.0016}, \num{0.0032} and \(0.00064\), respectively.
+Empirical and model structure functions for the \halpha{} velocity fluctuations are shown in Figure~\ref{fig:Ha_Br_comparison}a.
+Solid markers of different colors indicate the results of applying equation~\eqref{eq:Br} to the non-binned \halpha\ map shown in Figure~\ref{fig:velocity_maps_shared_cbar_fixed}, and the corresponding binned maps in Figure~\ref{fig:Ha_bins_comparison}.
+The dotted curves correspond to the best-fit heuristic model described in equation~\eqref{eq:sf-functional}, while the dashed curves represent the ideal model given in equation~\eqref{eq:model-strucfunc-ideal}.  
+For each binning level the size of the pixel in parsecs ranges from \(\binsize = 0.0004\) (unbinned)
+to \(0.0064\) (binning \(16 \times 16\)).
 
 % Present trubulent parameters for Halpha
-For the \halpha\ emission we were able to fit the model to all the observed structure functions. Table~\ref{tab:results_MUSE_Ha} lists the best-fit values for the model parameters with 95\% confidence interval.
-The first column corresponds to the value for the binning size used in each map before computing the structure function.
-The nuisance values like the noise and seeing (in RMS) are given in columns three and five.
-The turbulent parameters are listed in columns two, six and eight.
-Finally, columns nine and ten list the quotients \(s_0/r_0\) and \(\binsize{} / r_0\), which are used for a sanity check of the results.
+For the \halpha\ emission we were able to fit the model to all the observed structure functions. Table~\ref{tab:results_MUSE_Ha} lists the best-fit values for the model parameters with 95\% confidence intervals.
+In addition to the turbulence parameter (columns 2--4)
+and nuisance parameters (columns 5--6),
+the table shows
+the ratios \(s_0/r_0\) and \(\binsize{} / r_0\), which are used for a sanity check of the results.
 We also estimate the signal to noise ratio, SNR, of the turbulent fluctuations as:
 %
 \begin{equation}\label{eq:SNR}
   \text{SNR} = \frac{\sigma\pos}{\sigma_\text{noise}} = \left( \frac{2 \sigma\pos^2}{B_\text{noise}} \right)^{0.5}.
 \end{equation}
+The variation of the model parameters with binning level is also shown graphically in Figure~\ref{fig:parameters vs binning}.
 
 % Halpha Discussion small scales
 For the non-binned \halpha\ map, a power-law trend is present, but the structure at small scales is significantly affected by instrumental noise, with a derived value of \SI{2.61}{km^{2}.s^{-2}}.  
@@ -643,19 +646,28 @@ which corresponds to \(\binsize{} < 0.05 r_0\).
 
 
 % Model recovering for all maps
-Although the noise reduction induced by the binning results in a significant cosmetic improvement
+Although the noise reduction induced by the binning causes a significant cosmetic improvement
 in the empirical structure function (symbols in Fig.~\ref{fig:Ha_Br_comparison}a),
 it is important to note that the model recovers very similar turbulent parameters
 at all binning levels (dashed lines in  Fig.~\ref{fig:Ha_Br_comparison}a).
+As can be seen from Table~\ref{tab:results_MUSE_Ha} and Figure~\ref{fig:parameters vs binning},
+the physical parameters \(\sigma^2\), \(r_0\), and \(m\) remain constant for binning levels
+up to \(4 \times 4\).
+For larger binning levels, we start to see slight reductions in \(\sigma^2\) and \(r_0\),
+together with a steady increase in \(m\), which are all symptoms of the suppression of small-scale fluctuations due to the binning.
+
 This demonstrates that our methodology, based on fitting a heuristic model to the observational data, is sufficient to recover the turbulent parameters of the velocity field. 
 In practice, this implies that either the non-binned maps can be used, at the expense of increased computational cost, or binned maps can be employed within the constraint imposed by the ratio \(\binsize{} / r_0 < 0.05\), without compromising the recovery of the turbulent cascade. 
 This result extends the applicability of the method to datasets with low signal-to-noise ratios or limited spatial resolution.
 
 % Halpha Large scales
-At large spatial scales, the \halpha\ structure function shown in Figure~\ref{fig:Ha_Br_comparison} exhibits a downward hook, which reflects a reduction in the amplitude of the velocity fluctuations towards the edges of the observational field. 
+At large spatial scales, the \halpha\ structure function shown in Figure~\ref{fig:Ha_Br_comparison} exhibits a downward hook, which reflects a reduction in the amplitude of the velocity fluctuations towards the edges of the observational field, see discussion in \citet{garciav23}. 
 
 \subsubsection{Representative case study of the \ariii\ emission line}\label{sec:Representative case study Ar}
 
+The \ariii{} velocity map (Fig.~\ref{fig:velocity_maps_shared_cbar_fixed})
+appears very similar to \halpha{},
+except 
 % [Ar III] Discussion
 Table~\ref{tab:results_MUSE_Ar} presents the best-fit model parameters and their corresponding confidence intervals for the \ariii\ emission line, where the columns represent the same quantities as in Table~\ref{tab:results_MUSE_Ha}. The associated structure functions are shown in the right panel of Figure~\ref{fig:Ha_Br_comparison}.
 
@@ -743,7 +755,7 @@ Turbulent parameter versus binning level for all emission lines analyzed in this
 %  \label{fig:Orion_sf_1}
 %\end{figure*}
 
-\subsubsection{Extension to Additional Emission Lines}\label{sec:other emission lines}
+\subsubsection{Extension to additional emission Lines}\label{sec:other emission lines}
 
 The analysis presented for the \halpha\ and \ariii\ emission lines is extended to the remaining lines in the sample, following the same methodology.
 
@@ -865,10 +877,30 @@ Inspection of \citeauthor{2016MNRAS.455.4057M}'s measured \halpha{} structure fu
 reveals it to be similar to our own (our Fig.~\ref{fig:fit_results_01}a)
 over the same spatial range, once the difference in normalizations is accounted for.
 As recognized by \citet{2016MNRAS.455.4057M}, the shallow apparent slopes that they find are 
-entirely due to not correcting for the effects of noise.
+primarily due to not correcting for the effects of noise.
+
 
 
 \subsubsection{Comparison with \citet{2019MNRAS.483..704A} }\label{sec:comp_Anorve}
+
+In a series of papers \citet{2019MNRAS.483..704A, Anorve-Zeferino:2023a}
+claim to apply a ``mathematically sound methodology'' to \dot however \dots
+
+A direct comparison of our correlation length and power-law index results with those of
+\citet{2019MNRAS.483..704A} is not meaningful due to differences in the treatment of the velocity data and the methodology for calculating the structure function in that paper.
+
+
+To begin with, we note that Anorve-Zeferino works with the H$\alpha$ line-of-sight velocities, rather than the velocity centroid  fluctuations about the mean that we use in the present paper.
+This introduces a constant term into...WHAT?
+Additionally, Anorve-Zeferino (2019) does not take noise into consideration. This affects the velocity PDFs, since it results in a spike at line-of-sight velocity equal to zero, which is purely an artefact.
+The failure to account for noise also results in higher values of the structure function for small separations, as discussed in the present paper.
+We note that the structure functions presented by Anorve-Zeferino (2019) in their fig. 5 do not show the characteristic turnover reported by other authors.
+As mentioned earlier in the present paper and described in detail in Garcia-Vazquez (2023), this downward hook occurs because points with separations greater than the radius of the HII region will be more likely to both be found in the outskirts, and relatively well correlated, with both velocities close to the mean.
+These pairs of points will therefore contribute little to the structure function.
+On the other hand, both the Fourier-space and real-space algorithms used by Anorve-Zeferino (2019,2023) require ``zero-padding'', which introduces points at zero velocity (i.e., not well correlated) into the calculation at large spatial scales.
+Although procedure leads to structure functions that are more similar to results obtained from numerical simulations of homogeneous turbulence at large separations, this is purely by construction and does not represent any property of the underlying data.
+
+
 
 \citet{2019MNRAS.483..704A} compute the second-order structure function for the \halpha\ emission line using both a real space algorithm and the standard Fourier space algorithm.
 The structure function is computed for both the raw maps and a set of filtered maps. 
