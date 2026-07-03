@@ -1,0 +1,28 @@
+\begingroup
+\setlength{\tabcolsep}{6pt} % Default value: 6pt
+\renewcommand{\arraystretch}{1.5} % Default value: 1
+%% In Emacs we can use M-x align-current to align the table on the & symbols after editing
+\begin{table*}
+\begin{center}
+  \caption{
+    Best-fit model parameters and 95\% credibility intervals for fits to observed structure functions in the Orion core for the VLT MUSE observations (bin~0) using KPNO echelle FOV.
+  }
+
+%\begin{adjustbox}{width=1\textwidth}
+  
+  \begin{tabular}{l RRRRRR  @{\hspace{6\tabcolsep}} RRR}
+    \toprule
+Line   & \sigma^2\pos            & B_{\text{noise}}       & s_0 (\text{RMS})          & r_0                    & L         & m                   & L/r_0 & s_0 / r_0 & s_0 (\text{FWHM}) \\
+         & [\si{km^2.s^{-2}}] & [\si{km^2.s^{-2}}]     & [\si{pc}]                 & [\si{pc}]              & [\si{pc}] & [-]                 & [-]   & [-]       & [\text{arcsec}]   \\
+\midrule
+\halpha   & 12.86\PM{1.11}{0.75} & 2.554\PM{0.080}{0.030} & <0.0006 & 0.075\PM{0.009}{0.006} & 0.45 & 1.12\PM{0.03}{0.03} & 5.97 & 0.0026 & <0.70 \\
+\oi       & 15.13\PM{3.55}{1.59} & 4.765\PM{0.145}{0.056} & <0.0009 & 0.103\PM{0.035}{0.014} & 0.45 & 1.04\PM{0.04}{0.05} & 4.36 & 0.0020 & <1.06  \\
+\n        & 8.67\PM{0.47}{0.36} & 3.595\PM{0.173}{0.051} & <0.0006 & 0.042\PM{0.004}{0.003} & 0.45 & 0.96\PM{0.04}{0.04} & 10.79 & 0.0048 & <0.72  \\
+%\sii    & 6.31\PM{0.20}{0.17} & 0.039\PM{0.013}{0.016} & 0.0012\PM{0.0003}{0.0002} &0.033\PM{0.001}{0.001} & 0.34 & 1.08\PM{0.04}{0.04} & 10.29 & 0.0367 & 1.44\PM{0.31}{0.29}  \\
+  \bottomrule
+
+\end{tabular}\label{tab:results_MUSE_trim}
+%\end{adjustbox}
+\end{center}
+\end{table*}
+\endgroup

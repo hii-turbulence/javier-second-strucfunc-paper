@@ -258,10 +258,10 @@ However, these analyses have led to significantly different conclusions regardin
 For example, \citet{arthur2016turbulence}, using Kitt Peak National Observatory (KPNO) echelle observations, reported clear power-law behavior consistent with a turbulent cascade, while \citet{2016MNRAS.455.4057M}, analyzing Very Large Telescope (VLT) Multi Unit Spectroscopic Explorer (MUSE) data, found little evidence of such structure. 
 More recent studies using the same VLT MUSE observations \citep{2019MNRAS.483..704A} have obtained intermediate results.
 
-\textcolor{red}{The KPNO and MUSE datasets differ significantly in both their spectral and spatial sampling properties. 
+The KPNO and MUSE datasets differ significantly in both their spectral and spatial sampling properties. 
 The KPNO echelle observations have an instrumental spectral resolution of approximately \SI{8}{km.s^{-1}}, whereas the MUSE observations have a spectral resolution of about \SI{120}{km.s^{-1}} at \halpha. 
 Conversely, the MUSE observations provide finer spatial sampling, with a pixel scale of \SI{0.2}{arcsec.pixel^{-1}}, compared to \(\sim1-\SI{2}{arcsec.pixel^{-1}}\) for the KPNO data. 
-The combination of lower instrumental noise and higher spectral resolution makes the KPNO observations a useful reference for assessing the turbulent parameters recovered from the MUSE data.}
+The combination of lower instrumental noise and higher spectral resolution makes the KPNO observations a useful reference for assessing the turbulent parameters recovered from the MUSE data.
 
 The discrepancies in different works are likely driven by differences in methodology, data quality, and the treatment of observational effects such as noise and spatial resolution \citep{garciav23}. 
 In particular, instrumental noise can obscure small-scale velocity fluctuations, making the recovery of the turbulent cascade highly sensitive to the analysis technique. This raises a fundamental question: how can the turbulent structure function be reliably recovered from noisy integral field spectroscopic observations? 
@@ -315,20 +315,19 @@ The centroid velocity maps from KPNO employed in this work are based on the inte
 Their analysis incorporated additional east-west slit observations to improve the relative velocity calibration between adjacent slit positions.
 The derived velocity fields were previously analyzed in \citet{arthur2016turbulence}.
 
-\textcolor{red}{Figure~\ref{fig:H_I-6563_maps} shows the two-dimensional maps of integrated intensity (left panel) and centroid velocity (right panel) for the Orion Nebula reconstructed using the MUSE data, both centered at the ionizing star of the region; the O7~V star $\theta^1$~Ori~C \citep{2006A&A...448..351S}. 
+Figure~\ref{fig:H_I-6563_maps} shows the two-dimensional maps of integrated intensity (left panel) and centroid velocity (right panel) for the Orion Nebula reconstructed using the MUSE data, both centered at the ionizing star of the region; the O7~V star $\theta^1$~Ori~C \citep{2006A&A...448..351S}. 
 The field of view covers the brightest portion of the nebula commonly called the Huygens region.
-Several well-known morphological features of the Orion Nebula can be identified in the left panel of the figure \citep{2009AJ....137..367O}. }
+Several well-known morphological features of the Orion Nebula can be identified in the left panel of the figure \citep{2009AJ....137..367O}. 
 
-
-\textcolor{red}{The region of highest surface brightness lies southwest of the Trapezium stars and corresponds to Orion-S, an active site of star formation and stellar outflows.
+The region of highest surface brightness lies southwest of the Trapezium stars and corresponds to Orion-S, an active site of star formation and stellar outflows.
 Within the Trapezium, $\theta^1$~Ori~C is the main source of ionizing radiation, accompanied by three cooler B-type stars.
 Toward the southeast, the Orion Bar is visible, tracing the main ionization front of the nebula. 
-To the northeast, the Dark Bay appears as a region of high extinction produced by neutral material in the Veil located on the observer's side of the nebula.}
+To the northeast, the Dark Bay appears as a region of high extinction produced by neutral material in the Veil located on the observer's side of the nebula.
 
-\textcolor{red}{Several prominent kinematic features can be identified in the velocity map. 
-The Herbig--Haro objects such as HH~201, HH~203, and HH~204 are traced by their strongly blueshifted velocities \citep{Doi:2004a}. 
-A further blueshifted structure, the Big Arc South, is located south of Orion-S. 
-At redshifted velocities, the Red Bay appears northeast of this region, while the Red Fan is seen farther south \citep{Garcia-Diaz:2007a}.}
+Several prominent kinematic features can be identified in the velocity map. 
+The Herbig-Haro objects such as HH~201, HH~203, and HH~204 are traced by their strongly blue-shifted velocities \citep{Doi:2004a}. 
+A further blue-shifted structure, the Big Arc South, is located south of Orion-S. 
+At red-shifted velocities, the Red Bay appears northeast of this region, while the Red Fan is seen farther south \citep{Garcia-Diaz:2007a}.
 
 
 
@@ -352,12 +351,12 @@ Omitted pixels are shown in grey.}
 
 Figure~\ref{fig:velocity_maps_shared_cbar_fixed} shows the VLT MUSE centroid velocity maps, \(V_c\), for each emission line in our sample. 
 These maps provide the basis for analyzing the velocity fluctuations projected onto the plane of the sky.
-\textcolor{red}{The centroid velocity maps used throughout this work are derived from the original observations after removing pixels associated with stellar sources identified from the continuum map. 
+The centroid velocity maps used throughout this work are derived from the original observations after removing pixels associated with stellar sources identified from the continuum map. 
 Using the \halpha\ emission line as a reference, we also discard pixels with normalized surface-brightness values below \(0.025\) and pixels associated with the high-velocity objects. 
 The resulting spatial selection is then applied consistently to all remaining emission lines, ensuring that the turbulent analysis is performed over the same set of nebular regions. 
 Each emission line is centered with respect it own mean centroid velocity value.
 Pixels not included in the final velocity maps are shown in grey.
-For comparison KPNO velocity maps are shown in Figure~\ref{fig:kpno vel maps}.}
+For comparison KPNO velocity maps are shown in Figure~\ref{fig:kpno vel maps}.
 
 
 The overall amplitude of the plane-of-sky velocity fluctuations can be characterized by a dispersion, \(\sigma\pos\), defined as:
@@ -375,16 +374,16 @@ Note that \(\sigma\pos\) is also the RMS width of
 the probability density function (PDF) of \(V_c\).
 The PDFs for all emission lines analyzed in this work are shown in Figure~\ref{fig:pdfs}.
 
-\textcolor{red}{The velocity PDFs of MUSE and KPNO data are shown after subtracting the mean velocity from each map, centering all distributions at \SI{0}{km\,s^{-1}}. 
+The velocity PDFs of MUSE and KPNO data are shown after subtracting the mean velocity from each map, centering all distributions at \SI{0}{km\,s^{-1}}. 
 They represent the amplitude distribution of the plane-of-sky velocity fluctuations and exhibit approximately Gaussian profiles for all emission lines. 
 This behavior is expected after removing high-velocity features associated with Herbig-Haro objects and proplyds, together with low signal-to-noise pixels and regions contaminated by bright stars, resulting in more symmetric velocity distributions.
 All PDFs span a similar velocity range, approximately from \SI{-10}{km\,s^{-1}} to \SI{10}{km\,s^{-1}} which display broadly similar kinematic behavior.
 The \n\ emission line presents a small tail toward positive values which maps a southwest region in Figure~\ref{fig:velocity_maps_shared_cbar_fixed}. 
-The broader distribution observed in the \ariii\ emission line is likely dominated by observational noise due to the intrinsic faintness of the line, whereas the narrower distribution of \halpha\ reflects its higher signal-to-noise ratio.}
+The broader distribution observed in the \ariii\ emission line is likely dominated by observational noise due to the intrinsic faintness of the line, whereas the narrower distribution of \halpha\ reflects its higher signal-to-noise ratio.
 
-\textcolor{red}{Although the PDFs characterize the overall amplitude of the velocity fluctuations through \(\sigma\pos\), they do not contain information about the spatial correlations of the velocity field. 
+Although the PDFs characterize the overall amplitude of the velocity fluctuations through \(\sigma\pos\), they do not contain information about the spatial correlations of the velocity field. 
 Therefore, a correlation analysis, such as the second-order structure function, is required to characterize the scale dependence of the turbulent fluctuations.
-A summary of the velocity statistics is shown in Table~\ref{tab:velocity-statistics}}
+A summary of the velocity statistics is shown in Table~\ref{tab:velocity-statistics}.
 
 \input{tables/velocity_comparison}
 
@@ -546,7 +545,7 @@ In this section we present the turbulent parameters and their confidence interva
 
 The results are analyzed to assess how observational effects, such as noise, spatial resolution, and field of view, as well as different analysis methods, impact the recovery of the structure function and the derived parameters.
 
-\subsection{Intensity vs radial velocity diagrams}\label{sec:sb vs velocity diagrams}
+\subsection{Surface brightness vs radial velocity diagrams}\label{sec:sb vs velocity diagrams}
 
 Figure~\ref{fig:intensity_velocity} shows the joint distribution histograms of surface brightness and centroid velocity
 for the three emission lines \n{}, \halpha{}, \oiii{} from both the VLT MUSE and KPNO datasets. 
@@ -682,7 +681,7 @@ This suggests that the oscillatory pattern is likely driven by the low signal-to
 As in the case of \halpha, the observed structure functions show good overall agreement with the model described by equation~\eqref{eq:model-strucfunc-ideal} across all binned samples.
 This behavior further supports the robustness of the methodology in recovering the turbulent structure across different emission lines, even under varying signal-to-noise conditions.
 
-The left panel of Figure~\ref{fig:fit_results_01} shows the observed structure functions (bin~0) for the \halpha\ and \ariii\ emission lines, together with the best-fit model and the corresponding 95\% credibility intervals for the parameters. 
+The left panel of Figure~\ref{fig:fit_results_01} shows the observed structure functions ($1\times1$) for the \halpha\ and \ariii\ emission lines, together with the best-fit model and the corresponding 95\% credibility intervals for the parameters. 
 The right panel of Figure~\ref{fig:fit_results_01} presents the pairwise correlations of the posterior distributions of the model parameters, obtained using the \texttt{corner} Python library \citep{2017ascl.soft02002F}. 
 
 %Figure~\ref{fig:Orion_sf_1} extends this analysis to all binned samples of \halpha, illustrating the progressive recovery of small-scale fluctuations with increasing bin size, as well as the consistency of the best-fit model and parameter constraints across different resolutions.
@@ -696,7 +695,7 @@ The right panel of Figure~\ref{fig:fit_results_01} presents the pairwise correla
  \hfill
  \includegraphics[width=0.48\textwidth]{figures/Brs_Ar.pdf}
  \caption{
-The solid markers show the observational structure function computed using equation~\eqref{eq:Br}, for the non-binned map (bin 0) and binned maps (bin 1, 2, 3 and 4). 
+The solid markers show the observational structure function computed using equation~\eqref{eq:Br}, for the non-binned map ($1\times1$) and binned maps ($2\times2$, $4\times4$, $8\times8$ and $16\times16$). 
 The dotted line corresponds to the heuristic model described in equation~\eqref{eq:model-strucfunc-ideal}, while the dashed lines represent the ideal model given in equation~\eqref{eq:sf-functional}. 
 The vertical dashed line shows the value of the correlation length \(r_0\) and the horizontal dashed lines shows the value of the \(\sigma^2\pos\) recover from the fit.
 The solid horizontal lines how the value of \(\sigma^2\) obtained form the observations and binning. Left panel: \halpha. Right panel: \ariii.
@@ -819,22 +818,26 @@ This confirms that the balance between noise reduction and spatial resolution is
 For the discussion of the turbulent parameters and their comparison with previous results, we adopt the analysis corresponding to a binning factor which gives us the lower value of the seeing \(s_0\), as this configuration provides the best compromise between noise reduction and spatial resolution.
 The resulting turbulent parameters and their confidence intervals are listed in Table~\ref{tab:results_MUSE} and plotted in Figure~\ref{fig:parameters_comparison}. 
 
-\subsection{Turbulent parameters for VLT MUSE data}\label{sec:comparion previous works correlation length}
+\subsection{Turbulent parameters for VLT MUSE data}\label{sec:turbulent-paramaters-disc}
 
 %Sigma
-From Figure~\ref{fig:parameters_comparison}, we find that \(\sigma\pos^2\) spans values between \num{8} and \SI{10}{km^{2},s^{-2}}, consistent with the velocity statistics listed in Table~\ref{tab:velocity-statistics}.
-The main exception is the \siii\ emission line, for which the higher value in Table~\ref{tab:velocity-statistics} likely reflects the broadening of the velocity PDF by instrumental noise.
+From Figure~\ref{fig:parameters_comparison}, we see that \(\sigma\pos^2\) spans values between \num{8} and \SI{10}{km^{2},s^{-2}} which are consistent with the velocity statistics listed in Table~\ref{tab:velocity-statistics}.
+For the full VLT MUSE dataset, \(\sigma\pos^2\) remains broadly consistent among the different emission lines. 
+However, in the KPNO and MUSE-trim datasets, which sample a smaller field of view, higher-ionization lines tend to show larger values of \(\sigma\pos^2\). 
+This trend suggests that the central regions of the nebula, where higher-ionization emission is preferentially produced, exhibit larger centroid velocity fluctuations than the outer regions.
 
-%Correlation length discussion
-%The absence of a standardized methodology for determining the power-law index complicates direct comparisons between different studies. 
-%The model adopted in this work provides a consistent framework for fitting observed structure functions and extracting the parameters that describe the turbulent velocity fluctuations, offering a robust basis for future inter-dataset comparisons.
 An additional advantage of our methodology is that the model fitting also allows us to recover the correlation length \(r_0\), which represents a characteristic scale of the turbulent structure. 
-For the \halpha\, \oiii\ and \siii\ emission lines the VLT MUSE data yield similar correlation lengths of \(r_0 \sim \SI{0.07}{pc}\).
-A different behavior is observed for the \n\ and \ariii| emission lines, for which data yield \(r_0 \sim \SI{0.06}{pc}\). 
+For this parameter, we also find a tendency for higher-ionization lines to show larger values of \(r_0\).
+In the VLT MUSE dataset, the \oiii, \halpha, and \siii\ emission lines yield similar correlation lengths of \(r_0 \sim \SI{0.07}{pc}\).
+The \n\ and \ariii emission lines show slightly smaller values, with \(r_0 \sim \SI{0.06}{pc}\). 
+The behavior is consistent with the KPNO dataset which allow us to expand the sample using the \sii\ emission line.
+This suggest that \(r_0\) is not identical across the different ionization zones traced by the emission lines.
 
 % Power-law discussion
-The values listed in Table~\ref{tab:results_MUSE} indicate that the power-law index is broadly consistent for the \halpha, \oiii, \siii, and \ariii\ emission lines, with \(m \sim \num{1.1}\). 
+A similar behavior is observed for the power-law index \(m\). 
+The values listed in Table~\ref{tab:results_MUSE} indicate that the power-law index is consistent for the  \oiii, \halpha, \siii, and \ariii\ emission lines, with \(m \sim \num{1.1}\). 
 The \n\ emission line represents the main exception, showing a slightly shallower slope with \(m \sim \num{0.9}\).
+Lower values of \(m\) may indicate emission dominated by relatively thin layers of ionized gas, whereas higher values are more consistent with emission arising from extended volumes across the nebula.
 
 Since each line originates in a different ionization zone of the nebula, these differences may reflect variations in the characteristic scale of the turbulent motions across the ionization structure.
 If this interpretation is correct, the correlation length \(r_0\) and the power-law index \(m\) provides more than a statistical description of the velocity field; it becomes a physically meaningful quantity that can be used to probe the structure of the ionized gas.
@@ -1029,15 +1032,23 @@ for all emission lines from the  VLT MUSE observations.
   \centering
   \fitfigggg{MUSE-M42-O-bin1}{MUSE-M42-O-bin1}{MUSE-M42-N-bin0}{MUSE-M42-N-bin0}
   \caption{ 
-  Same information as Figure~\ref{fig:fit_results_01} for the \oiii\ (bin~1) and \n\ (bin~0) emission lines obtained through VLT MUSE.
+  Same information as Figure~\ref{fig:fit_results_01} for the \oiii\ (2$\times$2) and \n\ (1$\times$1) emission lines obtained through VLT MUSE.
   }
   \label{fig:fit_results_02}
 \end{figure*}
 
+%\begin{figure*}
+%  \centering
+%  \fitfigggg{MUSE-M42-S-bin0}{MUSE-M42-S-bin0}{MUSE-M42-Ar-bin2}{MUSE-M42-Ar-bin2}
+%  \caption{  Same information as Figure~\ref{fig:fit_results_01} for the \siii\ (1$\times$1) and the \ariii\ (4$\times$4) emission lines obtained through VLT MUSE.
+%  }
+%  \label{fig:fit_results_03}
+%\end{figure*}
+
 \begin{figure*}
   \centering
-  \fitfigggg{MUSE-M42-S-bin0}{MUSE-M42-S-bin0}{MUSE-M42-Ar-bin2}{MUSE-M42-Ar-bin2}
-  \caption{  Same information as Figure~\ref{fig:fit_results_01} for the \siii\ (bin~0) and the \ariii\ (bin~2) emission lines obtained through VLT MUSE.
+  \fitfigg{MUSE-M42-S-bin0}{MUSE-M42-S-bin0}
+  \caption{  Same information as Figure~\ref{fig:fit_results_01} for the \siii\ (1$\times$1) obtained through VLT MUSE.
   }
   \label{fig:fit_results_03}
 \end{figure*}
