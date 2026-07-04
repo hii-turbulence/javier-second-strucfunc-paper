@@ -2,6 +2,9 @@
 ## Run `git log | pbcopy` locally and paste into .gitlog.txt to register non-anonymous edit
 .gitlog.txt
 
+# Affinity lock files
+*.af~lock~
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
