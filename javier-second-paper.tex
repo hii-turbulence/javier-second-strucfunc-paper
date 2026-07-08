@@ -546,13 +546,66 @@ In this section we present the turbulent parameters and their confidence interva
 
 The results are analyzed to assess how observational effects, such as noise, spatial resolution, and field of view, as well as different analysis methods, impact the recovery of the structure function and the derived parameters.
 
+
+\begin{figure*}
+ \centering
+ \includegraphics[width=6.5in]{figures/SB_vs_radial_velocity_bins_grid_2x3_Ha}
+ \caption{
+   Joint distribution histograms of surface brightness and relative radial velocity centroid of \halpha{}
+   from the full MUSE field for different binning levels.
+   The darkness of the colored images is proportional to the number of pixels with
+   each combination of brightness and velocity.
+   No masking was applied, so all pixels from each dataset were used to construct the diagrams.
+   The surface brightness values are normalized to the median (multiplied by \num{100}) of each dataset.
+ }
+ \label{fig:intensity_velocity_ha}
+\end{figure*}
+
+\begin{figure*}
+ \centering
+ \includegraphics[width=6.5in]{figures/SB_vs_radial_velocity_bins_grid_2x3_Ar}
+ \caption{
+   As Fig.~\ref{fig:intensity_velocity_ha} but for the \ariii{} line.
+ }
+ \label{fig:intensity_velocity_ar}
+\end{figure*}
+
 \subsection{Surface brightness vs radial velocity diagrams}\label{sec:sb vs velocity diagrams}
 
-Figure~\ref{fig:intensity_velocity} shows the joint distribution histograms of surface brightness and centroid velocity
-for the three emission lines \n{}, \halpha{}, \oiii{} from both the VLT MUSE and KPNO datasets. 
-The three rows in the figure correspond to the full VLT MUSE field of view,
-the VLT MUSE data restricted to the KPNO field of view, and the KPNO observations, respectively.
+Figure~\ref{fig:intensity_velocity_ha} shows the joint distribution histograms of surface brightness and centroid velocity (relative to mean)
+for the \halpha{} line from the full MUSE field shown in Fig.~\ref{fig:H_I-6563_maps},
+with each panel representing a different binning level, as labelled.
 These diagrams provide a direct view of the relation between line brightness and centroid velocity for each emission line, allowing us to compare the velocity distribution of bright and faint gas across datasets.
+The unbinned data (upper left panel) appears considerably blurred along the vertical (velocity) axis,
+due to the per-pixel noise in the velocity map.
+As the binning is increased to \(2\times 2\) and \(4 \times 4\) (upper row of panels),
+this blurring is considerably decreased and the underlying structure resolves into sharper focus.
+This is most notable at low surface brightness (left-hand side of each panel),
+where the distribution in velocity becomes very narrow at higher binning levels.
+In contrast, the broad velocity distribution at high surface brightness,
+including an extended wing towards negative velocities, is relatively unaffected by the binning,
+indicating that it is physically real, rather than due to noise.
+As the binning is increased further through \(8 \times 8\) and \(16 \times 16\) to \(32 \times 32\),
+the sharpness of the structures stops improving and instead the decreasing number of map pixels
+means that the histograms themselves become increasingly noisy due to counting-statistics fluctuations.
+
+Figure~\ref{fig:intensity_velocity_ar} shows the same joint histograms but for the \ariii{} line.
+This line is roughly 20 times fainter than \halpha{} (Fig.~\ref{fig:ratios}),
+so the noise level in the velocity map is much higher, as can be seen directly in Fig.~\ref{fig:velocity_maps_shared_cbar_fixed}.
+As a result, the blurring along the velocity axis of the unbinned data is more extreme,
+although it is reduced as the binning level increases,
+with the high surface brightness side becoming sharp by the \(4 \times 4\) binning level,
+while the low surface brightness side remains noise-broadened up to the \(16 \times 16\) binning level.
+
+
+
+Figure~\ref{fig:intensity_velocity} compares the joint distributions between the
+VLT MUSE and KPNO datasets, showing the emission lines in common between the two:
+\n{}, \halpha{}, \oiii{}.
+The spatial binning level is held constant at \(4 \times 4\) for the MUSE data,
+whereas no binning is used for the KPNO data, which are already at a lower spatial resolution.
+The first row shows the full VLT MUSE field of view, while the second row shows
+the VLT MUSE data restricted to the KPNO field of view and the third row shows the KPNO observations.
 Visual comparison of the bottom two rows shows a remarkable consistency between the MUSE and KPNO
 results for each emission line, when restricted to the same field of view.
 Fine details in the joint distributions can be matched between the two datasets, but there are two main differences,
@@ -574,7 +627,8 @@ our results are not significantly affected by either of these issues.
 A third difference is that the MUSE joint distribution histograms in Figure~\ref{fig:intensity_velocity}
 appear more blurred than the KPNO ones, especially along the velocity axis,
 which is a direct result of the larger uncertainty in the radial velocity measurements of the MUSE observations.
-This can be improved by increasing the binning level of the maps,
+As shown above (Figs.~\ref{fig:intensity_velocity_ha}, \ref{fig:intensity_velocity_ar}),
+this can be improved by increasing the binning level of the maps,
 but only at the cost of worsening the counting-statistics fluctuations of the histograms
 due to the reduced number of map pixels.
 
@@ -583,15 +637,14 @@ due to the reduced number of map pixels.
  \centering
  \includegraphics[width=6.5in]{figures/SB_vs_radial_velocity_grid}\par
  \caption{
+   As Fig.~\ref{fig:intensity_velocity_ha} but comparing different emission lines (columns)
+   and observational datasets (rows).
    Joint distribution histograms of surface brightness and radial velocity centroid
-   for  \n{} (first column), \halpha{} (second column), and \oiii{} (third column).
-   The darkness of the colored images is proportional to the number of pixels with
-   each combination of brightness and velocity. 
+   (heliocentric scale)
+   for  \n{} (first column), \halpha{} (second column), and \oiii{} (third column). 
    The first row shows the full VLT MUSE field of view with a \(4\times4\) binning. 
    The second row shows the VLT MUSE data restricted to the KPNO field of view, also with a \(4\times4\) binning. 
    The third row shows the KPNO data with no binning. 
-   No masking was applied, so all pixels from each dataset were used to construct the diagrams.
-   The surface brightness values are normalized to the median (multiplied by \num{100}) of each dataset.
  }
 \label{fig:intensity_velocity}
 \end{figure*}
@@ -604,21 +657,6 @@ These two cases illustrate the effects of masking and binning on the structure f
 The same analysis is applied to the remaining emission lines, with results presented in the Appendix~\ref{apex:multiple_lines_results}. 
 %The results shown here are used to evaluate the impact of noise and spatial resolution on the recovery of the turbulent structure function.
 
-\begin{figure*}
- \centering
- \includegraphics[width=6.5in]{figures/SB_vs_radial_velocity_bins_grid_2x3_Ha}\par
- \caption{
- }
-\label{fig:intensity_velocity_ha}
-\end{figure*}
-
-\begin{figure*}
- \centering
- \includegraphics[width=6.5in]{figures/SB_vs_radial_velocity_bins_grid_2x3_Ar}\par
- \caption{
- }
-\label{fig:intensity_velocity_ar}
-\end{figure*}
 
 
 \subsubsection{Representative case study of the \halpha\ line}
@@ -681,12 +719,15 @@ This result extends the applicability of the method to datasets with low signal-
 % Halpha Large scales
 At large spatial scales, the \halpha\ structure function shown in Figure~\ref{fig:Ha_Br_comparison} exhibits a downward hook, which reflects a reduction in the amplitude of the velocity fluctuations towards the edges of the observational field, see discussion in \citet{garciav23}. 
 
-\begin{figure}
+\begin{figure*}
   \centering
-  \includegraphics[width=\linewidth]{figures/orion-muse-line-ratios}
-  \caption{Line ratios}
+  \includegraphics[width=0.8\linewidth]{figures/orion-muse-line-ratios}
+  \caption{Surface brightness ratio maps of all other emission lines with respect to \halpha{}.
+    The color scale for each map ranges from zero to three times the median ratio for each line,
+    as indicated. 
+  }
   \label{fig:ratios}
-\end{figure}
+\end{figure*}
 
 \subsubsection{Representative case study of the \ariii\ emission line}\label{sec:Representative case study Ar}
 
