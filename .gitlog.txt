@@ -1,3 +1,63 @@
+commit 29aa7986c774cbe2940f1cbbc01299656d80f04f
+Author: William Henney <whenney@gmail.com>
+Date:   Wed Jul 8 12:55:26 2026 -0600
+
+    Revise sec 4.2.2
+
+commit c6268fb5b74298bc410e708454728cc45354f374
+Author: William Henney <whenney@gmail.com>
+Date:   Tue Jul 7 19:35:32 2026 -0600
+
+    Add captions to the new figures and write corresponding paper text
+
+commit e3dfe1faafc22c856b4cd9927ecd38a7f8a0c01e
+Author: William Henney <whenney@gmail.com>
+Date:   Mon Jul 6 21:42:53 2026 -0600
+
+    Javier changes 2026-07-06
+
+commit 742971c53e365e796cafa46b15defdde8a58c552
+Author: William Henney <whenney@gmail.com>
+Date:   Fri Jul 3 21:53:39 2026 -0600
+
+    Add line ratio figure
+
+commit 11e393b5f5dbc00ac792921e167c48c65c0845e9
+Author: William Henney <whenney@gmail.com>
+Date:   Fri Jul 3 11:09:03 2026 -0600
+
+    Add Jane paragraph
+
+commit fe05adee7de8536f47ebccc60c293ef575835f5f
+Author: William Henney <whenney@gmail.com>
+Date:   Fri Jul 3 21:51:32 2026 -0600
+
+    Javier changes 2026-07-03 1pm
+
+commit 6785c470907d8ed66d144660fa4494429573c00f
+Author: William Henney <whenney@gmail.com>
+Date:   Fri Jul 3 11:10:20 2026 -0600
+
+    Javier changes 2026-07-03
+
+commit a464b815550f7bc91e60eae21d81b8482bfe0e3a
+Author: William Henney <whenney@gmail.com>
+Date:   Thu Jul 2 12:59:40 2026 -0600
+
+    Move another figure to app A
+
+commit 79cb53e57bb445d6da0421e554ec25122a549cb2
+Author: William Henney <whenney@gmail.com>
+Date:   Thu Jul 2 12:30:20 2026 -0600
+
+    Finish 4.2.1
+
+commit d96def62ed0aa41c130d129449fd19fb585fe95d
+Author: William Henney <whenney@gmail.com>
+Date:   Thu Jul 2 12:29:28 2026 -0600
+
+    Javier changes 12:30pm
+
 commit 4e515ab1b45e12762ef6a538545bd9147b52ddff
 Author: William Henney <whenney@gmail.com>
 Date:   Thu Jul 2 11:41:50 2026 -0600
