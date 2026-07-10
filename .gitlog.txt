@@ -1,3 +1,28 @@
+commit 934f20ab1929d8bb8836da68704b179d04d1e193
+Author: William Henney <whenney@gmail.com>
+Date:   Thu Jul 9 19:21:50 2026 -0600
+
+    Finish section on Anorve-Zeferino
+
+commit 08b33f6eceeb6a4cbb51854e4f8784c385bc2f7a
+Author: William Henney <whenney@gmail.com>
+Date:   Thu Jul 9 19:24:59 2026 -0600
+
+    Javier changes 2026-07-09
+
+commit de1e4170d0bc003987a618c7eecf1f8e69730391
+Merge: c4789bd 0e2f2a9
+Author: William Henney <whenney@gmail.com>
+Date:   Wed Jul 8 19:25:52 2026 -0600
+
+    Merge overleaf-2026-07-09-0125 into main
+
+commit 0e2f2a966e9ee425ebecfee77357758ac0e3bc9a
+Author: William Henney <whenney@gmail.com>
+Date:   Wed Jul 8 19:25:51 2026 -0600
+
+    Updates from Overleaf
+
 commit c4789bda0d30366929a10632702f09899e14fa1f
 Author: William Henney <whenney@gmail.com>
 Date:   Wed Jul 8 19:24:45 2026 -0600
