@@ -549,7 +549,9 @@ In this work, we focus on its application to observational data processed throug
 
 In this section we present the turbulent parameters and their confidence intervals obtained by fitting equation~\eqref{eq:sf-functional} to the observed structure function, \(B\obs(r)\). 
 
-The results are analyzed to assess how observational effects, such as noise, spatial resolution, and field of view, as well as different analysis methods, impact the recovery of the structure function and the derived parameters.
+The results are analyzed to assess how observational effects, such as noise and spatial resolution impact the recovery of the structure function and the derived parameters.
+
+%The results are analyzed to assess how observational effects, such as noise, spatial resolution, and field of view, as well as different analysis methods, impact the recovery of the structure function and the derived parameters.
 
 
 \begin{figure*}
@@ -871,8 +873,6 @@ The three parameters \(\sigma^2\), \(r_0\), and \(m\) all show a week increasing
 
 \subsection{Turbulent parameters}\label{sec:turbulent-paramaters-disc}
 
-\subsubsection{Data-setcs}
-
 For the discussion of the VLT MUSE turbulent parameters, we adopt, for each emission line, the binning level that yields the lowest fitted seeing value \(s_0\). 
 This choice provides the best compromise between noise reduction and preservation of spatial resolution. 
 The selected binning levels are \(1\times1\) for \halpha, \n, and \siii, \(2\times2\) for \oiii, and \(4\times4\) for \ariii. 
@@ -882,15 +882,13 @@ To place the VLT MUSE results in context, we compare them with the KPNO dataset 
 For a homogeneous comparison, we apply the same methodology used in this work to the KPNO data. 
 The resulting turbulent parameters and confidence intervals are listed in Table~\ref{tab:results_KPNO} and included in Figure~\ref{fig:parameters_comparison}. 
 The corresponding structure functions are presented in Appendix~\ref{apex:kpno_structure_function}.
-
 We also analyze the VLT MUSE data restricted to a field of view equivalent to that of the KPNO observations in order to assess how the inferred turbulent parameters depend on spatial coverage. 
-This comparison is relevant because the KPNO observations cover approximately \(\qty{3}{arcmin} \times \qty{5}{arcmin}\), whereas the full VLT MUSE covers \(\qty{6}{arcmin} \times \qty{5}{arcmin}\). 
-As a result, the observational box size changes from \(L=\qty{0.64}{pc}\) for the full VLT MUSE field to \(L=\qty{0.45}{pc}\) for the trimmed field. 
+%This comparison is relevant because the KPNO observations cover approximately \(\qty{3}{arcmin} \times \qty{5}{arcmin}\), whereas the full VLT MUSE covers \(\qty{6}{arcmin} \times \qty{5}{arcmin}\). 
+%As a result, the observational box size changes from \(L=\qty{0.64}{pc}\) for the full VLT MUSE field to \(L=\qty{0.45}{pc}\) for the trimmed field. 
 The turbulent parameters derived from this restricted VLT MUSE dataset are listed in Table~\ref{tab:results_MUSE_trim} and are also shown in Figure~\ref{fig:parameters_comparison}.
 
-\subsubsection{Analysis}
+\subsubsection{Velocity dispersion}
 
-\noindent\textbf{Velocity dispersion.}
 %Sigma
 From Figure~\ref{fig:parameters_comparison}, we see that \(\sigma\pos^2\) spans values between \num{8} and \qty{10}{km^{2},s^{-2}} which are consistent with the velocity statistics listed in Table~\ref{tab:velocity-statistics}.
 For the full VLT MUSE dataset, \(\sigma\pos^2\) remains broadly consistent among the different emission lines. 
@@ -902,43 +900,47 @@ This difference is likely due to the spatial selection adopted in their analysis
 As shown in their Figures~2 and~3, they removed high-velocity objects as complete spatial regions, whereas our KPNO selection excludes pixels based on a velocity threshold. 
 As a result, some high-velocity pixels surrounding these objects may remain in our maps, increasing the measured value of \(\sigma\pos^2\) (see Fig.~\ref{fig:kpno vel maps}).
 
-\noindent\textbf{Correlation length.}
+\subsubsection{Correlation length}
+
 An additional advantage of our methodology is that the model fitting also allows us to recover the correlation length \(r_0\), which represents a characteristic scale of the turbulent structure. 
 
 For this parameter, we also find a tendency for higher-ionization lines to show larger values of \(r_0\).
 In the VLT MUSE dataset, the \oiii, \halpha, and \siii\ emission lines yield similar correlation lengths of \(r_0 \sim \qty{0.07}{pc}\).
-The \n\ and \ariii emission lines show slightly smaller values, with \(r_0 \sim \qty{0.06}{pc}\). 
+The \n\ and \ariii\ emission lines show slightly smaller values, with \(r_0 \sim \qty{0.06}{pc}\). 
 The behavior is consistent with the KPNO dataset which allow us to expand the sample using the \sii\ emission line with a value of \(r_0 \sim \qty{0.04}{pc}\).
 This suggest that \(r_0\) is not identical across the different ionization zones traced by the emission lines.
 
-For the \n\ emission line, the correlation length decreases from \qty{0.061}{pc} for an observational box size \(L = \qty{0.64}{pc}\) to \qty{\sim 0.04}{pc} for \(L = \qty{0.45}{pc}\), bringing it into agreement with the KPNO.
+Among the emission lines analyzed, only \n\ shows a significant difference in correlation length between the full and trimmed VLT MUSE datasets.
+The correlation length value decreases from \qty{0.061}{pc} for an observational box size \(L = \qty{0.64}{pc}\) to \qty{\sim 0.04}{pc} for \(L = \qty{0.45}{pc}\), bringing it into agreement with the KPNO observations.
 In contrast, the values of \(r_0\) for the \halpha\ and \oiii\ coincides within confidence intervals.
 
 In \citet{garciav23}, we discussed the relationship between \(r_0\) and the observational box size \(L\), where the condition \(L > 10\,r_0\) was required to reliably recover \(r_0\) and our heuristic approach allows the recovery of \(r_0\) for \(L > 5\,r_0\).
-
 For the \n\ emission line, we find \(L / r_0 \sim 10\), which would nominally satisfy this condition. 
 However, the results suggest a stronger dependence between \(L\) and \(r_0\) in this case, indicating that the recovered correlation length remains sensitive to the sampled spatial extent.
 This is of interest since \halpha\ and \oiii\, with a lower \(L/r_0\) value seems less affected by this difference.
 
 \citet{arthur2016turbulence} associated the turbulent driving scale in the Orion Nebula with a characteristic value of \(\sim\qty{0.05}{pc}\). 
 This scale was estimated from the normalized structure function as the separation at which it reaches unity (see their Figure~8), and is further supported by their velocity-channel analysis, where it corresponds to the outer scale of regime~II in the power spectra (see their Figure~5).
+This scale may be related to photoevaporative flows from individual globules within the ionized gas, which originate from density fluctuations in the molecular cloud.
 
-\noindent\textbf{Power-law indices.}
+\subsubsection{Power-law indices}
+
 % Power-law discussion
-The same tendency is observed for the power-law index \(m\) regarding the ionization energy. 
+The power-law index \(m\) shows a similar dependence on ionization energy as the previous turbulent parameters, with higher-ionization lines tending to yield larger values of \(m\).
 The values listed in Table~\ref{tab:results_MUSE} indicate that the power-law index is consistent for the  \oiii, \halpha, \ariii, and \siii\ emission lines, with \(m \sim \num{1.1}\). 
 The \n\ emission line represents the main exception, showing a slightly shallower slope with \(m \sim \num{0.9}\).
 Complementing with KPNO data set the \sii\ value of slope is \(m \sim \num{1.0}\)
-Lower values of \(m\) may indicate emission dominated by relatively thin layers of ionized gas, whereas higher values are more consistent with emission arising from extended volumes across the nebula.
-
+Lower values of \(m\) may indicate emission dominated by relatively thin layers of ionized gas, whereas higher values are more consistent with emission arising from extended volumes across the nebula. 
 For the power-law index \(m\), the values derived from the VLT MUSE and KPNO datasets are broadly consistent. 
+
 As reported in \citet{arthur2016turbulence}, the more pronounced steepening below \qty{2}{arcsec} (\qty{\sim0.002}{pc}) in the KPNO observations arises from the spatial resolution of the data, corresponding to the regime where seeing effects and the inter-slit separation become significant (See section~3.2.1 of their work). 
 This behavior is reflected in the fitting of our model, which yields slightly higher values of \(m\) for the KPNO data. 
-This can be seen in the observed structure functions (compare solid blue markers in Figure~\ref{fig:fit_results_01} and Figure~\ref{fig:fit_results_04}), which lie below the underlying model (green curves in the figures), in contrast to the VLT MUSE observations which lie above the model.
+This can be seen in the observed KPNO structure functions (compare solid blue markers in Figure~\ref{fig:fit_results_01} and Figure~\ref{fig:fit_results_04}), which lie below the underlying model (green curves in the figures), in contrast to the VLT MUSE observations which lie above the model.
 
 Values reported by \citet{arthur2016turbulence} are \(m>1\) for \halpha\ and \oiii\ emission lines and \(m\sim1\) for \n\ and \sii\ emission lines which matches our results in Table~\ref{tab:results_KPNO}.
 The power-law indices were determined through fitting a straight line between scales of \(0.016 < r < 0.044 \ \text{pc}\) for all emission lines except \sii\ which was obtained for scales  \(0.014 < r < 0.064 \ \text{pc}\).
 
+\subsubsection{Field-of-view effects and ionization-dependent turbulence}
 
 The previous results indicate that the impact of the field of view on the recovered turbulent parameters is not uniform. 
 While \(\sigma\pos\) and, in some cases, \(r_0\) remain sensitive to the spatial extent of the observations, the power-law index \(m\) appears to be more robust. 
@@ -949,8 +951,7 @@ If this interpretation is correct, the correlation length \(r_0\) and the power-
 
 \subsection{Comparison with previous works}
 
-We compare our results with recent studies that have computed the second-order structure function for the Orion Nebula. 
-\citet{2016MNRAS.455.4057M} and \citet{2019MNRAS.483..704A} analyzed the same VLT MUSE observations used in this work.
+We compare our results with recent studies of the second-order structure function in the Orion Nebula, including \citet{2016MNRAS.455.4057M} and \citet{2019MNRAS.483..704A}, both of which analyzed the same VLT MUSE observations used here.
 
 \subsubsection{Comparison with \citet{2016MNRAS.455.4057M}}\label{sec:comp_McLeod}
 
@@ -1205,8 +1206,15 @@ In this appendix, we present the structure functions and corner plots (Figures~\
  \centering
  \includegraphics[width=5in]{figures/kpno_velocity_maps_shared_cbar_fixed}\par
  \caption{
- Two-dimensional velocity maps for different emission lines of the Orion Nebula obtained from KPNO observations.
- High velocity blue-shifted objects are masked as in \citet{arthur2016turbulence}.
+ Two-dimensional KPNO velocity maps of the Orion Nebula in different emission lines. 
+ North is up and east is to the left, with angular offsets measured relative to \(\theta^1\)~Ori~C. 
+ High-velocity blueshifted features are masked. 
+ The pixel scales are \SI{0.54}{arcsec\,pixel^{-1}} for \halpha, \n, and \oiii, and \SI{0.64}{arcsec\,pixel^{-1}} for \sii.
+ %Two-dimensional velocity maps for different emission lines of the Orion Nebula obtained from KPNO observations.
+ %The maps are oriented with north upward and east to the left. 
+ %The \(x\)- and \(y\)-axes show angular offsets, in arcseconds, relative to the position of the principal ionizing star of the Orion Nebula, \(\theta^1\)~Ori~C.
+ %High velocity blue-shifted objects are masked.
+ %A pixel width is equivalent to \SI{0.54}{arcsec} for \ha, \n\ and \oiii\ emissions lines, and \SI{0.64}{arcsec} for the \sii\ emission line.
  }
 \label{fig:kpno vel maps}
 \end{figure*}

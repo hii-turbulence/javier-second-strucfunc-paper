@@ -1,3 +1,9 @@
+commit c4789bda0d30366929a10632702f09899e14fa1f
+Author: William Henney <whenney@gmail.com>
+Date:   Wed Jul 8 19:24:45 2026 -0600
+
+    Revise section 4.2.3
+
 commit 29aa7986c774cbe2940f1cbbc01299656d80f04f
 Author: William Henney <whenney@gmail.com>
 Date:   Wed Jul 8 12:55:26 2026 -0600
