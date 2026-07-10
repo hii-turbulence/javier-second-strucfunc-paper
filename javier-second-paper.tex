@@ -107,6 +107,7 @@
 \newcommand\oiii{[\ion{O}{III}] \Wav{5007}}
 \newcommand\sii{[\ion{S}{II}] \Wav{6731}}
 \newcommand\siii{[\ion{S}{III}] \Wav{9069}}
+\newcommand\vcentroid{\ensuremath{V_{\text{c}}}}
 
 \newcommand\binsize{\ensuremath{\Delta x_{\text{bin}}}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -355,7 +356,7 @@ At red-shifted velocities, the Red Bay appears northeast of this region, while t
 \subsection{Plane-of-sky velocity fluctuations}\label{sec:pos fluctuations}
 
 
-Figure~\ref{fig:velocity_maps_shared_cbar_fixed} shows the VLT MUSE centroid velocity maps, \(V_c\), for each emission line in our sample. 
+Figure~\ref{fig:velocity_maps_shared_cbar_fixed} shows the VLT MUSE centroid velocity maps, \(\vcentroid\), for each emission line in our sample. 
 These maps provide the basis for analyzing the velocity fluctuations projected onto the plane of the sky.
 The centroid velocity maps used throughout this work are derived from the original observations after removing pixels associated with stellar sources identified from the continuum map. 
 Using the \halpha\ emission line as a reference, we also discard pixels with normalized surface-brightness values below \(0.025\) and pixels associated with the high-velocity objects. 
@@ -371,13 +372,13 @@ The overall amplitude of the plane-of-sky velocity fluctuations can be character
   \label{eq:sig-pos}
   \sigma^2\pos =
   \left\langle 
-  \bigl[ V_c (\xx_i) -\langle V_ c\rangle  \bigr]^2
+  \bigl[ \vcentroid (\xx_i) -\langle \vcentroid  \rangle  \bigr]^2
   \right \rangle ,
 \end{equation}
 where the average is performed over all observed points \(i\)
 in a given map.
 Note that \(\sigma\pos\) is also the RMS width of
-the probability density function (PDF) of \(V_c\).
+the probability density function (PDF) of \(\vcentroid\).
 The PDFs for all emission lines analyzed in this work are shown in Figure~\ref{fig:pdfs}.
 
 The velocity PDFs of MUSE and KPNO data are shown after subtracting the mean velocity from each map, centering all distributions at \qty{0}{km\,s^{-1}}. 
@@ -873,6 +874,7 @@ The three parameters \(\sigma^2\), \(r_0\), and \(m\) all show a week increasing
 
 \subsection{Turbulent parameters}\label{sec:turbulent-paramaters-disc}
 
+\subsubsection{Data-sets}
 For the discussion of the VLT MUSE turbulent parameters, we adopt, for each emission line, the binning level that yields the lowest fitted seeing value \(s_0\). 
 This choice provides the best compromise between noise reduction and preservation of spatial resolution. 
 The selected binning levels are \(1\times1\) for \halpha, \n, and \siii, \(2\times2\) for \oiii, and \(4\times4\) for \ariii. 
@@ -947,7 +949,13 @@ While \(\sigma\pos\) and, in some cases, \(r_0\) remain sensitive to the spatial
 This suggests that \(m\) provides a more reliable characterization of the turbulent cascade when comparing datasets with different spatial coverage using the same methodology.
 
 As a physical interpretation we know that each line originates in a different ionization zone of the nebula and these differences may reflect variations in the characteristic scale of the turbulent motions across the ionization structure.
-If this interpretation is correct, the correlation length \(r_0\) and the power-law index \(m\) provides more than a statistical description of the velocity field; it becomes a physically meaningful quantity that can be used to probe the structure of the ionized gas.
+If this interpretation is correct, the correlation length \(r_0\) and the power-law index \(m\) provides more than a statistical description of the velocity field; it becomes a physically
+meaningful quantity that can be used to probe the structure of the ionized gas.
+
+\subsection{Behavior at large separations}
+\label{sec:behavior-at-large}
+
+
 
 \subsection{Comparison with previous works}
 
@@ -963,7 +971,7 @@ In their analysis, the power-law index was estimated by fitting a straight line 
 of spatial separations.
 For the highest S/N lines of \halpha{} and \oiii{} they determined indices in the range
 \(m = \numrange{0.22}{0.45}\),
-as compared with the value \(m = 1.1\) that we find for the same two lines (Table~\ref{tab:results_MUSE}).
+which are significantly smaller than the value \(m = 1.1\) that we find for the same two lines (Table~\ref{tab:results_MUSE}).
 
 They argue that the structure function cannot be reliably recovered due to lower spectral resolution, short exposure times and a low S/N ratio. 
 However, as demonstrated in Section~\ref{sec:met}, the recovery of the structure function is strongly dependent on the analysis methodology, and appropriate treatment of noise and spatial resolution allows the turbulent signal to be recovered even in low signal-to-noise conditions.
@@ -975,66 +983,66 @@ primarily due to not correcting for the effects of noise.
 
 
 
-\subsubsection{Comparison with \citet{2019MNRAS.483..704A} }\label{sec:comp_Anorve}
+\subsubsection{Comparison with \citet{2019MNRAS.483..704A, Anorve-Zeferino:2023a}}
+\label{sec:comp_Anorve}
 
-In a series of papers \citet{2019MNRAS.483..704A, Anorve-Zeferino:2023a}
-claim to apply a ``mathematically sound methodology'' to \dots however \dots
+In a pair of papers, \citet{2019MNRAS.483..704A, Anorve-Zeferino:2023a}
+claim to apply a ``mathematically sound methodology'' to the calculation of velocity
+structure functions, using the same MUSE \halpha{} velocity map from
+\citet{2015A&A...582A.114W}.
+However, the structure functions presented in those papers differ strongly
+from those measured by us and by \citet{2016MNRAS.455.4057M} from the same observations.
+We find that the structure function reaches a maximum at separations
+\(\approx \qty{0.3}{pc}\) and then declines
+(see section~\ref{sec:behavior-at-large}),
+whereas \citet{2019MNRAS.483..704A} present structure functions in their Fig.~5
+that increase monotonically before reaching a constant plateau at separations
+\(> \qty{0.8}{pc}\).
+Similar results are presented by \citet{Anorve-Zeferino:2023a},
+where the computational method is described in greater detail
+and extended to higher-order structure functions.
+Unfortunately, the zero-padding employed in that method is fundamentally flawed:
+it causes the resulting structure functions to be dominated by the boundary
+of the valid data region and by the arbitrary choice of velocity zero point.
 
-A direct comparison of our correlation length and power-law index results with those of
-\citet{2019MNRAS.483..704A} is not meaningful due to differences in the treatment of the velocity data and the methodology for calculating the structure function in that paper.
+The large-scale decline in the correctly estimated Orion structure function
+is not evidence of computational failure.
+Instead, it reflects the spatial inhomogeneity of the velocity fluctuations,
+together with the changing spatial distribution of valid pixel pairs as the
+separation increases.
+By padding the map with heliocentric zero velocities,
+\citeauthor{2019MNRAS.483..704A} suppress this behaviour and replace it with
+an artificial rise towards a normalization-imposed plateau.
+For the second-order structure function, the normalization factor given by
+eq.~(11) of \citet{Anorve-Zeferino:2023a} is proportional to
+\(2\langle \vcentroid^2 \rangle\).
+For the MUSE \halpha{} data, with \(\vcentroid\) measured in the heliocentric frame,
+this is approximately
+\[
+2\langle \vcentroid^2 \rangle
+=
+2\big(
+\langle \vcentroid \rangle^2 + \sigma^2
+\big)
+\approx
+\qty{470}{km^2.s^{-2}}.
+\]
+This is much larger than the true fluctuation amplitude,
+\(2\sigma^2 \approx \qty{18}{km^2.s^{-2}}\).
+Consequently, the artificial contribution introduced by zero-padding overwhelms
+the signal from the intrinsic velocity fluctuations in the
+\citeauthor{Anorve-Zeferino:2023a} structure functions.
 
-
-To begin with, we note that Anorve-Zeferino works with the H$\alpha$ line-of-sight velocities, rather than the velocity centroid  fluctuations about the mean that we use in the present paper.
-This introduces a constant term into...WHAT?
-Additionally, Anorve-Zeferino (2019) does not take noise into consideration. This affects the velocity PDFs, since it results in a spike at line-of-sight velocity equal to zero, which is purely an artefact.
-The failure to account for noise also results in higher values of the structure function for small separations, as discussed in the present paper.
-We note that the structure functions presented by Anorve-Zeferino (2019) in their fig. 5 do not show the characteristic turnover reported by other authors.
-As mentioned earlier in the present paper and described in detail in Garcia-Vazquez (2023), this downward hook occurs because points with separations greater than the radius of the HII region will be more likely to both be found in the outskirts, and relatively well correlated, with both velocities close to the mean.
-These pairs of points will therefore contribute little to the structure function.
-On the other hand, both the Fourier-space and real-space algorithms used by Anorve-Zeferino (2019,2023) require ``zero-padding'', which introduces points at zero velocity (i.e., not well correlated) into the calculation at large spatial scales.
-Although procedure leads to structure functions that are more similar to results obtained from numerical simulations of homogeneous turbulence at large separations, this is purely by construction and does not represent any property of the underlying data.
-
-\citet{2019MNRAS.483..704A} compute the second-order structure function for the \halpha\ emission line using both a real space algorithm and the standard Fourier space algorithm.
-The structure function is computed for both the raw maps and a set of filtered maps. 
-The raw map include the full velocity range of the PDF, defined. 
-The filtered maps are then constructed by selecting narrower intervals from this distribution using some asymmetric velocity cutoffs: \(-9\sigma < v < 5\sigma\), \(-1\sigma < v < 5\sigma\), \(-9\sigma < v < -1\sigma\), and \(-1\sigma < v < 1\sigma\). 
-This different filters are named as filter~1, filter~2 and so on.
-
-The raw map corresponds to the same dataset as the unmasked map of \citet{2016MNRAS.455.4057M} which consider the complete region.
-Filter~2 and filter~4 corresponds to a representation of the mean field eliminating high velocity blue-shifted pixels while in filter~4 the Big Arc South, Big Fan, Big Bay, and the Bright Bar are masked.
-Filter~3 corresponds to high velocity objects which are blue-shifted but their kinematics does not represent the characteristic velocity fluctuations on the region.
-
-For their filter~1 the values of the mean velocity and dispersion are \qty{14.39}{km.s^{-1}} and \qty{3.72}{km.s^{-1}}. 
-For their filter~2 the values are \qty{15.11}{km.s^{-1}} and \qty{2.80}{km.s^{-1}}.
-For their filter~3 the values are \qty{6.65}{km.s^{-1}} and \qty{3.70}{km.s^{-1}}.
-And finally, for their filter~4 the values are \qty{14.53}{km.s^{-1}} and \qty{2.27}{km.s^{-1}}.
-As comparison our velocity statistics give us \qty{13.85}{km.s^{-1}} and \qty{2.82}{km.s^{-1}}, making filter~2 the most accurate comparison.
-
-\citet{2019MNRAS.483..704A} fitted the structure function with a power-law function of the form \(a x^b\) over the spatial range of \(0.129 < r < 0.645\ \text{pc}\). 
-They report values of \(b \sim \num{0.73}\) for the raw data and \(b \sim \num{0.77}\) for filter~1. 
-For filter~2, they obtain \(b \sim \num{0.68}\), whereas for filter~4 they find power-law index of \(b=\num{0.5566}\). 
-In comparison our results for the \halpha\ emission line is \num{1.1}.
-
-%\subsubsection{Comparison with \citet{arthur2016turbulence} }\label{sec:comp_Arthur}
-
-%\citet{arthur2016turbulence} derived the structure function using echelle observations from the Kitt Peak National Observatory (KPNO) for \halpha, \oiii, and \n, complemented by data from the Observatorio Astronómico Nacional at San Pedro Mártir (OAN-SPM) for the \sii\ line.
-%In their work a mask is constructed from pixels with extreme values of the centroid identified through consideration of their PDFs. 
-%These pixels correspond to high-velocity features, such as HH 201, 202, 203, 204, and 529, and also to numerical artifacts introduced during the construction of the velocity maps from the individual slit observations.
-
-%For direct comparison, Table~\ref{tab:results_KPNO} lists the turbulent parameters obtained by applying our methodology to the KPNO data and in Appendix~\ref{apex:kpno_structure_function} we present the structure functions and their corresponding corner plots and the fitting parameters in Table~\ref{tab:fitting-parameters-KPNO}. 
-
-%Since the KPNO observations cover an area of \(3' \times 5'\), while the VLT MUSE observations cover \(6' \times 5'\) (both centered on $\theta^1$~Orionis~C), one key difference seen in Table~\ref{tab:results_MUSE} and Table~\ref{tab:results_KPNO} is the larger value of \(\sigma\pos\) measured for the \halpha\ and \oiii\ emission lines in the KPNO data. 
-
-%Because the \halpha\ emission traces a larger volume of the nebula, whereas the \oiii\ emission originates primarily from the inner regions, the observed difference is likely related to the spatial extent of the observations. 
-%The larger MUSE field of view samples both the central high-amplitude fluctuations and the more quiescent outer regions, where the amplitude of the centroid velocity fluctuations is lower. Consequently, the measured value of \(\sigma\pos^2\) differs from that obtained using the smaller KPNO field of view.
-
-%For the power-law index \(m\), the values derived from the VLT MUSE and KPNO datasets are broadly consistent. 
-%As reported in \citet{arthur2016turbulence}, the more pronounced steepening below \qty{2}{arcsec} (\qty{\sim0.002}{pc}) in the KPNO observations arises from the spatial resolution of the data, corresponding to the regime where seeing effects and the inter-slit separation become significant (See section~3.2.1 of their work). 
-%This behavior is reflected in the fitting of our model, which yields slightly higher values of \(m\) for the KPNO data. 
-%This can be seen in the observed structure functions (compare solid blue markers in Figure~\ref{fig:fit_results_01} and Figure~\ref{fig:fit_results_04}), which lie below the ideal model (green curves in the figures), in contrast to the VLT MUSE observations which lie above the model.
-
-%Values reported by \citet{arthur2016turbulence} are \(m>1\) for \halpha\ and \oiii\ emission lines and \(m\sim1\) for \n\ and \sii\ emission lines which matches our results in Table~\ref{tab:results_KPNO}.
-%The power-law indices were determined through fitting a line between scales of \(0.016 < r < 0.044 \ \text{pc}\) for all emission lines except \sii\ which was obtained for scales  \(0.014 < r < 0.064 \ \text{pc}\).
+We also emphasize that the non-standard structure-function estimator
+adopted by \citeauthor{Anorve-Zeferino:2023a} is not invariant under
+a constant transformation of the velocity frame,
+\[
+\vcentroid(\boldsymbol{x})
+\rightarrow
+\vcentroid(\boldsymbol{x})+v_0.
+\]
+This lack of Galilean invariance makes it fundamentally unsuitable
+for analyzing velocity fluctuations.
 
 
 \input{tables/results_MUSE}
