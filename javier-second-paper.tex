@@ -289,7 +289,7 @@ Omitted pixels are shown in grey.}
 
 The KPNO and MUSE datasets differ significantly in both their spectral and spatial sampling properties. 
 The KPNO echelle observations have an instrumental spectral resolution of approximately \qty{8}{km.s^{-1}}, whereas the MUSE observations have a spectral resolution of about \qty{120}{km.s^{-1}} at \halpha. 
-Conversely, the MUSE observations provide finer spatial sampling, with a pixel scale of \qty{0.2}{arcsec.pixel^{-1}}, compared to \(\sim1-\qty{2}{arcsec.pixel^{-1}}\) for the KPNO data. 
+Conversely, the MUSE observations provide finer spatial sampling, with a pixel scale of \qty{0.2}{arcsec.pixel^{-1}}, compared to \num{1}--\qty{2}{arcsec.pixel^{-1}} for the KPNO data. 
 The combination of lower instrumental noise and higher spectral resolution makes the KPNO observations a useful reference for assessing the turbulent parameters recovered from the MUSE data.
 
 The discrepancies in different works are likely driven by differences in methodology, data quality, and the treatment of observational effects such as noise and spatial resolution \citep{garciav23}. 
@@ -660,7 +660,7 @@ due to the reduced number of map pixels.
 \subsection{Noise-resolution trade off}\label{sec:noise-resolution trade off}
 
 
-We first present the results for the \halpha\ and \ariii\ emission lines, which correspond to the brightest and faintest lines in our sample, respectively. 
+We first present the results for the \halpha\ and \ariii\ emission lines, which correspond to the brightest and faintest lines in the MUSE sample, respectively. 
 These two cases illustrate the effects of masking and binning on the structure function under different signal-to-noise conditions. 
 The same analysis is applied to the remaining emission lines, with results presented in the Appendix~\ref{apex:multiple_lines_results}. 
 %The results shown here are used to evaluate the impact of noise and spatial resolution on the recovery of the turbulent structure function.
@@ -870,6 +870,17 @@ The three parameters \(\sigma^2\), \(r_0\), and \(m\) all show a week increasing
 
 
 \section{Discussion}\label{sec:discussion}
+
+By comparing velocity mapping of the Orion Nebula obtained from different observations with highly orthogonal instrumental limitations,
+we can arrive at a more robust and complete characterization of the true velocity fluctuations in the nebula.
+Note that in this paper, we are concerned solely with the statistics of the line centroid velocities \(\vcentroid\),
+which are the result of a line-of-sight integration of the three-dimensional velocity field,
+weighted by the emissivity of the particular line and potentially subject to radiative transfer effects,
+such as absorption and scattering by dust \citep{1998ApJ...503..760H}.
+The relation of the spatial statistics of the two-dimensional fluctuations in \(\vcentroid\)
+to those of the three-dimensional fluctuations in velocity and emissivity is a complex topic,
+which we defer to later papers,
+but see discussion in \citet{garciav23}.
 
 
 \subsection{Turbulent parameters}\label{sec:turbulent-paramaters-disc}
