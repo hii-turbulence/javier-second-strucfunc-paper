@@ -1,3 +1,9 @@
+commit 1b06339baa2737cffed3fd5524b5a98db4c4f885
+Author: William Henney <whenney@gmail.com>
+Date:   Fri Jul 10 12:11:25 2026 -0600
+
+    Write introductory paragraph for the discussion
+
 commit 934f20ab1929d8bb8836da68704b179d04d1e193
 Author: William Henney <whenney@gmail.com>
 Date:   Thu Jul 9 19:21:50 2026 -0600
