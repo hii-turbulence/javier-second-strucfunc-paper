@@ -1,3 +1,22 @@
+commit 768a150c3707b2f5bfef360d8b357a3067fc5a4a
+Author: William Henney <whenney@gmail.com>
+Date:   Sat Jul 11 12:40:23 2026 -0600
+
+    Revise Discussion section
+
+commit 5400b9efe35ef71122bd7a73ccd47f0127fbd3b8
+Merge: 1b06339 bc5dbe3
+Author: William Henney <whenney@gmail.com>
+Date:   Fri Jul 10 12:12:46 2026 -0600
+
+    Merge overleaf-2026-07-10-1812 into main
+
+commit bc5dbe39942a749768d53965dca3228af7e4909a
+Author: William Henney <whenney@gmail.com>
+Date:   Fri Jul 10 12:12:45 2026 -0600
+
+    Updates from Overleaf
+
 commit 1b06339baa2737cffed3fd5524b5a98db4c4f885
 Author: William Henney <whenney@gmail.com>
 Date:   Fri Jul 10 12:11:25 2026 -0600

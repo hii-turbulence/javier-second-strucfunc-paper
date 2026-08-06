@@ -401,8 +401,7 @@ A summary of the velocity statistics is shown in Table~\ref{tab:velocity-statist
  \includegraphics[width=6in]{figures/MUSE_KPNO_velocity_histograms}\par
  \caption{
    Probability density functions of the plane-of-sky centroid velocities for the different emission lines presented in Fig~\ref{fig:velocity_maps_shared_cbar_fixed}.
-   The RMS width \(\sigma\pos\) of each distribution is shown,
-   as is the number of spatial points.
+   The RMS width \(\sigma\pos\) of each distribution is shown.
    The bin width is \qty{1}{km.s^{-1}}.
  }
 \label{fig:pdfs}
@@ -411,8 +410,8 @@ A summary of the velocity statistics is shown in Table~\ref{tab:velocity-statist
 
 \subsection{The binning procedure}\label{sec:binning procedure}
 
-To mitigate the impact of instrumental noise while preserving the underlying turbulent signal, we apply a spatial binning procedure to the velocity maps using the \texttt{tetrablok} Python package\footnote{\url{https://github.com/will-henney/tetrabloks}} \citep{2018MNRAS.479.3909G}. 
-This approach explicitly addresses the trade-off between noise reduction and spatial resolution in the recovery of the turbulent structure function.
+To mitigate the impact of instrumental noise while preserving the underlying turbulent signal, we apply a spatial binning procedure to the velocity maps using the \texttt{tetrablok} Python package\footnote{\url{https://github.com/will-henney/tetrabloks}}. 
+This approach explicitly addresses the trade-off between noise reduction and spatial resolution in the recovery of the turbulent structure function \citep{2018MNRAS.479.3909G}.
 
 The binning is performed by re-sampling the original data onto progressively coarser grids using binning factors of \(2^1 = 2\), \(2^2 = 4\), \(2^3 = 8\), and \(2^4 = 16\) applied in each spatial direction.
 When passing from a finer grid to the next coarser grid,
@@ -540,19 +539,18 @@ Table~\ref{tab:parameter-ranges} lists the uniform prior distributions assumed f
 To assess the reliability of the fits, we consider the turbulent parameters to be reliably recovered when a power-law regime is identified and the derived parameters are well constrained. For this, we require statistical consistency between the model and the data, quantified by a reduced chi-square value \(\chi^2 \lesssim 1\) (see column~7 of Table~\ref{tab:fitting-parameters}). 
 We also verify that the posterior distributions of the fitted parameters are well-behaved, without significant asymmetries or multimodalities, within the 95\% confidence interval.
 
-A detailed description of our structure function methodology can be found in \citet{garciav23}. 
-In this work, we focus on its application to observational data processed through binning and masking, with the aim of recovering the underlying turbulent cascade.
+%A detailed description of our structure function methodology can be found in \citet{garciav23}. 
+%In this work, we focus on its application to observational data processed through binning and masking, with the aim of recovering the underlying turbulent cascade.
 
 \input{tables/prior}
 
 
 \section{Results}\label{sec:results}
 
-In this section we present the turbulent parameters and their confidence intervals obtained by fitting equation~\eqref{eq:sf-functional} to the observed structure function, \(B\obs(r)\). 
 
-The results are analyzed to assess how observational effects, such as noise and spatial resolution impact the recovery of the structure function and the derived parameters.
 
-%The results are analyzed to assess how observational effects, such as noise, spatial resolution, and field of view, as well as different analysis methods, impact the recovery of the structure function and the derived parameters.
+%The results are analyzed to assess how observational effects, such as noise and spatial resolution impact the recovery of the structure function and the derived parameters.
+
 
 
 \begin{figure*}
@@ -613,7 +611,7 @@ VLT MUSE and KPNO datasets, showing the emission lines in common between the two
 The spatial binning level is held constant at \(4 \times 4\) for the MUSE data,
 whereas no binning is used for the KPNO data, which are already at a lower spatial resolution.
 The first row shows the full VLT MUSE field of view, while the second row shows
-the VLT MUSE data restricted to the KPNO field of view and the third row shows the KPNO observations.
+the VLT MUSE data restricted to the KPNO field of view, which we denote MUSE-trim, and the third row shows the KPNO observations.
 Visual comparison of the bottom two rows shows a remarkable consistency between the MUSE and KPNO
 results for each emission line, when restricted to the same field of view.
 Fine details in the joint distributions can be matched between the two datasets, but there are two main differences,
@@ -659,10 +657,10 @@ due to the reduced number of map pixels.
 %
 \subsection{Noise-resolution trade off}\label{sec:noise-resolution trade off}
 
-
+In this section we show the turbulent parameters and their confidence intervals obtained by fitting equation~\eqref{eq:sf-functional} to the observed structure function, \(B\obs(r)\). 
 We first present the results for the \halpha\ and \ariii\ emission lines, which correspond to the brightest and faintest lines in the MUSE sample, respectively. 
 These two cases illustrate the effects of masking and binning on the structure function under different signal-to-noise conditions. 
-The same analysis is applied to the remaining emission lines, with results presented in the Appendix~\ref{apex:multiple_lines_results}. 
+This is followed by the same analysis applied to the remaining emission lines, with their respective results presented in the Appendix~\ref{apex:multiple_lines_results}. 
 %The results shown here are used to evaluate the impact of noise and spatial resolution on the recovery of the turbulent structure function.
 
 
@@ -681,9 +679,9 @@ The same analysis is applied to the remaining emission lines, with results prese
    The solid markers show the observational structure function computed using equation~\eqref{eq:Br}, for the non-binned map ($1\times1$) and binned maps ($2\times2$, $4\times4$, $8\times8$ and $16\times16$). 
    The dotted line corresponds to the heuristic model described in equation~\eqref{eq:model-strucfunc-ideal}, while the dashed lines represent the underlying model given in equation~\eqref{eq:sf-functional}. 
    The vertical dashed line shows the value of the correlation length \(r_0\) and the horizontal dashed lines shows the value of the \(\sigma^2\pos\) recover from the fit.
-   The solid horizontal lines how the value of \(\sigma^2\) obtained form the observations and binning. Left panel: \halpha. Right panel: \ariii.
+   The solid horizontal lines how the value of \(\sigma^2\) obtained form the observations and binning. 
    The plot illustrates how the binning procedure reduces the impact of instrumental noise at small separations, as indicated by the dotted curve. Notably, the non-binned map still allows a reliable recovery of the turbulent parameters, demonstrating that the methodology remains effective even under low signal-to-noise conditions.
-   The thick red line corresponds to the ideal underlying  \halpha\ structure function, equation \eqref{eq:model-strucfunc-ideal}, derived from the KPNO observations, which serve as the reference dataset.
+   The thick red line corresponds to the ideal underlying  \halpha\ structure function, equation \eqref{eq:model-strucfunc-ideal}, derived from the KPNO observations (rescaled to the same \(r_0\) and \(\sigma^2\) as the MUSE observations), which serve as the reference dataset.
  }
  \label{fig:Ha_Br_comparison}
 \end{figure*}
@@ -692,8 +690,7 @@ The same analysis is applied to the remaining emission lines, with results prese
 \subsubsection{Representative case study of the \halpha\ line}
 \label{sec:Representative case study}
 
-
-% Present Brs for Halpha
+% Brs for Halpha
 Empirical and model structure functions for the \halpha{} velocity fluctuations are shown in Figure~\ref{fig:Ha_Br_comparison}a.
 Solid markers of different colors indicate the results of applying equation~\eqref{eq:Br} to the non-binned \halpha\ map shown in Figure~\ref{fig:velocity_maps_shared_cbar_fixed}, and the corresponding binned maps in Figure~\ref{fig:Ha_bins_comparison}.
 The dotted curves correspond to the best-fit heuristic model described in equation~\eqref{eq:sf-functional}, while the dashed curves represent the underlying model given in equation~\eqref{eq:model-strucfunc-ideal}
@@ -831,10 +828,10 @@ Turbulent parameter versus binning level for all emission lines analyzed in this
 
 \begin{figure*}
  \centering
- \includegraphics[width=6in]{figures/fit_parameters_grid_comparison_3}\par
+ \includegraphics[width=6in]{figures/fit_parameters_trim_average}\par
  \caption{
- Turbulent parameter versus emission line for different samples analyzed in this work: KPNO (circles), MUSE using KPNO FoV (squares) and MUSE results using the minimum value of seeing (triangles). 
- The results presented here for the VLT MUSE data set correspond to binning levels of $1\times1$ for \halpha, \n\ and \siii, $2\times2$ for \oiii and $4\times4$ for \ariii.
+ Turbulent parameter versus emission line for different samples analyzed in this work: MUSE (circles), MUSE using KPNO FoV (squares) and KPNO results (triangles). 
+ The results presented here for the VLT MUSE and MUSE-trim data set correspond to binning levels of $4\times4$ for all emission lines.
  }
 \label{fig:parameters_comparison}
 \end{figure*}
@@ -865,8 +862,6 @@ The three parameters \(\sigma^2\), \(r_0\), and \(m\) all show a weak increasing
 % from which it can be seen that the low-ionization \n{} line shows the largest amplitude fluctuations,
 % ranging from \(0.3\) to \(3\) times the median value of \(0.2\),
 % indicating 
-
-
 
 
 \section{Discussion}\label{sec:discussion}
@@ -925,8 +920,8 @@ but there is a difference of 20\% between the velocity variances:
 However, this is primarily due to the difference in field of view for the two datasets:
 the height of the two fields (\qty{5}{arcmin} in N-S direction) is roughly the same,
 whereas the MUSE field is roughly twice as wide (\qty{6}{arcmin} E-W direction) and includes regions in the outskirts of the nebula where the velocity fluctuations are slightly smaller.
-To test this, we analyzed the subset of the MUSE maps that overlap with the KPNO fields,
-which we denote MUSE-trim,
+To test this, we analyzed the subset of the MUSE maps that overlap with the KPNO fields (MUSE-trim),
+%which we denote MUSE-trim,
 finding a much closer agreement of \(\sigma^2\).
 Full results of this analysis are listed in Table~\ref{tab:results_MUSE} and included in Figure~\ref{fig:parameters_comparison}.
 
@@ -1149,7 +1144,7 @@ for analyzing velocity fluctuations.
 
 \input{tables/results_MUSE}
 \input{tables/results_KPNO}
-\input{tables/results_MUSE_trim}
+\input{tables/results_MUSE_trim_avg}
 
 
 %\subsection{Comparison between MUSE and KPNO observations using the an equivalent field of view}
@@ -1186,7 +1181,7 @@ Our findings can be summarize as:
     \item Comparison with the KPNO data yields consistent turbulent parameters, with similar power-law indices and correlation lengths, while remaining differences are attributed to the larger spatial coverage and higher spatial resolution of the VLT MUSE observations.
     \item Comparison with previous studies \citep{2019MNRAS.483..704A,2016MNRAS.455.4057M} shows that our approach provides a more consistent framework for recovering the structure of the velocity fluctuations from observational data.
     \item Each emission line exhibits a characteristic set of turbulent parameters, reflecting the physical conditions and spatial regions traced within the nebula.
-    \item The parameters \(\sigma\pos\) and \(r_0\) are sensitive to the spatial extent of the observations and to large-scale velocity gradients, while the power-law index \(m\) remains largely invariant, indicating that it provides a more robust tracer of the intrinsic turbulent cascade.
+%    \item The parameters \(\sigma\pos\) and \(r_0\) are sensitive to the spatial extent of the observations and to large-scale velocity gradients, while the power-law index \(m\) remains largely invariant, indicating that it provides a more robust tracer of the intrinsic turbulent cascade.
 \end{enumerate}
 
 
@@ -1233,14 +1228,14 @@ for all emission lines from the  VLT MUSE observations.
 \input{tables/results_MUSE_N}
 %\input{tables/results_MUSE_N_6548}
 \input{tables/results_MUSE_S}
+
 \begin{figure*}
   \centering
-  \fitfigggg{MUSE-M42-H-bin0}{MUSE-M42-H-bin0}{MUSE-M42-Ar-bin0}{MUSE-M42-Ar-bin0}
+  \fitfigggg{MUSE-M42-H-bin2}{MUSE-M42-H-bin2}{MUSE-M42-Ar-bin2}{MUSE-M42-Ar-bin2}
   \caption{ 
     (a)~Second-order structure functions
     for velocity centroid images
-    of the \ha{} emission line ($1\times1$)
-    from M~42.
+    of the \ha{} emission line from M~42 with a binning level of $4\times4$.
     The observed structure function \(B\obs(r)\) is shown by 
     blue symbols, with filled symbols indicating those points
     that are used to constrain the model fits.
@@ -1262,11 +1257,12 @@ for all emission lines from the  VLT MUSE observations.
   }
   \label{fig:fit_results_01}
 \end{figure*}
+
 \begin{figure*}
   \centering
-  \fitfigggg{MUSE-M42-O-bin1}{MUSE-M42-O-bin1}{MUSE-M42-N-bin0}{MUSE-M42-N-bin0}
+  \fitfigggg{MUSE-M42-N-bin2}{MUSE-M42-N-bin2}{MUSE-M42-S-bin2}{MUSE-M42-S-bin2}
   \caption{ 
-  Same information as Figure~\ref{fig:fit_results_01} for the \oiii\ (2$\times$2) and \n\ (1$\times$1) emission lines obtained through VLT MUSE.
+  Same information as Figure~\ref{fig:fit_results_01} for the \n\ and \siii\ emission lines obtained through VLT MUSE.
   }
   \label{fig:fit_results_02}
 \end{figure*}
@@ -1281,8 +1277,8 @@ for all emission lines from the  VLT MUSE observations.
 
 \begin{figure*}
   \centering
-  \fitfigg{MUSE-M42-S-bin0}{MUSE-M42-S-bin0}
-  \caption{  Same information as Figure~\ref{fig:fit_results_01} for the \siii\ (1$\times$1) obtained through VLT MUSE.
+  \fitfigg{MUSE-M42-O-bin2}{MUSE-M42-O-bin2}
+  \caption{  Same information as Figure~\ref{fig:fit_results_01} for the \oiii\ obtained through VLT MUSE.
   }
   \label{fig:fit_results_03}
 \end{figure*}
@@ -1331,21 +1327,20 @@ In this appendix, we present the structure functions and corner plots (Figures~\
 
 \input{tables/fit_parameters_KPNO}
 
-
 \begin{figure*}
   \centering
-  \fitfigggg{KPNO-M42-H-bin0}{KPNO-M42-H-bin0}{KPNO-M42-O-bin0}{KPNO-M42-O-bin0}
-  \caption{Figure~\ref{fig:fit_results_01} for the \halpha\ and \oiii\ emisison lines obtained through KPNO echelle.
+  \fitfigggg{KPNO-M42-N-bin0}{KPNO-M42-N-bin0}{KPNO-M42-S-bin0}{KPNO-M42-S-bin0}
+  \caption{ Figure~\ref{fig:fit_results_01} for the \n\ and \sii\ emission lines obtained through KPNO.
   }
-  \label{fig:fit_results_04}
+  \label{fig:fit_results_05}
 \end{figure*}
 
 \begin{figure*}
   \centering
-  \fitfigggg{KPNO-M42-N-bin0}{KPNO-M42-N-bin0}{KPNO-M42-S-bin0}{KPNO-M42-S-bin0}
-  \caption{ Figure~\ref{fig:fit_results_01} for the \n\ and \sii\ emisison lines obtained through KPNO echelle.
+  \fitfigggg{KPNO-M42-H-bin0}{KPNO-M42-H-bin0}{KPNO-M42-O-bin0}{KPNO-M42-O-bin0}
+  \caption{Figure~\ref{fig:fit_results_01} for the \halpha\ and \oiii\ emission lines obtained through KPNO.
   }
-  \label{fig:fit_results_05}
+  \label{fig:fit_results_04}
 \end{figure*}
 
 
