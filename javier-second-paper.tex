@@ -202,22 +202,36 @@
 \pagerange{\pageref{firstpage}--\pageref{lastpage}}
 \maketitle
 
-% Abstract of the paper
 \begin{abstract}
-  Turbulence plays a critical role in the evolution of \hii\ regions, yet recovering its statistical properties from observations remains challenging, especially under low signal-to-noise conditions.
-  We investigate whether high spatial resolution but low spectral resolution integral field spectroscopic observations from VLT MUSE of the Orion Nebula can recover the same turbulent velocity statistics as those derived from previously analyzed observations at high spectral resolution but lower spatial resolution.
-  We analyze the centroid velocity maps by computing the second-order structure function of the velocity fluctuations in the plane-of-sky and fitting a simple model based on the
-  correlation length \(r_0\), power-law slope \(m\) and noise level. 
-  We systematically test the effects of spatial binning on the trade-off between instrumental noise and spatial resolution,
-  using published high spectral resolution echelle spectroscopy as a point of comparison.
-  We find that downsampling improves the reliability of the empirical structure function
-  so long as the bin size is less than \(0.05\, r_0\),
-  and that model fitting is able to recover the turbulent parameters across all binning levels. 
-  Minor differences in the large-scale behavior among emission lines of different ionization potential are observed, revealing line-dependent turbulence signatures associated with the geometric and ionization structure of the nebula. 
-  Despite their relatively poor velocity resolution, our methodology can turn observations from
-  intermediate resolution (\(R \approx 3000\)) integral-field spectrographs such as MUSE
-  into a useful tool for studying turbulent velocity, even at the subsonic velocity dispersion typical of compact \hii\ regions.
+Turbulence plays a critical role in the evolution of \hii{}
+regions, yet recovering its statistical properties from observations
+remains challenging, particularly when centroid velocities are
+affected by instrumental noise. We present a methodology for
+recovering the second-order velocity structure function from
+intermediate spectral-resolution integral-field spectroscopy and
+apply it to VLT MUSE observations of the Orion Nebula. The
+plane-of-sky velocity field is characterized by fitting a simple
+parametric model to the observed structure function, allowing the
+turbulent velocity variance, correlation length, power-law slope,
+and noise level to be estimated simultaneously. We investigate the
+trade-off between instrumental noise and spatial resolution through
+systematic spatial binning and validate the recovered turbulent
+parameters against previously analysed high spectral-resolution
+KPNO echelle observations. We find that spatial binning improves
+the empirical structure function provided that the bin size remains
+below approximately \(0.05\,r_0\), while the fitted model recovers
+consistent turbulent parameters across all binning levels. The MUSE
+results agree closely with those from the KPNO data, demonstrating
+that intermediate-resolution integral-field spectroscopy can recover
+reliable turbulence statistics despite its relatively poor velocity
+resolution. We also identify modest but systematic differences in
+the turbulent properties traced by emission lines of different
+ionization potential, reflecting the geometric and ionization
+structure of the nebula. Our methodology provides a robust framework
+for extracting turbulent velocity statistics from noisy
+integral-field spectroscopic observations.
 \end{abstract}
+
 
 % Select between one and six entries from the list of approved keywords.
 % Don't make up new ones.
@@ -1231,6 +1245,8 @@ estimated structure function.
 \end{enumerate}
 
 \section*{Acknowledgements}
+
+
 
 \section*{Data availability statement}
 \label{sec:data-avail-stat}
