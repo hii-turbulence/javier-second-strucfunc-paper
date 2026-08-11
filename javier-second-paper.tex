@@ -1169,20 +1169,66 @@ for analyzing velocity fluctuations.
 %This suggests that \(m\) provides a more reliable characterization of the turbulent cascade when comparing datasets with different spatial coverage.
 
 
+% \section{Summary}\label{sec:summary}
+
+% Our findings can be summarized as follows:
+% \begin{enumerate}[1.]
+%     \item The fitting of our proposed model is enough to recover the turbulent parameters and their confidence intervals for the Orion MUSE velocity maps despite the low S/N ratio.
+%     \item The trade-off between noise and seeing is addressed through controlled binning, allowing the recovery of the turbulent cascade while reducing instrumental noise without significantly degrading the spatial information and reducing computational time.
+%   %  \item Weighting the structure function by the intensity and masking low-emission pixels allow the recovery of turbulent parameters when fitting the proposed model; however, unlike binning, these approaches do not lead to a significant reduction in instrumental noise.
+%     \item Comparison with the KPNO data yields consistent turbulent parameters, with similar power-law indices and correlation lengths, while remaining differences are attributed to the larger spatial coverage and higher spatial resolution of the VLT MUSE observations.
+%     \item Comparison with previous studies \citep{2019MNRAS.483..704A,2016MNRAS.455.4057M} shows that our approach provides a more consistent framework for recovering the structure of the velocity fluctuations from observational data.
+%     \item Each emission line exhibits a characteristic set of turbulent parameters, reflecting the physical conditions and spatial regions traced within the nebula.
+% %    \item The parameters \(\sigma\pos\) and \(r_0\) are sensitive to the spatial extent of the observations and to large-scale velocity gradients, while the power-law index \(m\) remains largely invariant, indicating that it provides a more robust tracer of the intrinsic turbulent cascade.
+% \end{enumerate}
+
 \section{Summary}\label{sec:summary}
 
-Our findings can be summarized as follows:
+Despite its relatively poor velocity resolution, intermediate
+spectral-resolution integral-field spectroscopy can recover reliable
+turbulent velocity statistics when analyzed with an appropriate
+treatment of instrumental noise and spatial resolution. Applied to
+the Orion Nebula, the VLT MUSE observations yield well-constrained
+values of the turbulent velocity variance, \(\sigma^2\), correlation length, \(r_0\), and
+power-law slope, \(m\), that agree closely with higher spectral-resolution
+KPNO echelle observations. Our principal findings are as follows:
+
 \begin{enumerate}[1.]
-    \item The fitting of our proposed model is enough to recover the turbulent parameters and their confidence intervals for the Orion MUSE velocity maps despite the low S/N ratio.
-    \item The trade-off between noise and seeing is addressed through controlled binning, allowing the recovery of the turbulent cascade while reducing instrumental noise without significantly degrading the spatial information and reducing computational time.
-  %  \item Weighting the structure function by the intensity and masking low-emission pixels allow the recovery of turbulent parameters when fitting the proposed model; however, unlike binning, these approaches do not lead to a significant reduction in instrumental noise.
-    \item Comparison with the KPNO data yields consistent turbulent parameters, with similar power-law indices and correlation lengths, while remaining differences are attributed to the larger spatial coverage and higher spatial resolution of the VLT MUSE observations.
-    \item Comparison with previous studies \citep{2019MNRAS.483..704A,2016MNRAS.455.4057M} shows that our approach provides a more consistent framework for recovering the structure of the velocity fluctuations from observational data.
-    \item Each emission line exhibits a characteristic set of turbulent parameters, reflecting the physical conditions and spatial regions traced within the nebula.
-%    \item The parameters \(\sigma\pos\) and \(r_0\) are sensitive to the spatial extent of the observations and to large-scale velocity gradients, while the power-law index \(m\) remains largely invariant, indicating that it provides a more robust tracer of the intrinsic turbulent cascade.
+
+\item We have developed a methodology that reliably recovers the
+turbulent velocity structure function from intermediate
+spectral-resolution integral-field spectroscopy by combining spatial
+masking, controlled binning, and model fitting.
+
+\item Spatial binning provides an effective means of reducing
+instrumental noise, provided that the bin size remains substantially
+smaller than the turbulent correlation length. We find that reliable
+recovery of the turbulent parameters is maintained for bin sizes
+satisfying \(\Delta x_{\rm bin} \lesssim 0.05\,r_0\),
+which provides a practical guideline for the analysis of similar
+datasets.
+
+\item Comparison with the KPNO echelle observations validates the
+methodology across datasets with very different instrumental
+characteristics, confirming that intermediate-resolution
+integral-field spectroscopy can recover robust turbulent statistics
+while providing substantially improved spatial sampling.
+
+\item The different emission lines yield broadly similar turbulent
+properties, with only modest systematic variations between ions.
+Higher-ionization species tend to exhibit slightly larger velocity
+variances, correlation lengths, and power-law indices, suggesting
+subtle differences in the turbulent environments sampled by
+different tracers.
+
+\item Our analysis resolves previous discrepancies in structure
+function studies of the Orion Nebula. In particular, we show that
+apparent failures to recover the turbulent cascade arise primarily
+from inadequate treatment of instrumental noise or from
+methodological choices that introduce systematic biases into the
+estimated structure function.
+
 \end{enumerate}
-
-
 
 \section*{Acknowledgements}
 
