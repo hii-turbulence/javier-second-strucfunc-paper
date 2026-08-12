@@ -172,8 +172,8 @@
 
 % Title of the paper, and the short title which is used in the headers.
 % Keep the title short and informative.
-%\title[Turbulence diagnostic trade-offs]{Trade-offs between noise and resolution in turbulence diagnostics}
-\title[Turbulence from noisy IFU data]{Recovering turbulent velocity statistics from noisy integral-field spectroscopy}
+% \title[Turbulence diagnostic trade-offs]{Trade-offs between noise and resolution in turbulence diagnostics}
+\title[Turbulent velocity statistics from IFUs]{Recovering turbulent velocity statistics from noisy integral-field spectroscopy}
 
 % The list of authors, and the short list which is used in the headers.
 % If you need two or more lines of authors, add an extra line using \newauthor
@@ -548,12 +548,13 @@ Model fitting is performed using a non-linear weighted least-squares approach ba
 The posterior distributions of the model parameters are estimated using Markov Chain Monte Carlo (MCMC) ensemble sampling \citep{2010CAMCS...5...65G}, implemented in the \texttt{emcee} Python library \citep{2013PASP..125..306F}.  
 Table~\ref{tab:parameter-ranges} lists the uniform prior distributions assumed for each parameter.
 
-\textcolor{red}{The model in equation~\ref{eq:sf-functional} assumes a strictly positive autocorrelation that decreases monotonically with separation \(r\). 
-This functional form is therefore not intended to describe the largest spatial scales, where departures from homogeneous turbulence can introduce additional fluctuations. 
-To limit the influence of these scales, we repeat the fitting procedure using maximum separations of \(0.4L\), \(0.5L\), and \(0.6L\), where \(L\) is the observational box size. 
-The final turbulent parameters are taken as the average of the values obtained from these fits, and the credibility intervals are defined by the corresponding minimum and maximum recovered values.}
+The model in equation~\eqref{eq:sf-functional} assumes a statistically homogeneous turbulent velocity field, for which the autocorrelation function remains positive and decreases monotonically with separation.
+At the largest spatial scales this assumption may break down owing to large-scale inhomogeneities in the nebula.
+Rather than adopting a single fitting range, we therefore repeat the analysis using maximum separations of \(0.4L\), \(0.5L\), and \(0.6L\), where \(L\) is the size of the observed field.
+The final parameter estimates are taken as the average of the three fits, while the quoted uncertainties encompass both the posterior uncertainties from each fit and the variation between the three fitting ranges.
 
-To assess the reliability of the fits, we consider the turbulent parameters to be reliably recovered when a power-law regime is identified and the derived parameters are well constrained. For this, we require statistical consistency between the model and the data, quantified by a reduced chi-square value \(\chi^2 \lesssim 1\). 
+
+To assess the quality of the fits, we consider the turbulent parameters to be reliably recovered when a power-law regime is identified and the derived parameters are well constrained. For this, we require statistical consistency between the model and the data, quantified by a reduced chi-square value \(\chi^2 \lesssim 1\). 
 We also verify that the posterior distributions of the fitted parameters are well-behaved within the 95\% confidence interval, without significant asymmetries or multimodalities.
 
 \input{tables/prior}
