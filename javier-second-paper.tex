@@ -217,7 +217,7 @@ turbulent velocity variance, correlation length, power-law slope,
 and noise level to be estimated simultaneously. We investigate the
 trade-off between instrumental noise and spatial resolution through
 systematic spatial binning and validate the recovered turbulent
-parameters against previously analysed high spectral-resolution
+parameters against previously analyzed high spectral-resolution
 KPNO echelle observations. We find that spatial binning improves
 the empirical structure function provided that the bin size remains
 below approximately \(0.05\,r_0\), while the fitted model recovers
@@ -278,7 +278,7 @@ More recent studies using the same VLT MUSE observations \citep{2019MNRAS.483..7
 
 \begin{figure*}
  \centering
- \includegraphics[width=6.5in]{figures/H_I-6563.pdf}\par
+ \includegraphics[width=6.5in]{figures/H_I-6563_lowres.pdf}\par
  \caption{
  Two-dimensional maps of the normalized \halpha\ integrated intensity (surface brightness) and centroid velocity in the Orion Nebula. 
  The surface brightness is normalized to the peak intensity in the map, and the velocity scale is shown after subtracting the mean velocity. North is up and East is to the left.
@@ -288,7 +288,7 @@ More recent studies using the same VLT MUSE observations \citep{2019MNRAS.483..7
 
 \begin{figure*}
  \centering
- \includegraphics[width=5in]{figures/velocity_maps_shared_cbar_fixed}\par
+ \includegraphics[width=5in]{figures/velocity_maps_shared_cbar_fixed_lowres}\par
  \caption{
    Two-dimensional velocity maps for different emission lines of the Orion Nebula obtained from VLT MUSE observations,
    with axes marked in native MUSE pixels of size \qty{0.2}{arcsec}. 
@@ -443,7 +443,7 @@ Each iteration and the resulting velocity map is shown in the different panels o
 
 \begin{figure*}
  \centering
- \includegraphics[width=6.5in]{figures/velocity_maps_shared_cbar_fixed_bin}\par
+ \includegraphics[width=6.5in]{figures/velocity_maps_shared_cbar_fixed_bin_lowres}\par
  \caption{
  Two-dimensional binned maps of the centroid velocity of the Orion nebula for the \halpha\ emission line. The size of each map are \(737 \times 882\), \(368\times 440\), \(183 \times 219\)  and \(91 \times 109 \ \text{pixels}\) which correspond to the bin sizes of $2^1=2$, $2^2=4$, $2^3=8$ and $2^4=16$ respectively. The same procedure of binning is applied to all emission lines.  
  }
@@ -689,7 +689,8 @@ This is followed by the same analysis applied to the remaining emission lines, w
    The solid markers show the observational structure function computed using equation~\eqref{eq:Br}, for the non-binned map ($1\times1$) and binned maps ($2\times2$, $4\times4$, $8\times8$ and $16\times16$). 
    The dotted line corresponds to the heuristic model described in equation~\eqref{eq:model-strucfunc-ideal}, while the dashed lines represent the underlying model given in equation~\eqref{eq:sf-functional}. 
    The vertical dashed line shows the value of the correlation length \(r_0\) and the horizontal dashed lines shows the value of the \(\sigma^2\pos\) recover from the fit.
-   The solid horizontal lines how the value of \(\sigma^2\) obtained form the observations and binning. 
+   The solid horizontal lines how the value of \(\sigma^2\) obtained form the observations and binning.
+   The results in the figures correspond to fits performed up to a maximum separation of \(0.5L\).
    The plot illustrates how the binning procedure reduces the impact of instrumental noise at small separations, as indicated by the dotted curve. Notably, the non-binned map still allows a reliable recovery of the turbulent parameters, demonstrating that the methodology remains effective even under low signal-to-noise conditions.
    The thick red line corresponds to the ideal underlying  \halpha\ structure function, equation \eqref{eq:model-strucfunc-ideal}, derived from the KPNO observations (rescaled to the same \(r_0\) and \(\sigma^2\) as the MUSE observations), which serve as the reference dataset.
  }
@@ -853,7 +854,7 @@ The same analysis as for the \halpha\ and \ariii\ emission lines is extended to 
 Figures~\ref{fig:fit_results_02}-\ref{fig:fit_results_03}
 and Tables~\ref{tab:results_MUSE_O}-\ref{tab:results_MUSE_S} of
 Appendix~\ref{apex:multiple_lines_results}.
-The fitted parameters are summarised in Fig.~\ref{fig:parameters vs binning},
+The fitted parameters are summarized in Fig.~\ref{fig:parameters vs binning},
 which shows the variation with binning level.
 % Noise analysis
 All these emission lines exhibit behavior consistent with the previous cases. 
@@ -1248,15 +1249,18 @@ on VLT telescope UT4 at the La Silla Paranal Observatory, ESO, Chile.
 Based in part on observations obtained at the Kitt Peak National Observatory,
 which is operated by the Association of Universities for Research in Astronomy, Inc.,
 under cooperative agreement with the National Science Foundation.
-We gratefully acknowledge financial support provided by
-\foreignlanguage{spanish}{%
-  Dirección General de Asuntos del Personal Académico,
-  Universidad Nacional Autónoma de México},
-through research grant
-``\foreignlanguage{spanish}{%
-  Programa de Apoyo a Proyectos de Investigación
-  e Inovación Tecnológica IN117326}''
-and through a postdoctoral grant to J.G.-V.
+%We gratefully acknowledge financial support provided by
+%\foreignlanguage{spanish}{%
+%  Dirección General de Asuntos del Personal Académico,
+%  Universidad Nacional Autónoma de México},
+%through research grant
+%``\foreignlanguage{spanish}{%
+%  Programa de Apoyo a Proyectos de Investigación
+%  e Inovación Tecnológica IN117326}''
+%and through a postdoctoral grant to J.G.-V.
+We gratefully acknowledge financial support from the \foreignlanguage{spanish}{Dirección General de Asuntos del Personal Académico (DGAPA), Universidad Nacional Autónoma de México (UNAM)}, through the ``\foreignlanguage{spanish}{Programa de Apoyo a Proyectos de Investigación e Innovación Tecnológica (PAPIIT), project IN117326}''. J.G.-V. gratefully acknowledges the postdoctoral grant received through the ``\foreignlanguage{spanish}{Programa de Becas Posdoctorales en la Universidad Nacional Autónoma de México}'', which supported this work.
+
+
 \section*{Data availability statement}
 \label{sec:data-avail-stat}
 The original MUSE datacube of the Orion Nebula is available at \url{https://data.aip.de/projects/musescience.html}.
@@ -1324,6 +1328,7 @@ for all emission lines from the  VLT MUSE observations.
     within the limits given in Table~\ref{tab:parameter-ranges}.
     Off-diagonal plots show the 2-dimensional histogram of the
     joint posterior distribution each pair of parameters.
+    The results in the figures correspond to fits performed up to a maximum separation of \(0.5L\).
     (c)~Same as (a) for \ariii. (d)~Same as (b) for \ariii.
   }
   \label{fig:fit_results_01}
@@ -1401,7 +1406,7 @@ In this appendix, we present the structure functions and corner plots (Figures~\
 \begin{figure*}
   \centering
   \fitfigggg{KPNO-M42-N-bin0}{KPNO-M42-N-bin0}{KPNO-M42-S-bin0}{KPNO-M42-S-bin0}
-  \caption{ Figure~\ref{fig:fit_results_01} for the \n\ and \sii\ emission lines obtained through KPNO.
+  \caption{  Same information as Figure~\ref{fig:fit_results_01} for the \n\ and \sii\ emission lines obtained through KPNO.
   }
   \label{fig:fit_results_05}
 \end{figure*}
@@ -1409,7 +1414,7 @@ In this appendix, we present the structure functions and corner plots (Figures~\
 \begin{figure*}
   \centering
   \fitfigggg{KPNO-M42-H-bin0}{KPNO-M42-H-bin0}{KPNO-M42-O-bin0}{KPNO-M42-O-bin0}
-  \caption{Figure~\ref{fig:fit_results_01} for the \halpha\ and \oiii\ emission lines obtained through KPNO.
+  \caption{ Same information as Figure~\ref{fig:fit_results_01} for the \halpha\ and \oiii\ emission lines obtained through KPNO.
   }
   \label{fig:fit_results_04}
 \end{figure*}
