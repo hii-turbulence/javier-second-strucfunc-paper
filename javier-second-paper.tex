@@ -251,21 +251,34 @@ HII regions -- ISM: kinematics and dynamics -- turbulence
 The process of star formation begins with the gravitational collapse of molecular clouds, followed by fragmentation into dense cores where stars form in clusters \citep{2003RPPh...66.1651L, 2007ARA&A..45..565M}. 
 Massive O- and B-type stars emerge within these stellar groups, and their intense ionizing radiation and stellar winds inject substantial energy and momentum into the surrounding gas, profoundly influencing the structure and dynamics of the the recently created ionized regions \citep{2006ApJ...647..397M, 2024RMxAC..58....8A}.
 
-\hii\ regions reveal complex velocity patterns that deviate from simple radial expansion \citep{TT1979,1996AJ....111.2349H,2015A&A...573A..10M,2019MNRAS.487.2200Z}.
+\hii\ regions reveal \NEW{heterogeneous} velocity patterns that deviate from simple radial expansion \citep{TT1979,1996AJ....111.2349H,2015A&A...573A..10M,2019MNRAS.487.2200Z}.
 Instead, the ionized gas exhibits complex behavior that can be interpreted as turbulence. 
 Within this framework, \hii\ regions offer ideal laboratories for studying turbulent dynamics in the astrophysical context \citep{1949ApJ...110..329C}.
 
 Turbulence in \hii\ regions is typically first characterized through the amplitude of velocity fluctuations. 
 This can be studied using velocity dispersion along the line-of-sight (LOS) or through the variance of centroid velocities projected onto the plane-of-sky (POS) \citep{1988A&A...201..199A,arthur2016turbulence}. 
 Statistical tools, such as the second-order structure function, enable the recovery of turbulence signatures in the POS such as the power-law $m$ and correlation length \(r_0\), and allow comparisons with theoretical models such as the Kolmogorov theory of incompressible turbulence \citep{von1951methode,1955IAUS....2..131C,munch1958internal,1961MNRAS.122....1F,1970A&A.....8..486L,Roy:1985a,1986ApJ...300..624R,1987ApJ...317..686O, castaneda1988,Mivi1995,1997ApJ...487..163M,Chakraborty:1999a, lagrois2011,arthur2016turbulence,2019arXiv191203543M,garciav23,2025ApJ...986..159R,2026A&A...707A.339R}.
-However, recovering these turbulent parameters from observational data is not straightforward. 
+However, recovering these turbulent parameters from observational data is not straightforward.
 
-Given that the structure function characterizes how velocity fluctuations vary with spatial separation, it is essential that the measured scales reflect genuine turbulent motions rather than instrumental or environmental effects.
+Given that the structure function characterizes how velocity fluctuations vary with spatial separation, it is essential that the measured scales reflect genuine turbulent motions rather than instrumental effects.
 In practice, this condition is difficult to satisfy. 
 Ground-based observations are affected by atmospheric seeing, while the smallest measurable velocity fluctuations are limited by the instrument’s spectral resolution and sensitivity. 
 In addition, noise and other systematic effects can distort the observed velocity field. 
-Furthermore, \hii\ regions are dynamic environments that exhibit large-scale motions not directly related to turbulence, which must be carefully disentangled when interpreting the data \citep{1979ApJ...233...85B,Mivi1995, lagrois2011}.
+% Furthermore, \hii\ regions are dynamic environments that exhibit large-scale motions not directly related to turbulence, which must be carefully disentangled when interpreting the data \citep{1979ApJ...233...85B,Mivi1995, lagrois2011}.
 
+\startNEW
+Note that we use the term ``turbulence'' as a shorthand
+for all globally disordered and chaotic motions within an \hii{} region,
+even though these motions do not necessarily represent homogeneous hydrodynamic turbulence
+in the sense of \citet{kolm1}.
+The aim of the present study is to characterize the spatial
+statistics of the measured velocity field in the ionized gas,
+which inevitably incorporate contributions from photoevaporative flows, ionization-front geometry, other large-scale ordered motions, along with genuine turbulent fluctuations.
+The physical origin of these velocity fluctuations, and the relative contributions of photoevaporative flows and turbulence, were examined in detail in earlier papers \citep{Medina:2014a, arthur2016turbulence},
+where empirical results were compared with synthetic observations from numerical simulations. See especially Fig.~16 of \citet{arthur2016turbulence},
+which summarizes the conceptual scheme of causal relationships.
+The present paper has a narrower goal: to assess the methodology used to retrieve the characteristic fluctuation amplitude, correlation length, and power-law slope from observed structure functions.
+\stopNEW
 
 The Orion Nebula (M~42), located at a distance of
 \startNEW
