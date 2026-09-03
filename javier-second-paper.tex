@@ -251,7 +251,7 @@ HII regions -- ISM: kinematics and dynamics -- turbulence
 The process of star formation begins with the gravitational collapse of molecular clouds, followed by fragmentation into dense cores where stars form in clusters \citep{2003RPPh...66.1651L, 2007ARA&A..45..565M}. 
 Massive O- and B-type stars emerge within these stellar groups, and their intense ionizing radiation and stellar winds inject substantial energy and momentum into the surrounding gas, profoundly influencing the structure and dynamics of the the recently created ionized regions \citep{2006ApJ...647..397M, 2024RMxAC..58....8A}.
 
-\hii\ regions reveal \NEW{heterogeneous} velocity patterns that deviate from simple radial expansion \citep{TT1979,1996AJ....111.2349H,2015A&A...573A..10M,2019MNRAS.487.2200Z}.
+\hii\ regions reveal heterogeneous velocity patterns that deviate from simple radial expansion \citep{TT1979,1996AJ....111.2349H,2015A&A...573A..10M,2019MNRAS.487.2200Z}.
 Instead, the ionized gas exhibits complex behavior that can be interpreted as turbulence. 
 Within this framework, \hii\ regions offer ideal laboratories for studying turbulent dynamics in the astrophysical context \citep{1949ApJ...110..329C}.
 
@@ -266,7 +266,7 @@ Ground-based observations are affected by atmospheric seeing, while the smallest
 In addition, noise and other systematic effects can distort the observed velocity field. 
 % Furthermore, \hii\ regions are dynamic environments that exhibit large-scale motions not directly related to turbulence, which must be carefully disentangled when interpreting the data \citep{1979ApJ...233...85B,Mivi1995, lagrois2011}.
 
-\startNEW
+
 Note that we use the term ``turbulence'' as a shorthand
 for all globally disordered and chaotic motions within an \hii{} region,
 even though these motions do not necessarily represent homogeneous hydrodynamic turbulence
@@ -278,13 +278,11 @@ The physical origin of these velocity fluctuations, and the relative contributio
 where empirical results were compared with synthetic observations from numerical simulations. See especially Fig.~16 of \citet{arthur2016turbulence},
 which summarizes the conceptual scheme of causal relationships.
 The present paper has a narrower goal: to assess the methodology used to retrieve the characteristic fluctuation amplitude, correlation length, and power-law slope from observed structure functions.
-\stopNEW
+
 
 The Orion Nebula (M~42), located at a distance of
-\startNEW
 \qty{388(5)}{pc}
 \citetext{\(\qty{1}{\arcsecond} \approx \qty{0.0019}{pc}\); \citealp{Kounkel:2017a}},
-\stopNEW
 is the closest massive star-forming region and one of the most studied \hii\ regions. 
 Ionized by the O7~V star $\theta^1$\,Ori~C, the nebula exhibits complex physical and kinematic structures, including a rich population of young stars, stellar outflows, and Herbig–Haro objects \citep{1993ApJ...410..696O,2001ARA&A..39...99O,Garcia-Diaz:2007a,2009AJ....137..367O,2019MNRAS.486.3423H,2021MNRAS.502.1703M}. 
 Its proximity and brightness make it a prime target for studies using spectroscopic observations \citep{Garcia-Diaz:2008a,2015A&A...582A.114W,2016ApJ...819..136A}.
@@ -296,7 +294,7 @@ More recent studies using the same VLT MUSE observations \citep{2019MNRAS.483..7
 
 \begin{figure*}
  \centering
- \includegraphics[width=6.5in]{figures/H_I-6563_lowres.pdf}\par
+ \includegraphics[width=6.5in]{figures/H_I-6563.pdf}\par
  \caption{
  Two-dimensional maps of the normalized \halpha\ integrated intensity (surface brightness) and centroid velocity in the Orion Nebula. 
  The surface brightness is normalized to the peak intensity in the map, and the velocity scale is shown after subtracting the mean velocity. North is up and East is to the left.
@@ -306,7 +304,7 @@ More recent studies using the same VLT MUSE observations \citep{2019MNRAS.483..7
 
 \begin{figure*}
  \centering
- \includegraphics[width=5in]{figures/velocity_maps_shared_cbar_fixed_lowres}\par
+ \includegraphics[width=5in]{figures/velocity_maps_shared_cbar_fixed}\par
  \caption{
    Two-dimensional velocity maps for different emission lines of the Orion Nebula obtained from VLT MUSE observations,
    with axes marked in native MUSE pixels of size \qty{0.2}{arcsec}. 
@@ -461,7 +459,7 @@ Each iteration and the resulting velocity map is shown in the different panels o
 
 \begin{figure*}
  \centering
- \includegraphics[width=6.5in]{figures/velocity_maps_shared_cbar_fixed_bin_lowres}\par
+ \includegraphics[width=6.5in]{figures/velocity_maps_shared_cbar_fixed_bin}\par
  \caption{
  Two-dimensional binned maps of the centroid velocity of the Orion nebula for the \halpha\ emission line. The size of each map are \(737 \times 882\), \(368\times 440\), \(183 \times 219\)  and \(91 \times 109 \ \text{pixels}\) which correspond to the bin sizes of $2^1=2$, $2^2=4$, $2^3=8$ and $2^4=16$ respectively. The same procedure of binning is applied to all emission lines.  
  }
@@ -786,8 +784,8 @@ At large spatial scales, the \halpha\ structure function shown in Figure~\ref{fi
   \includegraphics[width=0.8\linewidth]{figures/orion-muse-line-ratios}
   \caption{Surface brightness ratio maps of all other emission lines with respect to \halpha{}.
     The color scale for each map ranges from zero to three times the median ratio for each line,
-    as indicated. \NEW{The \(6' \times 5'\) field of view of each panel is the same as in Fig.~\ref{fig:H_I-6563_maps},
-    with the position of $\theta^1$\,Ori~C marked by a star.}
+    as indicated. The \(6' \times 5'\) field of view of each panel is the same as in Fig.~\ref{fig:H_I-6563_maps},
+    with the position of $\theta^1$\,Ori~C marked by a star.
   }
   \label{fig:ratios}
 \end{figure*}
@@ -1171,7 +1169,6 @@ a constant transformation of the velocity frame,
 This lack of Galilean invariance makes it fundamentally unsuitable
 for analyzing velocity fluctuations.
 
-\startNEW
 \subsubsection{Comparison with older studies}
 \label{sec:comp-with-older}
 
@@ -1193,7 +1190,7 @@ and has its peak emissivity exactly at the ionization front \citep[Fig.~5c]{2021
 It may be that weakness of the velocity fluctuations seen in this line
 is due to the fact that [\ion{O}{I}] traces the kinematics of the neutral gas of the
 photodissociation region, rather than the ionized gas within the nebula.
-\stopNEW
+
 
 \input{tables/results_MUSE}
 \input{tables/results_KPNO}
@@ -1300,7 +1297,7 @@ under cooperative agreement with the National Science Foundation.
 %  Programa de Apoyo a Proyectos de Investigación
 %  e Inovación Tecnológica IN117326}''
 %and through a postdoctoral grant to J.G.-V.
-We gratefully acknowledge financial support from the \foreignlanguage{spanish}{Dirección General de Asuntos del Personal Académico (DGAPA), Universidad Nacional Autónoma de México (UNAM)}, through the ``\foreignlanguage{spanish}{Programa de Apoyo a Proyectos de Investigación e Innovación Tecnológica (PAPIIT), project IN117326}''. J.G.-V. gratefully acknowledges the postdoctoral grant received through the ``\foreignlanguage{spanish}{Programa de Becas Posdoctorales en la Universidad Nacional Autónoma de México}'', which supported this work.
+We gratefully acknowledge financial support from the \foreignlanguage{spanish}{Dirección General de Asuntos del Personal Académico (DGAPA), Universidad Nacional Autónoma de México (UNAM)}, through the ``\foreignlanguage{spanish}{Programa de Apoyo a Proyectos de Investigación e Innovación Tecnológica'' (PAPIIT), project IN117326}. J.G.-V. gratefully acknowledges the postdoctoral grant received through the ``\foreignlanguage{spanish}{Programa de Becas Posdoctorales en la Universidad Nacional Autónoma de México}'', which supported this work. A sincere thanks to Dr. C. Robert O'Dell who help us improve the quality of our work.
 
 
 \section*{Data availability statement}
@@ -1308,7 +1305,7 @@ We gratefully acknowledge financial support from the \foreignlanguage{spanish}{D
 The original MUSE datacube of the Orion Nebula is available at \url{https://data.aip.de/projects/musescience.html}.
 Derived velocity maps and accompanying analysis programs used in this paper are currently available
 from the GitHub repository \url{https://github.com/JavGVastro/VIENTO}
-and will be deposited as a Zenodo record upon acceptance.
+and from the Zenodo research repository at \url{https://doi.org/10.5281/zenodo.22261245}.
 
 
 %\section*{Software availability statement}
