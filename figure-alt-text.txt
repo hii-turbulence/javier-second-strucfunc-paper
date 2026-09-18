@@ -1,0 +1,89 @@
+Figure 1.
+Maps of H alpha surface brightness and relative centroid velocity across the Orion Nebula in a field of view of six by five arc minutes. Bright nebular structures surround theta one Orionis C, while the velocity map shows coherent spatial fluctuations of several kilometers per second.
+
+Figure 2.
+Centroid velocity maps of H alpha, nitrogen two, oxygen three, sulfur three, and argon three emission. All lines show broadly similar large-scale velocity structure, with masked stars, faint regions, and high-velocity features shown in grey.
+
+Figure 3.
+Histograms of relative centroid velocity for five MUSE emission lines and three corresponding KPNO lines. Distributions are approximately Gaussian, span roughly minus ten to plus ten kilometers per second, and have similar widths.
+
+Figure 4.
+H alpha centroid velocity maps after progressively stronger spatial binning from two by two to sixteen by sixteen pixels. Large-scale velocity patterns remain while fine spatial structure and noise is progressively smoothed.
+
+Figure 5.
+Six joint distributions of log base ten relative H alpha surface brightness, ranging from minus three to zero, and radial velocity with increasing spatial binning. The distribution forms a broad, structured band, with a dense concentration near minus two in brightness and slightly negative velocity. Increasing binning progressively suppresses the diffuse vertical scatter while preserving the main velocity-brightness structure.
+
+Figure 6.
+Six joint distributions of log base ten normalized argon three surface brightness, ranging from minus three to minus one, and radial velocity with increasing spatial binning. The distribution forms a broad, structured band, with a dense concentration near minus two point three in brightness and slightly negative velocity. Increasing binning progressively suppresses the initially broad vertical scatter while preserving the main velocity-brightness structure.
+
+Figure 7.
+Nine joint distributions of log base ten normalized surface brightness, ranging approximately from minus three to minus one, and heliocentric radial velocity. Columns show nitrogen two, H alpha, and oxygen three; rows compare full-field MUSE, trimmed MUSE, and KPNO data. The structured distributions shift systematically to lower velocities from nitrogen two to oxygen three. Restricting the MUSE field changes their detailed structure, while the KPNO data show sharper, more intricate features.
+
+Figure 8.
+Two log-log plots of second-order velocity structure function versus spatial separation for H alpha and argon three, each showing five spatial binning levels. At small separations, the unbinned curves are elevated by noise, especially for argon three, while increasing binning progressively reveals a common rising power-law trend. The curves peak near a few tenths of a parsec before declining at larger separations. Fitted slopes are close to one for both lines.
+
+Figure 9.
+Four maps of emission-line surface brightness relative to H alpha across the Orion Nebula. Nitrogen two shows a prominent bright curved ionization front southwest of theta one Orionis C and is relatively weak in the central region. Sulfur three is smoother, while argon three and oxygen three are enhanced more centrally and show comparatively weak emission at the prominent outer front.
+
+Figure 10.
+Five plots show fitted parameters versus spatial binning level for five emission lines. The velocity variance and correlation length remain nearly constant with binning, while the structure-function slope increases slightly. In contrast, the fitted noise contribution decreases strongly with increasing binning, while the fitted seeing width increases and becomes more uncertain.
+
+Figure 11.
+Five plots show fitted parameters versus emission line for MUSE, trimmed MUSE, and KPNO observations. Velocity variance, correlation length, and structure-function slope vary modestly between lines, with a general increase toward higher ionization. Noise contributions are small, while fitted seeing widths are systematically larger for KPNO than MUSE.
+
+Figure A1(a):
+Log-log H alpha structure function versus separation. The observed function rises approximately as a power law from small scales, flattens near ten square kilometers per square second, peaks at a few tenths of a parsec, then declines. The fitted model closely follows the observations over the fitted range, while the underlying noise-free model falls steeply below the observations at small separations.
+
+Figure A1(b):
+Corner plot of five fitted H alpha parameters. Posterior distributions are compact and mostly unimodal. Correlation length and velocity variance are strongly positively correlated, both are negatively correlated with power-law slope, and noise is strongly positively correlated with seeing width.
+
+Figure A1(c):
+Log-log argon three structure function versus separation. The observed function rises approximately as a power law, flattens near ten square kilometers per square second, peaks at a few tenths of a parsec, then declines. The fitted model closely follows the observations, with a substantially larger small-scale noise contribution than for H alpha.
+
+Figure A1(d):
+Corner plot of five fitted argon three parameters. Posterior distributions are compact and mostly unimodal, with covariance patterns similar to H alpha: correlation length and velocity variance are positively correlated, both anticorrelate with power-law slope, and noise correlates strongly with seeing width.
+
+Figure A2(a):
+Log-log nitrogen two structure function versus separation. The observed function rises approximately as a power law from small scales, flattens near ten square kilometers per square second, peaks at a few tenths of a parsec, then declines. The fitted model closely follows the observations over the fitted range, while the underlying noise-free model falls below the observations at small separations.
+
+Figure A2(b):
+Corner plot of five fitted nitrogen two parameters. Posterior distributions are compact and mostly unimodal. Correlation length and velocity variance are strongly positively correlated, both are negatively correlated with power-law slope, and noise is strongly positively correlated with seeing width.
+
+Figure A2(c):
+Log-log sulfur three structure function versus separation. The observed function rises approximately as a power law, flattens near ten square kilometers per square second, peaks at a few tenths of a parsec, then declines steeply. The fitted model closely follows the observations over the fitted range, while the underlying noise-free model falls below the observations at small separations.
+
+Figure A2(d):
+Corner plot of five fitted sulfur three parameters. Posterior distributions are compact and mostly unimodal, with covariance patterns similar to nitrogen two: correlation length and velocity variance are positively correlated, both anticorrelate with power-law slope, and noise correlates strongly with seeing width.
+
+Figure A3(a):
+Log-log oxygen three structure function versus separation. The observed function rises approximately as a power law from small scales, flattens near ten square kilometers per square second, peaks at a few tenths of a parsec, then declines steeply. The fitted model closely follows the observations over the fitted range, while the underlying noise-free model falls below the observations at small separations.
+
+Figure A3(b):
+Corner plot of five fitted oxygen three parameters. Posterior distributions are compact and mostly unimodal. Correlation length and velocity variance are strongly positively correlated, both are negatively correlated with power-law slope, and noise is strongly positively correlated with seeing width.
+
+Figure B1:
+Four KPNO radial-velocity maps of the Orion Nebula in H alpha, nitrogen two, oxygen three, and sulfur two, spanning minus ten to plus ten kilometers per second relative to each line’s mean velocity. All show coherent redshifted and blueshifted structures. H alpha and oxygen three are particularly similar, with redshifted emission west of theta one Orionis C and a broad blueshifted band to the south. Nitrogen two and sulfur two show a prominent redshifted region in the southeast.
+
+Figure B2(a):
+Log-log nitrogen two structure function versus separation. The observed function rises approximately as a power law, flattens near ten square kilometers per square second, and then rises again at the largest separations. The fitted model closely follows the observations over the fitted range, with a very small noise contribution at small separations.
+
+Figure B2(b):
+Corner plot of five fitted nitrogen two parameters. Posterior distributions are compact and mostly unimodal. Correlation length and velocity variance are strongly positively correlated, both are negatively correlated with power-law slope, while seeing width is positively correlated with correlation length and velocity variance and negatively correlated with slope.
+
+Figure B2(c):
+Log-log sulfur two structure function versus separation. The observed function rises approximately as a power law and gradually flattens above separations of about one tenth of a parsec, before rising again at the largest separations. The fitted model closely follows the observations over the fitted range, with a very small noise contribution.
+
+Figure B2(d):
+Corner plot of five fitted sulfur two parameters. Posterior distributions are compact and mostly unimodal, with covariance patterns similar to nitrogen two: correlation length and velocity variance are positively correlated, both anticorrelate with power-law slope, while seeing width correlates positively with correlation length and velocity variance and negatively with slope.
+
+Figure B3(a):
+Log-log H alpha structure function versus separation. The observed function rises approximately as a power law, flattens above ten square kilometers per square second, peaks at a few tenths of a parsec, then declines steeply. The fitted model closely follows the observations over the fitted range, with a very small noise contribution at small separations.
+
+Figure B3(b):
+Corner plot of five fitted H alpha parameters. Posterior distributions are compact and mostly unimodal. Correlation length and velocity variance are strongly positively correlated, both are negatively correlated with power-law slope, while seeing width is positively correlated with correlation length and velocity variance and negatively correlated with slope.
+
+Figure B3(c):
+Log-log oxygen three structure function versus separation. The observed function rises approximately as a power law, flattens above ten square kilometers per square second, peaks at a few tenths of a parsec, then declines steeply. The fitted model closely follows the observations over the fitted range, with a very small noise contribution at small separations.
+
+Figure B3(d):
+Corner plot of five fitted oxygen three parameters. Posterior distributions are compact and mostly unimodal, with covariance patterns similar to H alpha: correlation length and velocity variance are positively correlated, both anticorrelate with power-law slope, while seeing width correlates positively with correlation length and velocity variance and negatively with slope.
